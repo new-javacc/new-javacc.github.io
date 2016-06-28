@@ -3,7 +3,7 @@ body {
 }
 #mainpage {
 	background-color: white;
-	margin: 100px;
+	/*margin: 100px;*/
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	padding-bottom: 100%;
@@ -29,6 +29,7 @@ body {
 .navig-button:hover {
 	background-color: rgb(255, 165, 0);
 	color: white;
+	cursor: pointer;
 }
 #logo {
 	width: 100px;
