@@ -1,0 +1,53 @@
+#description {
+	text-align: center;
+	font-size: 50px;
+	color: #ffa500;
+	margin-top: 1%;
+}
+
+#long-descr {
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	font-size: 20px;
+}
+
+#categories {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+
+td {
+	text-align: center;
+	border-right: 3px solid #ffa500;
+	width: 30%;
+}
+
+#last {
+	border-right: none;
+}
+
+h1 {
+	color: #ffa500;
+}
+
+.navigation {
+	width: 60%;
+	background-color: #ffa500;
+	border: 1px solid #ffa500;
+	border-radius: 5px;
+	color: white;
+	font-size: 20px;
+	transition: background-color 0.5s, color 0.5s;
+}
+
+.navigation:hover {
+	background-color: white;
+	color: #ffa500;
+}
+
+button:hover {
+	cursor: pointer;
+}
