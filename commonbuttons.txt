@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>JavaCC Home</title>
-		<link rel="stylesheet" href="common-styles.css">
-		<link rel="stylesheet" href="404-styles.css">
-		<script src="jquery-1.11.3.min.js"></script>
-	</head>
-	<body>
-<!--template-->
 		<div id="alldropdowns">
 			<div id="logo-container">
 				<a href="http://new-javacc.github.io"><img id="logo" src="new-javacc-logo.png"></a>
@@ -25,7 +15,3 @@
             	<button onclick="window.location = 'http://new-javacc.github.io/contact';" class="dropbtn"><div class="drpdntext">CONTACT</div></button>
             </div>
         </div>
-<!--end-->
-        <div id="msg">Oops! Looks like the page you're looking for doesn't exist.</div>
-	</body>
-</html>

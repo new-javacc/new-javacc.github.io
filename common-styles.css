@@ -1,11 +1,9 @@
 body {
 	background-color: rgb(255, 165, 0);
-}
-#mainpage {
 	background-color: white;
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
-	padding-bottom: 100%;
+    margin: none;
 }
 #alldropdowns {
 	width: 80%;
@@ -48,4 +46,8 @@ body {
     height: 100%;
     float: left;
     width: 18%;
+}
+
+button:hover {
+    cursor: pointer;
 }

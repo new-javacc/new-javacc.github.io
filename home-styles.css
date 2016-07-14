@@ -12,11 +12,12 @@
 	font-size: 20px;
 }
 
-#categories {
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
+.categories {
+	width: 100%;
 	margin-top: 5%;
+	background-color: #c8c8c8;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 td {
@@ -25,22 +26,19 @@ td {
 	width: 30%;
 }
 
-#last {
-	border-right: none;
-}
-
 h1 {
-	color: #ffa500;
+	color: #ffffff;
 }
 
 .navigation {
-	width: 60%;
+	width: 65%;
 	background-color: #ffa500;
 	border: 1px solid #ffa500;
 	border-radius: 5px;
 	color: white;
 	font-size: 20px;
 	transition: background-color 0.5s, color 0.5s;
+	margin-top: 5%;
 }
 
 .navigation:hover {
@@ -48,6 +46,34 @@ h1 {
 	color: #ffa500;
 }
 
-button:hover {
-	cursor: pointer;
+#resources {
+	text-align: left;
+	font-size: 60px;
+	margin-top: 2%;
+	color: #ffa500;
+	margin-left: 3%;
+}
+
+#table2 {
+    margin-top: 2%;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#table2 td {
+    border-right: none;
+}
+
+#last {
+	border-right: none;
+}
+
+.resource-descr {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+h2 {
+	font-size: 40px;
+	font-weight: lighter;
 }

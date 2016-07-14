@@ -7,43 +7,80 @@
 		<script src="jquery-1.11.3.min.js"></script>
 	</head>
 	<body>
-		<div id="mainpage">
-			<div id="alldropdowns">
-				<div id="logo-container">
-					<a href="http://new-javacc.github.io"><img id="logo" src="new-javacc-logo.png"></a>
-				</div>
-	            <div class="dropdown">
-	            	<button onclick="window.location = 'http://new-javacc.github.io/download';" class="dropbtn"><div class="drpdntext">DOWNLOAD</div></button>
-	            </div>
-	            <div class="dropdown">
-	            	<button onclick="window.location = 'http://new-javacc.github.io/info';" class="dropbtn"><div class="drpdntext">INFORMATION</div></button>
-	            </div>
-	            <div class="dropdown">
-	            	<button onclick="window.location = 'http://new-javacc.github.io/help';" class="dropbtn"><div class="drpdntext">HELP</div></button>
-	            </div>
-	            <div class="dropdown">
-	            	<button onclick="window.location = 'http://new-javacc.github.io/contact';" class="dropbtn"><div class="drpdntext">CONTACT</div></button>
-	            </div>
+<!--template-->
+		<div id="alldropdowns">
+			<div id="logo-container">
+				<a href="http://new-javacc.github.io"><img id="logo" src="new-javacc-logo.png"></a>
+			</div>
+            <div class="dropdown">
+            	<button onclick="window.location = 'http://new-javacc.github.io/download';" class="dropbtn"><div class="drpdntext">DOWNLOAD</div></button>
             </div>
-            <img src="new-javacc-logo.png">
-            <div id="description">The Java Parser Generator</div>
-            <div id="long-descr">Java Compiler Compiler &#8482; (JavaCC &#8482;) is the most popular parser generator for use with Java &#8482; applications. A parser generator is a tool that reads a grammar specification and converts it to a Java program that can recognize matches to the grammar. In addition to the parser generator itself, JavaCC provides other standard capabilities related to parser generation such as tree building (via a tool called JJTree included with JavaCC), actions, debugging, etc.</div>
-            <table id="categories">
-            	<tr>
-            		<td>
-            			<h1>Ready to jump in?</h1>
-            			<button class="navigation">Download JavaCC &#9654;</button>
-            		</td>
-            		<td>
-            			<h1>Want to learn more?</h1>
-            			<button class="navigation" onclick="window.location = 'http://new-javacc.github.io/features';">Check out JavaCC's features &#9654;</button>
-            		</td>
-            		<td id="last">
-            			<h1>Stuck on something?</h1>
-            			<button class="navigation" onclick="window.location = 'http://www.engr.mun.ca/~theo/JavaCC-FAQ/javacc-faq-moz.htm';">Check out the FAQ &#9654;</button>
-            		</td>
-            	</tr>
-            </table>
-		</div>
+            <div class="dropdown">
+            	<button onclick="window.location = 'http://new-javacc.github.io/info';" class="dropbtn"><div class="drpdntext">INFORMATION</div></button>
+            </div>
+            <div class="dropdown">
+            	<button onclick="window.location = 'http://new-javacc.github.io/help';" class="dropbtn"><div class="drpdntext">HELP</div></button>
+            </div>
+            <div class="dropdown">
+            	<button onclick="window.location = 'http://new-javacc.github.io/contact';" class="dropbtn"><div class="drpdntext">CONTACT</div></button>
+            </div>
+        </div>
+<!--end-->
+        <img src="new-javacc-logo.png">
+        <div id="description">The Java Parser Generator</div>
+        <div id="long-descr">Java Compiler Compiler &#8482; (JavaCC &#8482;) is the most popular parser generator for use with Java &#8482; applications. A parser generator is a tool that reads a grammar specification and converts it to a Java program that can recognize matches to the grammar. In addition to the parser generator itself, JavaCC provides other standard capabilities related to parser generation such as tree building (via a tool called JJTree included with JavaCC), actions, debugging, etc.</div>
+        <table class="categories">
+            <tr>
+                <td>
+                    <h1>Ready to jump in?</h1>
+                    <button class="navigation">Download JavaCC &#9654;</button>
+                </td>
+                <td>
+                    <h1>Want to learn more?</h1>
+                    <button class="navigation" onclick="window.location = 'http://new-javacc.github.io/features';">Check out JavaCC's features &#9654;</button>
+                </td>
+                <td id="last">
+                    <h1>Stuck on something?</h1>
+                    <button class="navigation" onclick="window.location = 'http://www.engr.mun.ca/~theo/JavaCC-FAQ/javacc-faq-moz.htm';">Check out the FAQ &#9654;</button>
+                </td>
+            </tr>
+        </table>
+        <div id="resources">&#128712; Helpful Resources</div>
+        <table class="categories" id="table2">
+            <tr>
+                <td>
+                    <h2>Installation & Getting Started</h2>
+                    <div class="resource-descr">This page contains a bunch of tips that should aid you through the installation process.</div>
+                    <button class="navigation" onclick="window.location = 'http://new-javacc.github.io/getting-started';">Read more &#9654;</button>
+                </td>
+                <td>
+                    <h2>Documentation</h2>
+                    <div class="resource-descr">The complete documentation for JavaCC.</div>
+                    <button class="navigation" onclick="window.location = 'http://new-javacc.github.io/doc';">Read more &#9654;</button>
+                </td>
+                <td id="last2">
+                    <h2>Lexer Writing Tips</h2>
+                    <div class="resource-descr">Tips for writing good JavaCC lexical analyzer specs. This can also help you if you are getting 'code size too big' error message from javac when you compile the generated token manager.</div>
+                    <button class="navigation" onclick="window.location = 'http://new-javacc.github.io/lexertips';">Read more &#9654;</button>
+                </td>
+            </tr>
+        	<tr>
+        		<td>
+        			<h2>Grammar Repository</h2>
+                    <div class="resource-descr">A repository of JavaCC grammars is being maintained on the JavaCC home page. We urge you to contribute your grammars to this repository or to the JavaCC authors for the benefit of others.</div>
+        			<button class="navigation">Read more &#9654;</button>
+        		</td>
+        		<td>
+        			<h2>Source Code</h2>
+                    <div class="resource-descr">The complete source code for JavaCC on GitHub.</div>
+        			<button class="navigation">Read more &#9654;</button>
+        		</td>
+        		<td id="last2">
+        			<h2>Contact</h2>
+                    <div class="resource-descr">Here's how you can contact us and keep in touch with what's happening.</div>
+        			<button class="navigation" onclick="window.location = 'http://new-javacc.github.io/contact';">Read more &#9654;</button>
+        		</td>
+        	</tr>
+        </table>
 	</body>
 </html>
