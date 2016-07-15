@@ -76,4 +76,28 @@ h1 {
 h2 {
 	font-size: 40px;
 	font-weight: lighter;
+	display: inline-flex;
+	float: center;
+}
+
+.icon-img {
+	height: 7%;
+	display: table-column;
+}
+
+.icon-cell {
+	width: 10%;
+	padding-left: 15%;
+}
+
+.title-cell {
+	width: 90%;
+}
+
+#cabinet {
+	height: 4%;
+}
+
+#mail {
+	padding-left: 25%;
 }

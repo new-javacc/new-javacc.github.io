@@ -1,0 +1,58 @@
+h1 {
+	font-size: 80px;
+	font-weight: lighter;
+}
+
+#encourage {
+	font-size: 30px;
+}
+
+#download-icon {
+	width: 160%;
+	height: 10%;
+}
+
+#download {
+	width: 30%;
+	background-color: #ffa500;
+	margin-top: 5%;
+	color: white;
+	border: none;
+	transition: background-color 0.5s, color 0.5s;
+	border: 2px solid #ffa500;
+	border-radius: 5px;
+}
+
+#download:hover {
+	background-color: white;
+	color: #ffa500;
+}
+
+td {
+	align: left;
+}
+
+#cell1 {
+	width: 10%;
+}
+
+#cell2 {
+	width: 90%;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+a {
+	color: blue;
+	transition: color 0.3s;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+}
+
+#older {
+	margin-top: 3%;
+	font-size: 20px;
+}
