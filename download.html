@@ -29,17 +29,12 @@
             <h1>100,000+ Downloads</h1>
             <div id="encourage">Join the community of thousands of users who utilize JavaCC in everyday coding.</div>
             <button id="download" onclick="window.location = 'https://java.net/projects/javacc/downloads/download/javacc-6.0.zip';">
-                  <table>
-                        <tr>
-                              <td id="cell1">
-                                    <img src="download-button.png" id="download-icon">
-                              </td>
-                              <td id="cell2">
-                                    <div>Download JavaCC 6.0</div>
-                              </td>
-                        </tr>
-                  </table>
+                  <div id="buttontext">
+                        <img src="download-button.png" id="download-icon">
+                        Download JavaCC 6.0
+                  </div>
             </button>
-            <div id="older">For older versions, click <a href="http://new-javacc.github.io/older-versions">here</a>.</div>
+            <script src="show-versions.js"></script>
+            <div id="older"><a onclick="showOld();">Older versions &#9660;</a>.</div>
 	</body>
 </html>
