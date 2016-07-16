@@ -12,57 +12,73 @@
 			<div id="logo-container">
 				<a href="http://new-javacc.github.io"><img id="logo" src="new-javacc-logo.png"></a>
 			</div>
-                  <div class="dropdown">
-                  	<button onclick="window.location = 'http://new-javacc.github.io/download';" class="dropbtn"><div class="drpdntext">DOWNLOAD</div></button>
-                  </div>
-                  <div class="dropdown">
-                  	<button onclick="window.location = 'http://new-javacc.github.io/info';" class="dropbtn"><div class="drpdntext">INFORMATION</div></button>
-                  </div>
-                  <div class="dropdown">
-                  	<button onclick="window.location = 'http://new-javacc.github.io/help';" class="dropbtn"><div class="drpdntext">HELP</div></button>
-                  </div>
-                  <div class="dropdown">
-                  	<button onclick="window.location = 'http://new-javacc.github.io/contact';" class="dropbtn"><div class="drpdntext">CONTACT</div></button>
-                  </div>
+            <div class="dropdown">
+            	<button onclick="window.location = 'http://new-javacc.github.io/download';" class="dropbtn"><div class="drpdntext">DOWNLOAD</div></button>
             </div>
+            <div class="dropdown">
+            	<button onclick="window.location = 'http://new-javacc.github.io/help';" class="dropbtn"><div class="drpdntext">HELP</div></button>
+            </div>
+            <div class="dropdown">
+            	<button onclick="window.location = 'http://new-javacc.github.io/contact';" class="dropbtn"><div class="drpdntext">CONTACT</div></button>
+            </div>
+        </div>
 <!--end-->
-            <div class="bottomhalf">
-                  <h1>
-                        Installation Notes
-                  </h1>
-                  <div id="alltext">
-                        <div>The download should have placed into your file system either a zip or gzip file containing the JavaCC software.<br><br>To install, open a command line, go to the directory where the file was installed, and depending on which file you downloaded either type:<br><br></div>
-                        <code>unzip javacc-6.0.zip</code>
-                        <br><br>
-                        <div>for zip files, or:</div>
-                        <br>
-                        <code>gunzip javacc-6.0.tar.gz</code>
-                        <br><br>
-                        <div>followed by</div>
-                        <br>
-                        <code>tar xvf javacc-6.0.tar</code>
-                        <br><br>
-                        <div>for gzip files.</div>
-                  </div>
-            </div>
-            <div class="bottomhalf">
-                  <h1>
-                        Getting Started
-                  </h1>
-                  <div id="alltext">
-                        <div>The download should have placed into your file system either a zip or gzip file containing the JavaCC software.<br><br>To install, open a command line, go to the directory where the file was installed, and depending on which file you downloaded either type:<br><br></div>
-                        <code>unzip javacc-6.0.zip</code>
-                        <br><br>
-                        <div>for zip files, or:</div>
-                        <br>
-                        <code>gunzip javacc-6.0.tar.gz</code>
-                        <br><br>
-                        <div>followed by</div>
-                        <br>
-                        <code>tar xvf javacc-6.0.tar</code>
-                        <br><br>
-                        <div>for gzip files.</div>
-                  </div>
-            </div>
+            <table id="help-layout">
+                  <tr>
+                        <td id="cell1">
+                              <script src="color-buttons.js"></script>
+                              <div id="button-container">
+                                    <div class="help-button"><button class="thebutton">JAVACC HELP</button></div>
+                                    <div class="help-button"><button class="thebutton">Getting Started</button></div>
+                                    <div class="help-button"><button class="thebutton">JavaCC Release Notes</button></div>
+                                    <div class="help-button"><button class="thebutton">JJTree Release Notes</button></div>
+                                    <div class="help-button"><button class="thebutton">JJDoc Release Notes</button></div>
+                                    <div class="help-button"><button class="thebutton">Mailing List</button></div>
+                              </div>
+                        </td>
+                        <td id="cell2">
+                              <div class="bottomhalf">
+                                    <h1>
+                                          Installation Notes
+                                    </h1>
+                                    <div id="alltext">
+                                          <div>The download should have placed into your file system either a zip or gzip file containing the JavaCC software.<br><br>To install, open a command line, go to the directory where the file was installed, and depending on which file you downloaded either type:<br><br></div>
+                                          <code class="commands">unzip javacc-6.0.zip</code>
+                                          <br><br>
+                                          <div>for zip files, or:</div>
+                                          <br>
+                                          <code class="commands">gunzip javacc-6.0.tar.gz</code>
+                                          <br><br>
+                                          <div>followed by</div>
+                                          <br>
+                                          <code class="commands">tar xvf javacc-6.0.tar</code>
+                                          <br><br>
+                                          <div>for gzip files.</div>
+                                          <br>
+                                          <div></div>
+                                    </div>
+                                    <h1>
+                                          Getting Started
+                                    </h1>
+                                    <div id="alltext">
+                                          <div>Once you have completed installation, add the <code>bin</code> directory within the JavaCC installation to your path. The <code>javacc</code>, <code>jjtree</code>, and <code>jjdoc</code> invocation scripts/executables reside in this directory.<br><br></div>
+                                          <div>You can get started quickly by looking at the examples and the associated README files in the examples directory under the installation directory. For additional information consult the documentation index and the following release notes:</div>
+                                          <ul>
+                                                <li>
+                                                      <a>&#9654; JavaCC Release Notes</a>
+                                                </li>
+                                                <li>
+                                                      <a>&#9654; JJTree Release Notes</a>
+                                                </li>
+                                                <li>
+                                                      <a>&#9654; JJDoc Release Notes</a>
+                                                </li>
+                                          </ul>
+                                          <div>For additional help, see the JavaCC <a>mailing list</a>.</div>
+                                    </div>
+                              </div>
+                        </td>
+                  </tr>
+            </table>
 	</body>
 </html>

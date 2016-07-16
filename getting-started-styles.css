@@ -2,7 +2,7 @@ body {
 	text-align: left;
 }
 
-code {
+.commands {
 	background-color: #323232;
 	color: white;
 	padding-left: 1%;
@@ -21,10 +21,66 @@ h1 {
 }
 
 .bottomhalf {
-	margin-left: 20%;
-	margin-right: 20%;
 	border: 3px solid #323232;
 	border-radius: 20px;
 	background-color: #ffeedd;
 	padding-bottom: 1%;
+}
+
+li {
+	list-style: none;
+}
+
+ul a {
+	color: blue;
+	transition: color 0.5s;
+}
+
+ul a:hover {
+	color: red;
+	cursor: pointer;
+}
+
+#help-layout {
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+}
+
+#help-layout td {
+	/*border: 1px solid black;*/
+}
+
+#cell2 {
+	width: 60%;
+}
+
+#cell1 {
+	width: 20%;
+	vertical-align: top;
+}
+
+.help-button {
+	text-align: center;
+}
+
+#cell1 button {
+	width: 90%;
+}
+
+.thebutton {
+	text-align: left;
+	color: white;
+	border: 2px solid white;
+	font-size: 20px;
+	transition: color 0.5s, border 0.5s;
+}
+
+.thebutton:hover {
+	color: #ffa500;
+	border: 2px solid #ffa500;
+}
+
+#button-container {
+	margin-top: 5%;
 }

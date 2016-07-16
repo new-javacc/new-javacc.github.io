@@ -5,17 +5,17 @@ body {
     margin: none;
 }
 #alldropdowns {
-	width: 80%;
+	width: 96%;
 	height: 50px;
-	margin-left: 18%;
-	margin-right: 2%;
 	margin-bottom: 70px;
+    margin-left: 2%;
+    margin-right: 2%;
 	top: 30px;
 	position: relative;
 }
 
 .dropdown {
-	width: 18%;
+	width: 16%;
     display: inline-block;
 	background-color: white;
 	color: rgb(255, 165, 0);
@@ -45,6 +45,13 @@ body {
     height: 100%;
     float: left;
     width: 18%;
+    margin-left: none;
+    margin-right: 30%;
+}
+
+#logo-container {
+    align: left;
+    margin-left: none;
 }
 
 button:hover {

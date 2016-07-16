@@ -6,9 +6,6 @@
             	<button onclick="window.location = 'http://new-javacc.github.io/download';" class="dropbtn"><div class="drpdntext">DOWNLOAD</div></button>
             </div>
             <div class="dropdown">
-            	<button onclick="window.location = 'http://new-javacc.github.io/info';" class="dropbtn"><div class="drpdntext">INFORMATION</div></button>
-            </div>
-            <div class="dropdown">
             	<button onclick="window.location = 'http://new-javacc.github.io/help';" class="dropbtn"><div class="drpdntext">HELP</div></button>
             </div>
             <div class="dropdown">
