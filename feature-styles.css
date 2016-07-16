@@ -1,0 +1,49 @@
+body {
+	text-align: left;
+}
+
+h1, #intro {
+	margin-top: 2%;
+	margin-bottom: 2%;
+	margin-left: 2%;
+	margin-right: 10%;
+}
+
+#intro {
+	font-size: 20px;
+}
+
+ul, li {
+	margin-left: 2%;
+	margin-right: 5%;
+	font-size: 20px;
+}
+
+li {
+	list-style: none;
+}
+
+.show {
+	display: block;
+}
+
+.arrow {
+	display: inline-block;
+}
+
+.feat-info {
+	display: none;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 3%;
+	list-style: none;
+}
+
+a {
+	transition: color 0.3s;
+}
+
+a:hover {
+	cursor: pointer;
+	color: #ffa500;
+}
