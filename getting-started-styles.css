@@ -70,15 +70,18 @@ ul a:hover {
 
 .thebutton {
 	text-align: left;
-	color: white;
-	border: 2px solid white;
+	background-color: #c8c8c8;
+	color: black;
+	border: none;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	/*border: 2px solid white;*/
 	font-size: 20px;
-	transition: color 0.5s, border 0.5s;
+	transition: color 0.5s;
 }
 
 .thebutton:hover {
 	color: #ffa500;
-	border: 2px solid #ffa500;
 }
 
 #button-container {
