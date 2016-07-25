@@ -53,6 +53,8 @@ ul a:hover {
 
 #cell2 {
 	width: 60%;
+	vertical-align: top;
+	padding-top: 2%;
 }
 
 #cell1 {
