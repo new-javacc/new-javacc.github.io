@@ -3,11 +3,11 @@
                         <td id="cell1">
                               <script src="color-buttons.js"></script>
                               <div id="button-container">
-                                    <div class="help-button"><button class="thebutton">JAVACC HELP</button></div>
-                                    <div class="help-button"><button class="thebutton">Getting Started</button></div>
-                                    <div class="help-button"><button class="thebutton">JavaCC Release Notes</button></div>
-                                    <div class="help-button"><button class="thebutton">JJTree Release Notes</button></div>
-                                    <div class="help-button"><button class="thebutton">JJDoc Release Notes</button></div>
-                                    <div class="help-button"><button class="thebutton">Mailing List</button></div>
+                                    <div class="help-button"><button onclick="window.location = 'http://javacc.org/help';" class="thebutton">JAVACC HELP</button></div>
+                                    <div class="help-button"><button onclick="window.location = 'http://javacc.org/getting-started';" class="thebutton">Getting Started</button></div>
+                                    <div class="help-button"><button onclick="window.location = 'http://javacc.org/javacc-release-notes';" class="thebutton">JavaCC Release Notes</button></div>
+                                    <div class="help-button"><button onclick="window.location = 'http://javacc.org/jjtree-release-notes';" class="thebutton">JJTree Release Notes</button></div>
+                                    <div class="help-button"><button onclick="window.location = 'http://javacc.org/jjdoc-release-notes';" class="thebutton">JJDoc Release Notes</button></div>
+                                    <div class="help-button"><button onclick="window.location = 'http://javacc.org/mailing-lists';" class="thebutton">Mailing List</button></div>
                               </div>
                         </td>
