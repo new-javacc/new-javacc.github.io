@@ -4,7 +4,8 @@
 		<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
 		<title>JavaCC Help</title>
 		<link rel="stylesheet" href="common-styles.css">
-		<link rel="stylesheet" href="getting-started-styles.css">
+    <link rel="stylesheet" href="getting-started-styles.css">
+		<link rel="stylesheet" href="javacc-release-notes-styles.css">
 		<script src="jquery-1.11.3.min.js"></script>
 	</head>
 	<body>
@@ -51,13 +52,12 @@
 <!--end-->
                     <td id="cell2">
                         <div class="bottomhalf">
-                            <h1>
-                                  JavaCC Help
-                            </h1>
-                            <div id="alltext">
-                                  <div>Here's all the information and help for the JavaCC project.<br><br></div>
-                                  <div>Click on any link in the sidebar to get more information on a specific aspect of JavaCC.</div>
-                            </div>
+                          <iframe id="notes" src="https://javacc.java.net/doc/javaccreleasenotes.html">
+                            <p>Your browser does not support iframe.</p>
+                            <script>
+                              document.getElementById("notes").height = "1000";
+                            </script>
+                          </iframe>
                         </div>
                     </td>
               </tr>

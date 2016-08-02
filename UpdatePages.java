@@ -7,22 +7,30 @@ import java.io.File;
 public class UpdatePages {
 
 	public static void main(String[] args) {
-		ArrayList<File> files = getAllHtmlFiles();
-		update(files);
+		ArrayList<File> files = getAllFiles("html");
+		ArrayList<File> temps = getAllFiles("txt");
+		update(files, temps);
 		System.out.println("Successfully updated all HTML pages.");
 	}
 
-	public static ArrayList<File> getAllHtmlFiles() {
+	public static ArrayList<File> getAllFiles(String ext) {
 		ArrayList<File> allFiles = new ArrayList<File>();
 		File folder = new File(".");
 		File[] files1 = folder.listFiles();
 		for (int i = 0; i < files1.length; i++) {
-			if (files1[i].getName().endsWith(".html")) allFiles.add(files1[i]);
+			if (files1[i].getName().endsWith("." + ext)) allFiles.add(files1[i]);
 		}
 		return allFiles;
 	}
 
-	public static void update(ArrayList<File> files) {
+	public static void update(ArrayList<File> files, ArrayList<File> templates) {
+		for (File f : templates) {
+			update(files, f.getName());
+		}
+	} 
+
+	public static void update(ArrayList<File> files, String commonpath) {
+		String name = commonpath.substring(0, commonpath.indexOf("."));
 		for (int i = 0; i < files.size(); i++) {
 			File htmlFile = files.get(i);
 			System.out.println("Updating file: " + htmlFile.getName());
@@ -35,7 +43,7 @@ public class UpdatePages {
 			}
 			Scanner temp = null;
 			try {
-				temp = new Scanner(new File("commonbuttons.txt"));
+				temp = new Scanner(new File(commonpath));
 			} catch (FileNotFoundException e) {
 				System.err.println("Failure");
 				continue;
@@ -47,7 +55,7 @@ public class UpdatePages {
 			String currentLine = "";
 			String wholeText = "";
 			while (input.hasNext()) {
-				while (input.hasNext() && currentLine.indexOf("<!--template-->") == -1) {
+				while (input.hasNext() && currentLine.indexOf("<!--" + name + "-->") == -1) {
 					currentLine = input.nextLine();
 					wholeText += currentLine + "\n";
 				}

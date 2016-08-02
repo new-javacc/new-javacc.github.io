@@ -7,14 +7,17 @@ public class CreatePage {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 		System.out.print("Enter the name of the new file -> ");
-		newFile(kb.nextLine());
+		String str = kb.nextLine();
+		System.out.print("Enter the name of the template file -> ");
+		String temp = kb.nextLine();
+		newFile(str, temp);
 		System.out.println("Successfully created new page.");
 	}
 
-	public static void newFile(String name) {
+	public static void newFile(String name, String template) {
 		Scanner input = null;
 		try {
-			input = new Scanner(new File("template.html"));
+			input = new Scanner(new File(template));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.exit(1);
