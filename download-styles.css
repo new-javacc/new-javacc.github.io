@@ -64,3 +64,12 @@ a:hover {
 #buttontext {
 	float: center;
 }
+
+#older-versions {
+	display: none;
+	margin-top: 2%;
+}
+
+#older-versions a {
+	font-size: 20px;
+}

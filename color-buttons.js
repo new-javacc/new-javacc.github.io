@@ -1,12 +1,18 @@
-var current_color = 0;
-var buttons = document.getElementsByClassName("thebutton");
-
 // window.onload = function() {
-// 	var incr = 255 / buttons.length | 0;
-// 	var current = 0;
-// 	incr /= 1.5;
-// 	for (i = 0; i < buttons.length; i++) {
-// 		buttons[i].style.backgroundColor = "rgb(" + current + "," + current + ",255)";
-// 		current += incr;
+// 	for (i = 1; true; i++) {
+// 		if (document.getElementsByClassName('level' + i).length == 0) {
+// 			console.log(document.getElementsByClassName('level1').length);
+// 			break;
+// 		}
+// 		var ind = 5 * i;
+// 		var elems = document.getElementsByClassName('level' + i);
+// 		for (j = 0; j < elems.length; j++) {
+// 			elems[j].style.textIndent = ind + '%';
+// 			console.log(elems[j]);
+// 		}
 // 	}
+// }
+
+// function(n) {
+// 	$(document.getElementsByClassName('inside-help')[n]).animate({height: "toggle"}, 500);
 // }
