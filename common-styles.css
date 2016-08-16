@@ -26,8 +26,7 @@ body {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #ffa500;
-    color: #ffffff;
+    background-color: #dddddd;
 }
 
 .dropbtn {
@@ -38,7 +37,7 @@ body {
     width: 100%;
     border: none;
     cursor: pointer;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s;
 }
 
 #logo {
