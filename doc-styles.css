@@ -1,0 +1,18 @@
+li {
+	padding: 2px;
+	list-style-type: disc;
+}
+
+li ul li {
+	list-style-type: circle;
+}
+
+a {
+	text-decoration: none;
+	color: #ffa500;
+	transition: 0.5s;
+}
+
+a:hover {
+	color: blue;
+}

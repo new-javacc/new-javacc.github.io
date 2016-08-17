@@ -4,7 +4,8 @@
 		<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
 		<title>JavaCC Help</title>
 		<link rel="stylesheet" href="common-styles.css">
-		<link rel="stylesheet" href="getting-started-styles.css">
+    <link rel="stylesheet" href="getting-started-styles.css">
+		<link rel="stylesheet" href="javacc-release-notes-styles.css">
 		<script src="jquery-1.11.3.min.js"></script>
 	</head>
 	<body>
@@ -54,8 +55,36 @@
 <!--end-->
                     <td id="cell2">
                         <div class="bottomhalf">
+                          <iframe id="notes" src="https://javacc.java.net/doc/JJTree.html">
+                            <p>Your browser does not support iframe.</p>
+                          </iframe>
                         </div>
                     </td>
+                    <script>
+                      // taken from http://stackoverflow.com/questions/325273/make-iframe-to-fit-100-of-containers-remaining-height
+                      var buffer = 20; //scroll bar buffer
+                      var iframe = document.getElementById('notes');
+
+                      function pageY(elem) {
+                          return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
+                      }
+
+                      function resizeIframe() {
+                          var height = document.documentElement.clientHeight;
+                          height -= pageY(document.getElementById('notes'))+ buffer ;
+                          height = (height < 0) ? 0 : height;
+                          document.getElementById('notes').style.height = height + 'px';
+                      }
+
+                      // .onload doesn't work with IE8 and older.
+                      if (iframe.attachEvent) {
+                          iframe.attachEvent("onload", resizeIframe);
+                      } else {
+                          iframe.onload=resizeIframe;
+                      }
+
+                      window.onresize = resizeIframe;
+                    </script>
               </tr>
         </table>
 	</body>

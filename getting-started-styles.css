@@ -32,12 +32,12 @@ li {
 }
 
 ul a {
-	color: blue;
+	color: #ffa500;
 	transition: color 0.5s;
 }
 
 ul a:hover {
-	color: red;
+	color: blue;
 	cursor: pointer;
 }
 

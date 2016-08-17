@@ -5,4 +5,16 @@
 	width: 96%;
 	height: 100%;
 	border: none;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#notes::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+	height: 0px;
+    background: transparent;
 }
