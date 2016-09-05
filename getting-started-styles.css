@@ -24,7 +24,7 @@ h1 {
 	border: 3px solid #323232;
 	border-radius: 20px;
 	background-color: #ffffff;
-	padding-bottom: 1%;
+	padding: 1%;
 }
 
 li {
@@ -88,4 +88,8 @@ ul a:hover {
 
 #button-container {
 	margin-top: 5%;
+}
+
+#tutorial-buttons {
+	display: none;
 }

@@ -7,17 +7,20 @@ import java.io.File;
 public class UpdatePages {
 
 	public static void main(String[] args) {
-		ArrayList<File> files = getAllFiles("html");
-		ArrayList<File> temps = getAllFiles("txt");
+		ArrayList<File> files = getAllFiles("html", ".");
+		ArrayList<File> temps = getAllFiles("txt", ".");
 		update(files, temps);
 		System.out.println("Successfully updated all HTML pages.");
 	}
 
-	public static ArrayList<File> getAllFiles(String ext) {
+	public static ArrayList<File> getAllFiles(String ext, String dir) {
 		ArrayList<File> allFiles = new ArrayList<File>();
-		File folder = new File(".");
+		File folder = new File(dir);
 		File[] files1 = folder.listFiles();
 		for (int i = 0; i < files1.length; i++) {
+			if (files1[i].isDirectory() && !files1[i].getName().equals(".git")) {
+				allFiles.addAll(getAllFiles(ext, dir + "/" + files1[i].getName()));
+			}
 			if (files1[i].getName().endsWith("." + ext)) allFiles.add(files1[i]);
 		}
 		return allFiles;

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
-		<title>JavaCC - Getting Started</title>
-            <link rel="stylesheet" href="common-styles.css">
-		<link rel="stylesheet" href="getting-started-styles.css">
-		<script src="jquery-1.11.3.min.js"></script>
-	</head>
-	<body>
+  <head>
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
+    <title>JavaCC Help</title>
+    <link rel="stylesheet" href="common-styles.css">
+    <link rel="stylesheet" href="getting-started-styles.css">
+    <link rel="stylesheet" href="javacc-release-notes-styles.css">
+    <script src="jquery-1.11.3.min.js"></script>
+  </head>
+  <body>
 <!--template-->
 		<div id="alldropdowns">
 			<div id="logo-container">
@@ -59,49 +60,39 @@
                               </div>
                         </td>
 <!--end-->
-                        <td id="cell2">
-                              <div class="bottomhalf">
-                                    <h1>
-                                          Installation Notes
-                                    </h1>
-                                    <div id="alltext">
-                                          <div>The download should have placed into your file system either a zip or gzip file containing the JavaCC software.<br><br>To install, open a command line, go to the directory where the file was installed, and depending on which file you downloaded either type:<br><br></div>
-                                          <code class="commands">unzip javacc-6.0.zip</code>
-                                          <br><br>
-                                          <div>for zip files, or:</div>
-                                          <br>
-                                          <code class="commands">gunzip javacc-6.0.tar.gz</code>
-                                          <br><br>
-                                          <div>followed by</div>
-                                          <br>
-                                          <code class="commands">tar xvf javacc-6.0.tar</code>
-                                          <br><br>
-                                          <div>for gzip files.</div>
-                                          <br>
-                                          <div></div>
-                                    </div>
-                                    <h1>
-                                          Getting Started
-                                    </h1>
-                                    <div id="alltext">
-                                          <div>Once you have completed installation, add the <code>bin</code> directory within the JavaCC installation to your path. The <code>javacc</code>, <code>jjtree</code>, and <code>jjdoc</code> invocation scripts/executables reside in this directory.<br><br></div>
-                                          <div>You can get started quickly by looking at the examples and the associated README files in the examples directory under the installation directory. For additional information consult the documentation index and the following release notes:</div>
-                                          <ul>
-                                                <li>
-                                                      <a href="http://javacc.org/javacc-release-notes">&#9654; JavaCC Release Notes</a>
-                                                </li>
-                                                <li>
-                                                      <a href="http://javacc.org/jjtree-release-notes">&#9654; JJTree Release Notes</a>
-                                                </li>
-                                                <li>
-                                                      <a href="http://javacc.org/jjdoc-release-notes">&#9654; JJDoc Release Notes</a>
-                                                </li>
-                                          </ul>
-                                          <div>For additional help, see the JavaCC <a>mailing list</a>.</div>
-                                    </div>
-                              </div>
-                        </td>
-                  </tr>
-            </table>
-	</body>
+                    <td id="cell2">
+                        <div class="bottomhalf">
+                          <iframe id="notes" src="https://javacc.java.net/doc/lexertips.html">
+                            <p>Your browser does not support iframe.</p>
+                          </iframe>
+                        </div>
+                    </td>
+                    <script>
+                      // taken from http://stackoverflow.com/questions/325273/make-iframe-to-fit-100-of-containers-remaining-height
+                      var buffer = 20; //scroll bar buffer
+                      var iframe = document.getElementById('notes');
+
+                      function pageY(elem) {
+                          return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
+                      }
+
+                      function resizeIframe() {
+                          var height = document.documentElement.clientHeight;
+                          height -= pageY(document.getElementById('notes'))+ buffer ;
+                          height = (height < 0) ? 0 : height;
+                          document.getElementById('notes').style.height = height + 'px';
+                      }
+
+                      // .onload doesn't work with IE8 and older.
+                      if (iframe.attachEvent) {
+                          iframe.attachEvent("onload", resizeIframe);
+                      } else {
+                          iframe.onload=resizeIframe;
+                      }
+
+                      window.onresize = resizeIframe;
+                    </script>
+              </tr>
+        </table>
+  </body>
 </html>

@@ -11,6 +11,13 @@
                                           <div class="help-button"><button onclick="window.location = 'http://javacc.org/jjtree-release-notes';" class="thebutton level1">JJTree Release Notes</button></div>
                                           <div class="help-button"><button onclick="window.location = 'http://javacc.org/jjdoc-release-notes';" class="thebutton level1">JJDoc Release Notes</button></div>
                                           <div class="help-button"><button onclick="window.location = 'http://javacc.org/mailing-lists';" class="thebutton level1">Mailing List</button></div>
+                                          <div class="help-button"><button onclick="showTutorials();" class="thebutton level1">&#9654; Tutorials</button></div>
+                                          <div id="tutorial-buttons">
+                                                <div class="help-button"><button onclick="window.location = 'http://javacc.org/tutorials/lookahead';" class="thebutton level1">Lookahead</button></div>
+                                                <div class="help-button"><button onclick="window.location = 'http://javacc.org/tutorials/tokenmanager';" class="thebutton level1">Token Manager</button></div>
+                                                <div class="help-button"><button onclick="window.location = 'http://javacc.org/tutorials/errorrecovery';" class="thebutton level1">Error Recovery</button></div>
+                                                <div class="help-button"><button onclick="window.location = 'http://javacc.org/tutorials/charstream'" class="thebutton level1">Character Stream</button></div>
+                                          </div
                                     </div>
                               </div>
                         </td>
