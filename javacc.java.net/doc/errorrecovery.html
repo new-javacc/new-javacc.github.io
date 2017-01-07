@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>JavaCC: Error Reporting and Recovery &mdash; Project Kenai</title>
+    <link href="https://asset-1.java.net/stylesheets/print_packaged.css?20160708.bf2ac18" media="print" rel="stylesheet" type="text/css" />
+    <script src="https://asset-3.java.net/javascripts/head_packaged.js?20160708.bf2ac18" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher:'bcd30425-1749-43d6-a311-18a82f89771a'
+        });
+    </script>
+    <script type="text/javascript">
+//<![CDATA[
+var page={"token":"n51DutxXIGJf2kg7GBxTP9wHJWMixsjHjgz30a6EZy4="};
+//]]>
+</script>
+    <script type="text/javascript" charset="utf-8">
+      function debug(m){}
+    </script>
+    
+	<link href="/styles.css" media="screen" rel="stylesheet" type="text/css" /> 
+ 
+<!-- Changed by: Michael Van De Vanter, 14-Jan-2003 -->
+
+    <link href="https://java.net/theme/stylesheets/java_net.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://java.net/theme/stylesheets/layout.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://asset-3.java.net/stylesheets/additions.css?20160708.bf2ac18" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if IE]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie.css";</style><![endif]-->
+    <!--[if lte IE 6]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie6.css";</style><![endif]-->
+    <!--[if IE 7]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie7.css";</style><![endif]-->
+    <!--[if IE 8]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie8.css";</style><![endif]-->
+
+    <meta name="keywords" content="" />
+    <!-- Anti clickjacking -->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+      if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
+  </head>
+  <body class="front not-logged-in article-type-page one-sidebar">
+      <div id="container">
+      
+      <div id="skip-nav" class="element-invisible">
+        <!-- To adjust the display of the skip link see the Advanced theme settings
+        (General settings), and never use display:none! -->
+        <a href="#main-content">Skip to main content</a>
+      </div>
+      <div id="leaderboard">
+        <div id="block-block-31"  class="block">
+          <div class="block-inner">
+            <div class="content">
+                <a href="https://java.net/people/new">Create Account</a>
+  <span class="separator"></span>
+  <a href="https://java.net/people/login?original_uri=https%3A%2F%2Fjavacc.java.net%2Fdoc%2Ferrorrecovery.html" rel="nofollow">Login</a>
+  <span class="separator"></span>
+  <a href="https://java.net/projects/help/pages/WebSite#WithNavigation" target="_blank">Help</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="header" class="clearfix">
+        <div id="branding">
+          <div class="logo-site-name">
+            <strong>
+              <span id="logo">
+                <a href="http://www.java.net/" rel="home" class="active">
+                  <img alt="java.net - Go to Homepage" border="0" class="logo-link" src="https://java.net/theme/images/logo.png" title="Java.net - Go to the Homepage" />
+                </a>
+              </span>
+            </strong>
+          </div>
+          <div id="site-slogan">The Source for Java Technology Collaboration</div>
+        </div>
+        <div id="search-box" class="hide-label">
+          <form action="http://www.java.net/search/node" method="post" id="search-theme-form">
+            <div id="search">
+              <input type="hidden" value="search_form" id="edit-search-form" name="form_id" />
+              <div style="margin-left: -10px;" class="checks">
+                <span><input type="checkbox" name="type[forum]" id="edit-forums" value="forum" /> Forums</span>
+                <span><input type="checkbox" name="type[blog]" id="edit-blogs" value="blog" /> Blogs</span>
+                <span><input type="checkbox" name="projects" id="edit-projects" value="project" /> Projects</span>
+                <span><input type="checkbox" name="people" id="edit-people" value="people" /> People</span>
+              </div>
+              <input type="text" class="form-text" id="edit-search-theme-form-1" value="Search All" size="15" onclick="this.value = ''" onblur="if (!this.value) this.value = ''" name="keys" />
+              <input type="submit" value="" name="op" title="Search" class="form-submit" alt="Search" />
+            </div>
+          </form>
+        </div>
+      </div>
+    <div id="primary" class="nav">
+      <div id="primary-inner">
+                <h2 class="element-invisible">Main Menu</h2>
+       <ul class="primary-links clearfix">
+          <li class=""><a href="https://about.java.net" title="Return to the java.net homepage" class="active">Home</a></li>
+          <li class="active-trail"><a href="https://java.net/projects" title="View the projects hosted on java.net">Projects</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java" title="Participate in the java.net forums">Forums</a></li>
+          <li class=""><a href="https://java.net/people" title="View all the people involved with java.net">People</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java" title="Get involved in your local Java User Group (JUG)">Java User Groups</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java/jcp" title="Get involved with the Java Community Process!">JCP</a></li>
+          <li class="active-trail"><a href="https://java.net/projects/help/pages/Home" title="Help pages java.net">Help</a></li>
+                  </ul>
+       </div>
+    </div>
+    <div id="columns">
+      <div class="columns-inner clearfix">
+        <div id="content-column">
+          <div class="content-inner">
+           <div id="navig-breadcrumbs">
+              <a href="https://java.net/">java.net</a><span>></span>  <a href="https://java.net/projects">projects</a> >
+  <a href="https://java.net/projects/javacc">javacc</a> >
+  <a href="https://java.net/projects/javacc/content" class="current">Website</a>
+
+            </div>
+            <div id="block-quicktabs-2"  class="block">
+              <div class="block-inner">
+                <div class="content">
+                  <!-- BEGIN CONTENT AREA -->
+                  
+                  
+
+
+
+
+<div class="contentPadding website">
+            
+
+<h1>JavaCC [tm]: Error Reporting and Recovery</h1>
+
+<p>
+This document describes the error recovery features introduced in
+Version 0.7.1.  This document also describes how features have changed
+since Version 0.6.
+</p>
+<p>
+The first change (from 0.6) is that we have two new exceptions:
+</p>
+<pre>
+    . ParseException
+    . TokenMgrError
+</pre>
+<p>
+Whenever the token manager detects a problem, it throws the exception
+TokenMgrError.  Previously, it used to print the message:
+</p>
+<pre>
+  Lexical Error ...
+</pre>
+<p>
+following which it use to throw the exception ParseError.
+</p>
+<p>
+Whenever the parser detects a problem, it throws the exception
+ParseException.  Previously, it used to print the message:
+</p>
+<pre>
+  Encountered ... Was expecting one of ...
+</pre>
+<p>
+following which it use to throw the exception ParseError.
+</p>
+<p>
+In Version 0.7.1, error messages are never printed explicitly,
+rather this information is stored inside the exception objects that
+are thrown.  Please see the classes ParseException.java and
+TokenMgrError.java (that get generated by JavaCC [tm] during parser
+generation) for more details.
+</p>
+<p>
+If the thrown exceptions are never caught, then a standard action is
+taken by the virtual machine which normally includes printing the
+stack trace and also the result of the "toString" method in the
+exception.  So if you do not catch the JavaCC exceptions, a message
+quite similar to the ones in Version 0.6.
+</p>
+<p>
+But if you catch the exception, you must print the message yourself.
+</p>
+<p>
+Exceptions in the Java [tm] programming language are all subclasses of
+type Throwable.  Furthermore, exceptions are divided into two broad
+categories - ERRORS and other exceptions.
+</p>
+<p>
+Errors are exceptions that one is not expected to recover from -
+examples of these are ThreadDeath or OutOfMemoryError.  Errors are
+indicated by subclassing the exception "Error".  Exceptions subclassed
+from Error need not be specified in the "throws" clause of method
+declarations.
+</p>
+<p>
+Exceptions other than errors are typically defined by subclassing the
+exception "Exception".  These exceptions are typically handled by the
+user program and must be declared in throws clauses of method
+declarations (if it is possible for the method to throw that
+exception).
+</p>
+<p>
+The exception TokenMgrError is a subclass of Error, while the
+exception ParseException is a subclass of Exception.  The reasoning
+here is that the token manager is never expected to throw an exception
+- you must be careful in defining your token specifications such that
+you cover all cases.  Hence the suffix "Error" in TokenMgrError.  You
+do not have to worry about this exception - if you have designed your
+tokens well, it should never get thrown.  Whereas it is typical to
+attempt recovery from Parser errors - hence the name "ParseException".
+(Although if you still want to recover from token manager errors, you
+can do it - it's just that you are not forced to catch them.)
+</p>
+<p>
+In Version 0.7.1, we have added a syntax to specify additional exceptions
+that may be thrown by methods corresponding to non-terminals.  This
+syntax is identical to the Java "throws ..." syntax.  Here's an
+example of how you use this:
+</p>
+<pre>
+
+  void VariableDeclaration() throws SymbolTableException, IOException :
+  {...}
+  {
+    ...
+  }
+</pre>
+<p>
+Here, VariableDeclaration is defined to throw exceptions
+SymbolTableException and IOException in addition to ParseException.
+</p>
+<h2>Error Reporting</h2>
+<p>
+The scheme for error reporting is simpler in Version 0.7.1 (as compared
+to Version 0.6) - simply modify the file ParseException.java to do
+what you want it to do.  Typically, you would modify the getMessage
+method to do your own customized error reporting.  All information
+regarding these methods can be obtained from the comments in the
+generated files ParseException.java and TokenMgrError.java.  It will
+also help to understand the functionality of the class Throwable (read
+a Java book for this).
+</p>
+<p>
+There is a method in the generated parser called
+"generateParseException".  You can call this method anytime you wish
+to generate an object of type ParseException.  This object will
+contain all the choices that the parser has attempted since the last
+successfully consumed token.
+</p>
+
+<h2>Error Recovery</h2>
+<p>
+JavaCC offers two kinds of error recovery - shallow recovery and deep
+recovery.  Shallow recovery recovers if none of the current choices
+have succeeded in being selected, while deep recovery is when a choice
+is selected, but then an error happens sometime during the parsing of
+this choice.
+</p>
+<h3>Shallow Error Recovery</h3>
+<p>
+We shall explain shallow error recovery using the following example:
+</p>
+<pre>
+void Stm() :
+{}
+{
+  IfStm()
+|
+  WhileStm()
+}
+</pre>
+<p>
+Let's assume that IfStm starts with the reserved word "if" and WhileStm
+starts with the reserved word "while".  Suppose you want to recover by
+skipping all the way to the next semicolon when neither IfStm nor WhileStm
+can be matched by the next input token (assuming a lookahead of 1).  That
+is the next token is neither "if" nor "while".
+</p>
+<p>
+What you do is write the following:
+</p>
+<pre>
+void Stm() :
+{}
+{
+  IfStm()
+|
+  WhileStm()
+|
+  error_skipto(SEMICOLON)
+}
+</pre>
+<p>
+But you have to define "error_skipto" first.  So far as JavaCC is concerned,
+"error_skipto" is just like any other non-terminal.  The following is one
+way to define "error_skipto" (here we use the standard JAVACODE production):
+</p>
+<pre>
+JAVACODE
+void error_skipto(int kind) {
+  ParseException e = generateParseException();  // generate the exception object.
+  System.out.println(e.toString());  // print the error message
+  Token t;
+  do {
+    t = getNextToken();
+  } while (t.kind != kind);
+    // The above loop consumes tokens all the way up to a token of
+    // "kind".  We use a do-while loop rather than a while because the
+    // current token is the one immediately before the erroneous token
+    // (in our case the token immediately before what should have been
+    // "if"/"while".
+}
+</pre>
+<p>
+That's it for shallow error recovery.  In a future version of JavaCC
+we will have support for modular composition of grammars.  When this
+happens, one can place all these error recovery routines into a
+separate module that can be "imported" into the main grammar module.
+We intend to supply a library of useful routines (for error recovery
+and otherwise) when we implement this capability.
+</p>
+<h3>Deep Error Recovery</h3>
+<p>
+Let's use the same example that we did for shallow recovery:
+</p>
+<pre>
+void Stm() :
+{}
+{
+  IfStm()
+|
+  WhileStm()
+}
+</pre>
+<p>
+In this case we wish to recover in the same way.  However, we wish to
+recover even when there is an error deeper into the parse.  For
+example, suppose the next token was "while" - therefore the choice
+"WhileStm" was taken.  But suppose that during the parse of WhileStm
+some error is encountered - say one has "while (foo { stm; }" - i.e., the
+closing parentheses has been missed.  Shallow recovery will not work
+for this situation.  You need deep recovery to achieve this.  For this,
+we offer a new syntactic entity in JavaCC - the try-catch-finally block.
+</p>
+<p>
+First, let us rewrite the above example for deep error recovery and then
+explain the try-catch-finally block in more detail:
+</p>
+<pre>
+void Stm() :
+{}
+{
+  try {
+    (
+      IfStm()
+    |
+      WhileStm()
+    )
+  catch (ParseException e) {
+    error_skipto(SEMICOLON);
+  }
+}
+</pre>
+<p>
+That's all you need to do.  If there is any unrecovered error during the
+parse of IfStm or WhileStm, then the catch block takes over.  You can
+have any number of catch blocks and also optionally a finally block
+(just as with Java errors).  What goes into the catch blocks is *Java code*,
+not JavaCC expansions.  For example, the above example could have been
+rewritten as:
+</p>
+<pre>
+void Stm() :
+{}
+{
+  try {
+    (
+      IfStm()
+    |
+      WhileStm()
+    )
+  catch (ParseException e) {
+    System.out.println(e.toString());
+    Token t;
+    do {
+      t = getNextToken();
+    } while (t.kind != SEMICOLON);
+  }
+}
+</pre>
+<p>
+Our belief is that it's best to avoid placing too much Java code in the
+catch and finally blocks since it overwhelms the grammar reader.  Its best
+to define methods that you can then call from the catch blocks.
+</p>
+<p>
+Note that in the second writing of the example, we essentially copied
+the code out of the implementation of error_skipto.  But we left out the
+first statement - the call to generateParseException.  That's because in
+this case, the catch block already provides us with the exception.  But
+even if you did call this method, you will get back an identical object.
+</p>
+
+      </div>
+
+                  <!--END CONTENT AREA-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sidebar-first" class="sidebar">
+            <div class="vAccordion">      <div id="block-menu-menu-kenai-project-features" class="block">
+      <div class="block-inner">
+        <h2>Project Features</h2>
+        <div class="content" style="text-align: left; margin: 5px;">
+          <ul class="menu">
+                          
+              
+                <li class="leaf">
+                  <a href="https://java.net/projects/javacc/lists">Mailing Lists</a>
+                </li>
+                
+                            
+                          
+                            <li><a href="https://java.net/projects/javacc/downloads">Downloads</a></li>
+                          
+                            <li><a href="http://java.net/jira/browse/JAVACC" target="_blank">JIRA</a></li>
+                          
+              
+                <li class="leaf">
+                  <a href="https://java.net/projects/javacc/sources">Source Code Repositories</a>
+                </li>
+                
+                            <li style="margin-left: 12px"><a href="https://java.net/projects/javacc/sources/svn/show">Subversion</a></li>
+                          
+                            <li><a href="http://javacc.java.net/">javacc.java.net</a></li>
+                          
+                            <li><a href="https://java.net/projects/javacc/pages/Home">JavaCC 7 Design</a></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  
+
+  <div id="block-menu-menu-kenai-project-about" class="block">
+    <div class="block-inner">
+      <h2>About this Project</h2>
+      <div class="content" style="text-align: left; margin: 5px;">
+        <a href="https://java.net/projects/javacc">Check out http://javacc.org</a>
+                  is a subproject of
+          <a href="https://java.net/projects/javatools">Javatools</a>,
+                was started in November 2010
+        and has <a href="https://java.net/projects/javacc/members">1016 members</a>.
+        The project administrators are
+        <a href="https://java.net/people/528626-Glassfish-Kenai-Migration-Admin"><span class="person -kenai-super_glassfish">Glassfish Kenai Migration Admin</span></a>, <a href="https://java.net/people/11961-paulcager"><span class="person -kenai-paulcager">paulcager</span></a>, <a href="https://java.net/people/402-Tom-Copeland"><span class="person -kenai-tcopeland">Tom Copeland</span></a>, and <a href="https://java.net/people/23-sreeni"><span class="person -kenai-sreeni">sreeni</span></a>.
+        <br />
+        <ul class="menu">
+                                    <li class="leaf">
+                <a href="https://java.net/projects/javacc/watch">Join This Project</a>
+              </li>
+                              </ul>
+              </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div id="tertiary-content">
+      <div id="block-menu-menu-footer-menu"  class="block">
+        <div class="block-inner">
+          <div class="content">
+            <ul class="menu">
+              <li class="leaf first">
+                <a href="http://www.java.net/contact" title="">Feedback</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.java.net/javanet-faq" title="">FAQ</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.java.net/javanet-web-site-terms-use" title="">Terms of Use</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.oracle.com/us/legal/privacy/index.html" title="">Privacy</a>
+              </li>
+              <li class="leaf last">
+                <a href="http://www.oracle.com/us/legal/third-party-trademarks/index.html" title="">Trademarks</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-region">
+        <div class="block">
+          <div class="block-inner">
+            <div class="content">
+              <div style="width: 59%; float: left;">
+                <p>
+                  Your use of this web site or any of its content or software indicates
+                  your agreement to be bound by these
+                  <a href="http://www.java.net/javanet-web-site-terms-use">Terms of Participation</a>.
+                </p>
+                <p>
+                  Copyright © 2014, Oracle Corporation and/or its affiliates. All rights reserved.
+                  Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+                  Other names may be trademarks of their respective owners.
+                </p>
+                <p>(<a href="https://java.net/projects/help/pages/ReleaseNotes">revision 20160708.bf2ac18</a>)</p>
+              </div>
+              <div style="width: 310px; float: right; text-align: right; margin-right: 10px">
+                <div style="float: right;">
+                  <a href="http://www.oracle.com" title="Oracle"><img alt="" src="https://java.net/theme/images/oracle.png" /></a>
+                  <a href="http://kenai.com" title="Kenai.com"><img alt="" src="https://java.net/theme/images/kenai.png" /></a>
+                  <a href="http://www.cognisync.com" title="Cognisync"><img alt="" src="https://java.net/theme/images/cognisync.png" /></a>
+                  <br />
+                  <div class="powered-by">
+                    Powered by Oracle, Project Kenai and Cognisync
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+        <!-- popups that are anchored to specific elements -->
+    <div class="popupMenuShadow" id="contextMenuShadow"></div>
+    <div class="popupMenuContainer" id="contextMenu">
+      <div class="popupMenu inline">	
+        <div class="upArrow"></div>
+        <div class="header"></div>
+        <div class="contextMenuBody" id="contextMenuBody">&nbsp;</div>
+      </div>
+    </div> 
+    
+    <!-- large content loaded via ajax. Faded but not modal. -->
+    <div class="jqmWindow" id="jqm_large_overlay">
+      <div class="jqmHeader">
+        <div class="jqmTitle">&nbsp;</div>
+        <img alt="Close" class="jqmClose" src="https://asset-1.java.net/images/close.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmTarget">
+        <img alt="loading" src="https://asset-1.java.net/images/activity.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmFooter">
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" title="Done"> Done </button></div>
+      </div>
+    </div>
+    
+    <!-- confirmation dialogs with buttons. Faded and modal. -->
+    <div class="jqmWindow" id="jqm_dialog">
+      <div class="jqmHeader">
+        <div class="jqmTitle">Please Confirm</div>
+        <img alt="Close" class="jqmClose" src="https://asset-1.java.net/images/close.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmTarget">&nbsp;</div>
+      <div class="jqmFooter">
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" id="jq_no_button" title="No" onclick="Modal.no()"> No </button></div>
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" id="jq_yes_button" title="Yes" onclick="Modal.yes();"> Yes </button></div>
+      </div>
+    </div>    
+
+    <div id="jq-ui-autocomplete-parent"></div>
+    
+  
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-6400569-8");
+        pageTracker._trackPageview();
+      } catch(err) {}</script>
+  
+
+  </body>
+  <script src="https://asset-1.java.net/javascripts/body_packaged.js?20160708.bf2ac18" type="text/javascript"></script>
+  <script src="https://java.net/theme/javascript/java_custom.js" type="text/javascript"></script>
+  
+</html>

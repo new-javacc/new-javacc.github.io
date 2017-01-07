@@ -1,0 +1,864 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>JavaCC API Documentation &mdash; Project Kenai</title>
+    <link href="https://asset-0.java.net/stylesheets/print_packaged.css?20160708.bf2ac18" media="print" rel="stylesheet" type="text/css" />
+    <script src="https://asset-3.java.net/javascripts/head_packaged.js?20160708.bf2ac18" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher:'bcd30425-1749-43d6-a311-18a82f89771a'
+        });
+    </script>
+    <script type="text/javascript">
+//<![CDATA[
+var page={"token":"n51DutxXIGJf2kg7GBxTP9wHJWMixsjHjgz30a6EZy4="};
+//]]>
+</script>
+    <script type="text/javascript" charset="utf-8">
+      function debug(m){}
+    </script>
+    
+ 
+  <link href="/styles.css" media="screen" rel="stylesheet" type="text/css" /> 
+
+    <link href="https://java.net/theme/stylesheets/java_net.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://java.net/theme/stylesheets/layout.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://asset-2.java.net/stylesheets/additions.css?20160708.bf2ac18" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if IE]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie.css";</style><![endif]-->
+    <!--[if lte IE 6]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie6.css";</style><![endif]-->
+    <!--[if IE 7]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie7.css";</style><![endif]-->
+    <!--[if IE 8]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie8.css";</style><![endif]-->
+
+    <meta name="keywords" content="" />
+    <!-- Anti clickjacking -->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+      if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
+  </head>
+  <body class="front not-logged-in article-type-page one-sidebar">
+      <div id="container">
+      
+      <div id="skip-nav" class="element-invisible">
+        <!-- To adjust the display of the skip link see the Advanced theme settings
+        (General settings), and never use display:none! -->
+        <a href="#main-content">Skip to main content</a>
+      </div>
+      <div id="leaderboard">
+        <div id="block-block-31"  class="block">
+          <div class="block-inner">
+            <div class="content">
+                <a href="https://java.net/people/new">Create Account</a>
+  <span class="separator"></span>
+  <a href="https://java.net/people/login?original_uri=https%3A%2F%2Fjavacc.java.net%2Fdoc%2Fapiroutines.html" rel="nofollow">Login</a>
+  <span class="separator"></span>
+  <a href="https://java.net/projects/help/pages/WebSite#WithNavigation" target="_blank">Help</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="header" class="clearfix">
+        <div id="branding">
+          <div class="logo-site-name">
+            <strong>
+              <span id="logo">
+                <a href="http://www.java.net/" rel="home" class="active">
+                  <img alt="java.net - Go to Homepage" border="0" class="logo-link" src="https://java.net/theme/images/logo.png" title="Java.net - Go to the Homepage" />
+                </a>
+              </span>
+            </strong>
+          </div>
+          <div id="site-slogan">The Source for Java Technology Collaboration</div>
+        </div>
+        <div id="search-box" class="hide-label">
+          <form action="http://www.java.net/search/node" method="post" id="search-theme-form">
+            <div id="search">
+              <input type="hidden" value="search_form" id="edit-search-form" name="form_id" />
+              <div style="margin-left: -10px;" class="checks">
+                <span><input type="checkbox" name="type[forum]" id="edit-forums" value="forum" /> Forums</span>
+                <span><input type="checkbox" name="type[blog]" id="edit-blogs" value="blog" /> Blogs</span>
+                <span><input type="checkbox" name="projects" id="edit-projects" value="project" /> Projects</span>
+                <span><input type="checkbox" name="people" id="edit-people" value="people" /> People</span>
+              </div>
+              <input type="text" class="form-text" id="edit-search-theme-form-1" value="Search All" size="15" onclick="this.value = ''" onblur="if (!this.value) this.value = ''" name="keys" />
+              <input type="submit" value="" name="op" title="Search" class="form-submit" alt="Search" />
+            </div>
+          </form>
+        </div>
+      </div>
+    <div id="primary" class="nav">
+      <div id="primary-inner">
+                <h2 class="element-invisible">Main Menu</h2>
+       <ul class="primary-links clearfix">
+          <li class=""><a href="https://about.java.net" title="Return to the java.net homepage" class="active">Home</a></li>
+          <li class="active-trail"><a href="https://java.net/projects" title="View the projects hosted on java.net">Projects</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java" title="Participate in the java.net forums">Forums</a></li>
+          <li class=""><a href="https://java.net/people" title="View all the people involved with java.net">People</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java" title="Get involved in your local Java User Group (JUG)">Java User Groups</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java/jcp" title="Get involved with the Java Community Process!">JCP</a></li>
+          <li class="active-trail"><a href="https://java.net/projects/help/pages/Home" title="Help pages java.net">Help</a></li>
+                  </ul>
+       </div>
+    </div>
+    <div id="columns">
+      <div class="columns-inner clearfix">
+        <div id="content-column">
+          <div class="content-inner">
+           <div id="navig-breadcrumbs">
+              <a href="https://java.net/">java.net</a><span>></span>  <a href="https://java.net/projects">projects</a> >
+  <a href="https://java.net/projects/javacc">javacc</a> >
+  <a href="https://java.net/projects/javacc/content" class="current">Website</a>
+
+            </div>
+            <div id="block-quicktabs-2"  class="block">
+              <div class="block-inner">
+                <div class="content">
+                  <!-- BEGIN CONTENT AREA -->
+                  
+                  
+
+
+
+
+<div class="contentPadding website">
+            
+
+<h1>JavaCC [tm]: API Routines</h1>
+
+<p>
+This web page is a comprehensive list of all classes, methods,
+and variables available for use by a JavaCC [tm] user.  These classes,
+methods, and variables are typically used from the actions that
+are embedded in a JavaCC grammar.  In the sample code used below,
+it is assumed that the name of the generated parser is "TheParser".
+</p>
+
+<h3>Non-Terminals in the Input Grammar</h3>
+<p>
+For each non-terminal NT in the input grammar file, the following method
+is generated into the parser class:
+</p>
+<ul>
+<li>
+<strong><em>returntype</em> NT(<em>parameters</em>) throws ParseException;</strong>
+</li>
+</ul>
+<p>
+Here, <em>returntype</em> and <em>parameters</em> are what were specified
+in the JavaCC input file in the definition of NT (where NT occurred on the
+left-hand side).
+</p>
+<p>
+When this method is called, the input stream is parsed to match this non-terminal.
+On a successful parse, this method returns normally.  On detection of a parse
+error, an error message is displayed and the method returns by throwing an exception
+of the type ParseException.
+</p>
+<p>
+<em>Note that all non-terminals in a JavaCC input grammar have equal status;
+it is possible to parse to any non-terminal by calling the  non-terminal's method.
+</em>
+</p>
+
+<h3>API for Parser Actions</h3>
+<ul>
+  <li><strong> Token token;</strong>
+<br />
+This variable holds the last token consumed by the parser and can be used
+in parser actions. This is <em>exactly</em> the same as the token returned by
+<em>getToken(0)</em>.
+  </li>
+</ul>
+<p>
+In addition, the two methods - <em><a href="#getToken">getToken(int i)</a></em> and
+<em><a href="#getNextToken">getNextToken()</a></em> can also be used in
+actions to traverse the token list.
+</p>
+<h3>The Token Manager Interface</h3>
+<p>
+Typically, the token manager interface is not to be used.  Instead all access
+must be made through the parser interface.  However, in certain situations -
+such as if you are not building a parser and building only the token manager -
+the token manager interface is useful.
+The token manager provides the following routine:
+</p>
+<ul>
+<li>
+<strong>Token getNextToken() throws ParseError;</strong>
+</li>
+</ul>
+<p>
+Each call to this method returns the next token in the input stream. This
+method throws a ParseError exception when there is a lexical error, i.e.,
+it could not find a match for any of the specified tokens from the input
+stream.  The type Token is described later.
+</p>
+
+<h3>Constructors and Other Initialization Routines</h3>
+<ul>
+<li>
+<strong>TheParser.TheParser(java.io.InputStream stream)</strong>
+<br />
+This creates a new parser object, which in turn creates a new token manager object
+that reads its tokens from "stream".  This constructor is available only
+when both the options USER_TOKEN_MANAGER and USER_CHAR_STREAM are false.
+If the option STATIC is true, this constructor (along with other constructors)
+can be called exactly once to create a single parser object.
+</li>
+<li>
+<strong>TheParser.TheParser(CharStream stream)</strong>
+<br />
+Similar to the previous constructor, except that this one is available only
+when the option USER_TOKEN_MANAGER is false and USER_CHAR_STREAM is true.
+</li>
+<li>
+<strong>void TheParser.ReInit(java.io.InputStream stream)</strong>
+<br />
+This reinitializes an existing parser object.  In addition, it also reinitializes
+the existing token manager object that corresponds to this parser object.  The result
+is a parser object with the exact same functionality as one that was created
+with the constructor above.  The only difference is that new objects are not
+created.  This method is available only
+when both the options USER_TOKEN_MANAGER and USER_CHAR_STREAM are false.
+If the option STATIC is true, this (along with the other ReInit methods)
+is the only way to restart a parse operation
+for there is only one parser and all one can do is reinitialize it.
+</li>
+<li>
+<strong>void TheParser.ReInit(CharStream stream)</strong>
+<br />
+Similar to the previous method, except that this one is available only
+when the option USER_TOKEN_MANAGER is false and USER_CHAR_STREAM is true.
+</li>
+<li>
+<strong>TheParser(TheParserTokenManager tm)</strong>
+This creates a new parser object which uses an already created token manager object "tm" as
+its token manager.  This constructor is only available if option USER_TOKEN_MANAGER is
+false.  If the option STATIC is true, this constructor (along with other constructors)
+can be called exactly once to create a single parser object.
+</li>
+<li>
+<strong>TheParser(TokenManager tm)</strong>
+<br />
+Similar to the previous constructor, except that this one is available only
+when the option USER_TOKEN_MANAGER is true.
+</li>
+<li>
+<strong>void TheParser.ReInit(TheParserTokenManager tm)</strong>
+<br />
+This reinitializes an existing parser object with the token manager object "tm" as its
+new token manager.  This method is only available if option USER_TOKEN_MANAGER is
+false.  If the option STATIC is true, this (along with the other ReInit methods)
+is the only way to restart a parse operation
+for there is only one parser and all one can do is reinitialize it.
+</li>
+<li>
+<strong>void TheParser.ReInit(TokenManager tm)</strong>
+<br />
+Similar to the previous method, except that this one is available only
+when the option USER_TOKEN_MANAGER is true.
+</li>
+<li>
+<strong>TheParserTokenManager.TheParserTokenManager(CharStream stream)</strong>
+<br />
+Creates a new token manager object initialized to read input from "stream".  When
+the option STATIC is true, this constructor may be called only once.
+This is available only when USER_TOKEN_MANAGER is false and USER_CHAR_STREAM
+is true.  When USER_TOKEN_MANAGER is false and USER_CHAR_STREAM is false (the default situation),
+a constructor similar to the one above is available with the type CharStream
+replaced as follows:
+ <ul>
+  <li>
+When JAVA_UNICODE_ESCAPE is false and UNICODE_INPUT is false, CharStream is
+replaced by ASCII_CharStream.
+  </li>
+  <li>
+When JAVA_UNICODE_ESCAPE is false and UNICODE_INPUT is true, CharStream is
+replaced by UCode_CharStream.
+  </li>
+  <li>
+When JAVA_UNICODE_ESCAPE is true and UNICODE_INPUT is false, CharStream is
+replaced by ASCII_UCodeESC_CharStream.
+  </li>
+  <li>
+When JAVA_UNICODE_ESCAPE is true and UNICODE_INPUT is true, CharStream is
+replaced by UCode_UCodeESC_CharStream.
+  </li>
+ </ul>
+</li>
+<li>
+<strong>void TheParserTokenManager.ReInit(CharStream stream)</strong>
+<br />
+Reinitializes the current token manager object to read input from "stream".  When
+the option STATIC is true, this is the only way to restart a token manager operation.
+This is available only when USER_TOKEN_MANAGER is false and USER_CHAR_STREAM
+is true.  When USER_TOKEN_MANAGER is false and USER_CHAR_STREAM is false (the default situation),
+a constructor similar to the one above is available with the type CharStream
+replaced as follows:
+ <ul>
+  <li>
+When JAVA_UNICODE_ESCAPE is false and UNICODE_INPUT is false, CharStream is
+replaced by ASCII_CharStream.
+  </li>
+  <li>
+When JAVA_UNICODE_ESCAPE is false and UNICODE_INPUT is true, CharStream is
+replaced by UCode_CharStream.
+  </li>
+  <li>
+When JAVA_UNICODE_ESCAPE is true and UNICODE_INPUT is false, CharStream is
+replaced by ASCII_UCodeESC_CharStream.
+  </li>
+  <li>
+When JAVA_UNICODE_ESCAPE is true and UNICODE_INPUT is true, CharStream is
+replaced by UCode_UCodeESC_CharStream.
+  </li>
+ </ul>
+</li>
+</ul>
+
+<h3>The Token Class</h3>
+<p>
+The Token class is the type of token objects that are created by the token manager
+after a successful scanning of the token stream.  These token objects are then
+passed to the parser and are accessible to the actions in a JavaCC grammar usually
+by grabbing the return value of a token.  The methods getToken and getNextToken
+described below also give access to objects of this type.
+</p>
+<p>
+Each Token object has the following fields and methods:
+</p>
+<ul>
+<li>
+<strong>int kind;</strong>
+<br />
+This is the index for this kind of token in the internal representation scheme
+of JavaCC.  When tokens in the JavaCC input file are given labels, these labels
+are used to generate "int" constants that can be used in actions.
+The value 0 is always used to represent the predefined token &lt;EOF&gt;.  A
+constant "EOF" is generated for convenience in the ...Constants file.
+</li>
+<li>
+<strong>int beginLine, beginColumn, endLine, endColumn;</strong>
+<br />
+These indicate the beginning and ending positions of the token as it appeared
+in the input stream.
+</li>
+<li>
+<strong>String image;</strong>
+<br />
+This represents the image of the token as it appeared in the input stream.
+</li>
+<li>
+<strong>Token next;</strong>
+<br />
+A reference to the next regular (non-special) token from the input
+stream.  If this is the last token from the input stream, or if the
+token manager has not read tokens beyond this one, this field is
+set to null.
+<br />
+<br />
+The description in the above paragraph holds only if this token is also a regular
+token.  Otherwise, see below for a description of the contents of
+this field.
+<br />
+<br />
+Note: There are two kinds of tokens - regular and special.  Regular tokens are
+the normal tokens that are fed to the parser.  Special tokens are other useful
+tokens (like comments) that are not discarded (like white space).  For more
+information on the different kinds of tokens
+<a href="tokenmanager.html">please see the minitutorial on the token manager</a>.
+</li>
+<li>
+<strong>Token specialToken;</strong>
+<br />
+This field is used to access special tokens that occur prior to this
+token, but after the immediately preceding regular (non-special) token.
+If there are no such special tokens, this field is set to null.
+When there are more than one such special token, this field refers
+to the last of these special tokens, which in turn refers to the next
+previous special token through its specialToken field, and so on
+until the first special token (whose specialToken field is null).
+The next fields of special tokens refer to other special tokens that
+immediately follow it (without an intervening regular token).  If there
+is no such token, this field is null.
+</li>
+
+<li>
+<strong>public Object getValue();</strong>
+<br />
+An optional attribute value of the Token.
+<br />
+Tokens which are not used as syntactic sugar will often contain
+meaningful values that will be used later on by the compiler or
+interpreter. This attribute value is often different from the image.
+Any subclass of Token that actually wants to return a non-null value can
+override this method as appropriate.
+</li>
+
+<li>
+<strong>static final Token newToken(int ofKind);</strong>
+<br />
+<strong>static final Token newToken(int ofKind, String image);</strong>
+<br />
+Returns a new token object as its default behavior.  If you wish to
+perform special actions when a token is constructed or create subclasses
+of class Token and instantiate them instead, you can redefine this method
+appropriately.  The only constraint is that this method returns a <em>new</em>
+object of type Token (or a subclass of Token).
+</li>
+</ul>
+
+<h3>Reading Tokens from the Input Stream</h3>
+<p>
+There are two methods available for this purpose:
+</p>
+<ul>
+<li>
+<strong><a name="getNextToken">Token TheParser.getNextToken() throws ParseError</a></strong>
+<br />
+This method returns the next available token in the input stream and moves
+the token pointer one step in the input stream (i.e., this changes the state
+of the input stream).  If there are no more tokens available in the input
+stream, the exception ParseError is thrown.  Care must be taken when calling
+this method since it can interfere with the parser's knowledge of the state
+of the input stream, current token, etc.
+</li>
+<li>
+<strong><a name="getToken">Token TheParser.getToken(int index) throws ParseError</a></strong>
+<br />
+This method returns the index-th token from the current token ahead in the
+token stream.  If index is 0, it returns the current token (the last token
+returned by getNextToken or consumed by the parser); if index is 1, it returns
+the next token (the next token that will be returned by getNextToken of consumed
+by the parser) and so on.  The index parameter cannot be negative.  This method
+does not change the input stream pointer (i.e., it does not change the
+state of the input stream).  If an attempt is made to access a token beyond the
+last available token, the exception ParseError is thrown.
+If this method is called from a semantic lookahead specification, which in turn
+is called during a lookahead determination process, the current token is temporarily
+adjusted to be the token currently being inspected by the lookahead process.
+For more details,
+<a href="lookahead.html">please see the minitutorial on using lookahead</a>.
+</li>
+</ul>
+
+<h3>Working with Debugger Tracing</h3>
+<p>
+When you generate parsers with the options DEBUG_PARSER or DEBUG_LOOKAHEAD, these
+parsers produce a trace of their activity which is printed to the user console.
+You can insert calls to the following methods to control this tracing activity:
+</p>
+<ul>
+<li>
+<strong>void TheParser.enable_tracing()</strong>
+</li>
+<li>
+<strong>void TheParser.disable_tracing()</strong>
+</li>
+</ul>
+<p>
+For convenience, these methods are available even when you build parsers without
+the debug options.  In this case, these methods are no-ops.  Hence you can
+permanently leave these methods in your code and they automatically kick in when
+you use the debug options.
+</p>
+
+<h3>Customizing Error Messages</h3>
+<p>
+To help the user in customizing error messages generated by the parser and lexer, the
+user is offered the facilities described in this section.  In the case of the
+parser, these facilities are only available if the option ERROR_REPORTING is
+true, while in the case of the lexer, these facilities are always available.
+</p>
+<p>
+The parser contains the following method definition:
+</p>
+<ul>
+<li>
+<strong>protected void token_error() { ... }</strong>
+</li>
+</ul>
+To customize error reporting by the parser, the parser class must be subclassed
+and this method redefined in the subclass.  To help with creating your
+error reporting scheme, the following variables are available:
+<ul>
+<li>
+<strong>protected int error_line, error_column;</strong>
+<br />
+The line and column where the error was detected.
+</li>
+<li>
+<strong>protected String error_string;</strong>
+<br />
+The image of the offending token or set of tokens.  When a lookahead of more
+than 1 is used, more than one token may be present here.
+</li>
+<li>
+<strong>protected String[] expected_tokens;</strong>
+<br />
+An array of images of legitimate token sequences.  Here again, each legitimate
+token sequence may be more than just one token when a lookahead of more than
+1 is used.
+</li>
+</ul>
+<p>
+The lexer contains the following method definition:
+</p>
+<ul>
+<li>
+<strong>protected void LexicalError() { ... }</strong>
+</li>
+</ul>
+<p>
+To customize error reporting by the lexer, the lexer class must be subclassed
+and this method redefined in the subclass.  To help with creating your
+error reporting scheme, the following variables are available:
+</p>
+<ul>
+<li>
+<strong>protected int error_line, error_column;</strong>
+<br />
+The line and column where the error was detected.
+</li>
+<li>
+<strong>protected String error_after;</strong>
+<br />
+The partial string that has been read since the last successful token
+match was performed.
+</li>
+<li>
+<strong>protected char curChar;</strong>
+<br />
+The offending character.
+</li>
+</ul>
+
+<h2>The <strong><code><a name="error-handler">ErrorHandler</a></code></strong> (C++ only) interface</h2>
+
+<p>
+Since the parser doesn't use exceptions in C++, we provide an interface - ErrorHandler that handles the various different errors encountered during the parse.
+</p>
+
+<dl>
+      <dt><strong><code>int error_count;</code></strong></dt>
+
+      <dd>This protected field indicates the number of errors. If you are subclassing this class, it's your responsibility to update this field.
+      </dd>
+
+      <dt><strong><code>void handleUnexpectedToken()</code></strong></dt>
+      <dd>This public function is called when the parser encounters a different token when expecting to consume a specific kind of token. Parameters:
+      <dl>
+       <li>int expectedKind - token kind that the parser was trying to consume.</li>
+       <li>string expectedToken - the image of the token - tokenImages[expectedKind].</li>
+       <li>Token* actual - the actual token that the parser got instead.</li>
+      </dl><dl>
+     </dl></dd>
+
+      <dt><strong><code>void handleParseError()</code></strong></dt>
+      <dd>This public function is called when the parser cannot continue parsing any further. Parameters:
+ 
+       <dl>
+      <li> Token* last - the last token successfully parsed. </li>
+      <li> Token* unexpected - the token at which the error occurs. </li>
+      <li> string production - the name of the production in which this error occurrs. </li>
+      </dl> </dd>
+
+      <dt><strong><code>int  getErrorCount()</code></strong></dt>
+      <dd>This public function returns the number of errors.</dd>
+
+</dl>
+
+
+<hr />
+
+<h1>JavaCC [tm]: JJTree</h1>
+
+<p>JJTree has two APIs: it adds some <a href="#jjtree-state">parser
+methods</a>; and it requires all node objects to implement the <a href="#jjtree-node">Node</a> interface.</p>
+
+<h2><a name="jjtree-state">JJTree parser methods</a></h2>
+
+<p>JJTree maintains some state in the parser object itself.  It
+encapsulates all this state with an object that can be referred to via
+the <code>jjtree</code> field.</p>
+
+<p>The parser state implements an open stack where nodes are held
+until they can be added to their parent node.  The <code>jjtree</code>
+state object provides methods for you to manipulate the contents of
+the stack in your actions if the basic JJTree mechanisms are not
+sufficient.
+</p>
+
+<dl>
+      <dt><strong><code>void reset()</code></strong></dt>
+
+      <dd>Call this to reinitialize the node stack.  All nodes
+      currently on the stack are thrown away.  Don't call this from
+      within a node scope, or terrible things will surely happen.</dd>
+
+      <dt><strong><code>Node rootNode();</code></strong></dt>
+
+      <dd>Returns the root node of the AST.  Since JJTree operates
+      bottom-up, the root node is only defined after the parse has
+      finished.</dd>
+
+      <dt><strong><code>boolean nodeCreated();</code></strong></dt>
+
+      <dd>Determines whether the current node was actually closed and
+      pushed.  Call this in the final action within a conditional node
+      scope.</dd>
+
+      <dt><strong><code>int arity();</code></strong></dt>
+
+      <dd>Returns the number of nodes currently pushed on the node
+      stack in the current node scope.</dd>
+
+      <dt><strong><code>void pushNode(Node n);</code></strong></dt>
+
+      <dd>Pushes a node on to the stack.</dd>
+
+      <dt><strong><code>Node popNode();</code></strong></dt>
+
+      <dd>Returns the node on the top of the stack, and removes it from
+      the stack.</dd>
+
+      <dt><strong><code>Node peekNode();</code></strong></dt>
+
+      <dd>Returns the node currently on the top of the stack.</dd>
+    </dl>
+
+<hr />
+
+<h2>The <strong><code><a name="jjtree-node">Node</a></code></strong> interface</h2>
+
+<p>
+All AST nodes must implement this interface.  It provides basic
+machinery for constructing the parent and child relationships between
+nodes.
+</p>
+
+<dl>
+      <dt><strong><code>public void jjtOpen();</code></strong></dt>
+
+      <dd>This method is called after the node has been made the
+      current node.  It indicates that child nodes can now be added to
+      it.</dd>
+
+      <dt><strong><code>public void jjtClose();</code></strong></dt>
+
+      <dd>This method is called after all the child nodes have been
+	added.</dd>
+
+      <dt><strong><code>public void jjtSetParent(Node n);</code><br /><code>public Node jjtGetParent();</code></strong></dt>
+
+      <dd>This pair of methods is used to inform the node of its
+      parent.</dd>
+
+      <dt><strong><code>public void jjtAddChild(Node n, int i);</code></strong></dt>
+
+      <dd>This method tells the node to add its argument to the node's
+	list of children.</dd>
+
+      <dt><strong><code>public Node jjtGetChild(int i);</code></strong></dt>
+
+      <dd>This method returns a child node.  The children are numbered
+	 from zero, left to right.</dd>
+
+      <dt><strong><code>int jjtGetNumChildren();</code></strong></dt>
+
+      <dd>Return the number of children the node has.</dd>
+
+</dl>
+
+
+      </div>
+
+                  <!--END CONTENT AREA-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sidebar-first" class="sidebar">
+            <div class="vAccordion">      <div id="block-menu-menu-kenai-project-features" class="block">
+      <div class="block-inner">
+        <h2>Project Features</h2>
+        <div class="content" style="text-align: left; margin: 5px;">
+          <ul class="menu">
+                          
+              
+                <li class="leaf">
+                  <a href="https://java.net/projects/javacc/lists">Mailing Lists</a>
+                </li>
+                
+                            
+                          
+                            <li><a href="https://java.net/projects/javacc/downloads">Downloads</a></li>
+                          
+                            <li><a href="http://java.net/jira/browse/JAVACC" target="_blank">JIRA</a></li>
+                          
+              
+                <li class="leaf">
+                  <a href="https://java.net/projects/javacc/sources">Source Code Repositories</a>
+                </li>
+                
+                            <li style="margin-left: 12px"><a href="https://java.net/projects/javacc/sources/svn/show">Subversion</a></li>
+                          
+                            <li><a href="http://javacc.java.net/">javacc.java.net</a></li>
+                          
+                            <li><a href="https://java.net/projects/javacc/pages/Home">JavaCC 7 Design</a></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  
+
+  <div id="block-menu-menu-kenai-project-about" class="block">
+    <div class="block-inner">
+      <h2>About this Project</h2>
+      <div class="content" style="text-align: left; margin: 5px;">
+        <a href="https://java.net/projects/javacc">Check out http://javacc.org</a>
+                  is a subproject of
+          <a href="https://java.net/projects/javatools">Javatools</a>,
+                was started in November 2010
+        and has <a href="https://java.net/projects/javacc/members">1016 members</a>.
+        The project administrators are
+        <a href="https://java.net/people/528626-Glassfish-Kenai-Migration-Admin"><span class="person -kenai-super_glassfish">Glassfish Kenai Migration Admin</span></a>, <a href="https://java.net/people/11961-paulcager"><span class="person -kenai-paulcager">paulcager</span></a>, <a href="https://java.net/people/402-Tom-Copeland"><span class="person -kenai-tcopeland">Tom Copeland</span></a>, and <a href="https://java.net/people/23-sreeni"><span class="person -kenai-sreeni">sreeni</span></a>.
+        <br />
+        <ul class="menu">
+                                    <li class="leaf">
+                <a href="https://java.net/projects/javacc/watch">Join This Project</a>
+              </li>
+                              </ul>
+              </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div id="tertiary-content">
+      <div id="block-menu-menu-footer-menu"  class="block">
+        <div class="block-inner">
+          <div class="content">
+            <ul class="menu">
+              <li class="leaf first">
+                <a href="http://www.java.net/contact" title="">Feedback</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.java.net/javanet-faq" title="">FAQ</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.java.net/javanet-web-site-terms-use" title="">Terms of Use</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.oracle.com/us/legal/privacy/index.html" title="">Privacy</a>
+              </li>
+              <li class="leaf last">
+                <a href="http://www.oracle.com/us/legal/third-party-trademarks/index.html" title="">Trademarks</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-region">
+        <div class="block">
+          <div class="block-inner">
+            <div class="content">
+              <div style="width: 59%; float: left;">
+                <p>
+                  Your use of this web site or any of its content or software indicates
+                  your agreement to be bound by these
+                  <a href="http://www.java.net/javanet-web-site-terms-use">Terms of Participation</a>.
+                </p>
+                <p>
+                  Copyright © 2014, Oracle Corporation and/or its affiliates. All rights reserved.
+                  Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+                  Other names may be trademarks of their respective owners.
+                </p>
+                <p>(<a href="https://java.net/projects/help/pages/ReleaseNotes">revision 20160708.bf2ac18</a>)</p>
+              </div>
+              <div style="width: 310px; float: right; text-align: right; margin-right: 10px">
+                <div style="float: right;">
+                  <a href="http://www.oracle.com" title="Oracle"><img alt="" src="https://java.net/theme/images/oracle.png" /></a>
+                  <a href="http://kenai.com" title="Kenai.com"><img alt="" src="https://java.net/theme/images/kenai.png" /></a>
+                  <a href="http://www.cognisync.com" title="Cognisync"><img alt="" src="https://java.net/theme/images/cognisync.png" /></a>
+                  <br />
+                  <div class="powered-by">
+                    Powered by Oracle, Project Kenai and Cognisync
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+        <!-- popups that are anchored to specific elements -->
+    <div class="popupMenuShadow" id="contextMenuShadow"></div>
+    <div class="popupMenuContainer" id="contextMenu">
+      <div class="popupMenu inline">	
+        <div class="upArrow"></div>
+        <div class="header"></div>
+        <div class="contextMenuBody" id="contextMenuBody">&nbsp;</div>
+      </div>
+    </div> 
+    
+    <!-- large content loaded via ajax. Faded but not modal. -->
+    <div class="jqmWindow" id="jqm_large_overlay">
+      <div class="jqmHeader">
+        <div class="jqmTitle">&nbsp;</div>
+        <img alt="Close" class="jqmClose" src="https://asset-2.java.net/images/close.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmTarget">
+        <img alt="loading" src="https://asset-0.java.net/images/activity.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmFooter">
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" title="Done"> Done </button></div>
+      </div>
+    </div>
+    
+    <!-- confirmation dialogs with buttons. Faded and modal. -->
+    <div class="jqmWindow" id="jqm_dialog">
+      <div class="jqmHeader">
+        <div class="jqmTitle">Please Confirm</div>
+        <img alt="Close" class="jqmClose" src="https://asset-2.java.net/images/close.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmTarget">&nbsp;</div>
+      <div class="jqmFooter">
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" id="jq_no_button" title="No" onclick="Modal.no()"> No </button></div>
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" id="jq_yes_button" title="Yes" onclick="Modal.yes();"> Yes </button></div>
+      </div>
+    </div>    
+
+    <div id="jq-ui-autocomplete-parent"></div>
+    
+  
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-6400569-8");
+        pageTracker._trackPageview();
+      } catch(err) {}</script>
+  
+
+  </body>
+  <script src="https://asset-1.java.net/javascripts/body_packaged.js?20160708.bf2ac18" type="text/javascript"></script>
+  <script src="https://java.net/theme/javascript/java_custom.js" type="text/javascript"></script>
+  
+</html>

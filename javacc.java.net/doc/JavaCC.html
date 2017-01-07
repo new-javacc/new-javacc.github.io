@@ -1,0 +1,1942 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>BNF for JavaCC.jj &mdash; Project Kenai</title>
+    <link href="https://asset-2.java.net/stylesheets/print_packaged.css?20160708.bf2ac18" media="print" rel="stylesheet" type="text/css" />
+    <script src="https://asset-1.java.net/javascripts/head_packaged.js?20160708.bf2ac18" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher:'bcd30425-1749-43d6-a311-18a82f89771a'
+        });
+    </script>
+    <script type="text/javascript">
+//<![CDATA[
+var page={"token":"n51DutxXIGJf2kg7GBxTP9wHJWMixsjHjgz30a6EZy4="};
+//]]>
+</script>
+    <script type="text/javascript" charset="utf-8">
+      function debug(m){}
+    </script>
+    
+
+
+    <link href="https://java.net/theme/stylesheets/java_net.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://java.net/theme/stylesheets/layout.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://asset-1.java.net/stylesheets/additions.css?20160708.bf2ac18" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if IE]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie.css";</style><![endif]-->
+    <!--[if lte IE 6]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie6.css";</style><![endif]-->
+    <!--[if IE 7]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie7.css";</style><![endif]-->
+    <!--[if IE 8]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie8.css";</style><![endif]-->
+
+    <meta name="keywords" content="" />
+    <!-- Anti clickjacking -->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+      if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
+  </head>
+  <body class="front not-logged-in article-type-page one-sidebar">
+      <div id="container">
+      
+      <div id="skip-nav" class="element-invisible">
+        <!-- To adjust the display of the skip link see the Advanced theme settings
+        (General settings), and never use display:none! -->
+        <a href="#main-content">Skip to main content</a>
+      </div>
+      <div id="leaderboard">
+        <div id="block-block-31"  class="block">
+          <div class="block-inner">
+            <div class="content">
+                <a href="https://java.net/people/new">Create Account</a>
+  <span class="separator"></span>
+  <a href="https://java.net/people/login?original_uri=https%3A%2F%2Fjavacc.java.net%2Fdoc%2FJavaCC.html" rel="nofollow">Login</a>
+  <span class="separator"></span>
+  <a href="https://java.net/projects/help/pages/WebSite#WithNavigation" target="_blank">Help</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="header" class="clearfix">
+        <div id="branding">
+          <div class="logo-site-name">
+            <strong>
+              <span id="logo">
+                <a href="http://www.java.net/" rel="home" class="active">
+                  <img alt="java.net - Go to Homepage" border="0" class="logo-link" src="https://java.net/theme/images/logo.png" title="Java.net - Go to the Homepage" />
+                </a>
+              </span>
+            </strong>
+          </div>
+          <div id="site-slogan">The Source for Java Technology Collaboration</div>
+        </div>
+        <div id="search-box" class="hide-label">
+          <form action="http://www.java.net/search/node" method="post" id="search-theme-form">
+            <div id="search">
+              <input type="hidden" value="search_form" id="edit-search-form" name="form_id" />
+              <div style="margin-left: -10px;" class="checks">
+                <span><input type="checkbox" name="type[forum]" id="edit-forums" value="forum" /> Forums</span>
+                <span><input type="checkbox" name="type[blog]" id="edit-blogs" value="blog" /> Blogs</span>
+                <span><input type="checkbox" name="projects" id="edit-projects" value="project" /> Projects</span>
+                <span><input type="checkbox" name="people" id="edit-people" value="people" /> People</span>
+              </div>
+              <input type="text" class="form-text" id="edit-search-theme-form-1" value="Search All" size="15" onclick="this.value = ''" onblur="if (!this.value) this.value = ''" name="keys" />
+              <input type="submit" value="" name="op" title="Search" class="form-submit" alt="Search" />
+            </div>
+          </form>
+        </div>
+      </div>
+    <div id="primary" class="nav">
+      <div id="primary-inner">
+                <h2 class="element-invisible">Main Menu</h2>
+       <ul class="primary-links clearfix">
+          <li class=""><a href="https://about.java.net" title="Return to the java.net homepage" class="active">Home</a></li>
+          <li class="active-trail"><a href="https://java.net/projects" title="View the projects hosted on java.net">Projects</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java" title="Participate in the java.net forums">Forums</a></li>
+          <li class=""><a href="https://java.net/people" title="View all the people involved with java.net">People</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java" title="Get involved in your local Java User Group (JUG)">Java User Groups</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java/jcp" title="Get involved with the Java Community Process!">JCP</a></li>
+          <li class="active-trail"><a href="https://java.net/projects/help/pages/Home" title="Help pages java.net">Help</a></li>
+                  </ul>
+       </div>
+    </div>
+    <div id="columns">
+      <div class="columns-inner clearfix">
+        <div id="content-column">
+          <div class="content-inner">
+           <div id="navig-breadcrumbs">
+              <a href="https://java.net/">java.net</a><span>></span>  <a href="https://java.net/projects">projects</a> >
+  <a href="https://java.net/projects/javacc">javacc</a> >
+  <a href="https://java.net/projects/javacc/content" class="current">Website</a>
+
+            </div>
+            <div id="block-quicktabs-2"  class="block">
+              <div class="block-inner">
+                <div class="content">
+                  <!-- BEGIN CONTENT AREA -->
+                  
+                  
+
+
+
+
+<div class="contentPadding website">
+            
+<h1 align="CENTER">BNF for JavaCC.jj</h1>
+<h2 align="CENTER">TOKENS</h2>
+<table>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/**********************************************
+ * THE JAVACC TOKEN SPECIFICATION STARTS HERE *
+ **********************************************/
+
+/* JAVACC RESERVED WORDS: These are the only tokens in JavaCC but not in Java */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; TOKEN : {
+&lt;_LOOKAHEAD: "LOOKAHEAD"&gt;
+| &lt;_IGNORE_CASE: "IGNORE_CASE"&gt;
+| &lt;_PARSER_BEGIN: "PARSER_BEGIN"&gt;
+| &lt;_PARSER_END: "PARSER_END"&gt;
+| &lt;_JAVACODE: "JAVACODE"&gt;
+| &lt;_TOKEN: "TOKEN"&gt;
+| &lt;_SPECIAL_TOKEN: "SPECIAL_TOKEN"&gt;
+| &lt;_MORE: "MORE"&gt;
+| &lt;_SKIP: "SKIP"&gt;
+| &lt;_TOKEN_MGR_DECLS: "TOKEN_MGR_DECLS"&gt;
+| &lt;_EOF: "EOF"&gt;
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/*
+ * The remainder of the tokens are exactly (except for the removal of tokens
+ * containing ">>" and "<<") as in the Java grammar and must be diff equivalent
+ * (again with the exceptions above) to it.
+ */
+
+/* WHITE SPACE */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; SKIP : {
+" "
+| "\t"
+| "\n"
+| "\r"
+| "\f"
+| "/*@egen*/" : AFTER_EGEN
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;AFTER_EGEN&gt; SKIP : {
+&lt;~[]&gt; : DEFAULT
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* COMMENTS */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; MORE : {
+"//" : IN_SINGLE_LINE_COMMENT
+| &lt;"/**" ~["/"]&gt; : IN_FORMAL_COMMENT
+| "/*" : IN_MULTI_LINE_COMMENT
+| "/*@bgen(jjtree" : IN_MULTI_LINE_COMMENT
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;IN_SINGLE_LINE_COMMENT&gt; SPECIAL : {
+&lt;SINGLE_LINE_COMMENT: "\n" | "\r" | "\r\n"&gt; : DEFAULT
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;IN_FORMAL_COMMENT&gt; SPECIAL : {
+&lt;FORMAL_COMMENT: "*/"&gt; : DEFAULT
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;IN_MULTI_LINE_COMMENT&gt; SPECIAL : {
+&lt;MULTI_LINE_COMMENT: "*/"&gt; : DEFAULT
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;IN_SINGLE_LINE_COMMENT,IN_FORMAL_COMMENT,IN_MULTI_LINE_COMMENT&gt; MORE : {
+&lt;~[]&gt;
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* JAVA RESERVED WORDS AND LITERALS */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; TOKEN : {
+&lt;ABSTRACT: "abstract"&gt;
+| &lt;ASSERT: "assert"&gt;
+| &lt;BOOLEAN: "boolean"&gt;
+| &lt;BREAK: "break"&gt;
+| &lt;BYTE: "byte"&gt;
+| &lt;CASE: "case"&gt;
+| &lt;CATCH: "catch"&gt;
+| &lt;CHAR: "char"&gt;
+| &lt;CLASS: "class"&gt;
+| &lt;CONST: "const"&gt;
+| &lt;CONTINUE: "continue"&gt;
+| &lt;_DEFAULT: "default"&gt;
+| &lt;DO: "do"&gt;
+| &lt;DOUBLE: "double"&gt;
+| &lt;ELSE: "else"&gt;
+| &lt;ENUM: "enum"&gt;
+| &lt;EXTENDS: "extends"&gt;
+| &lt;FALSE: "false"&gt;
+| &lt;FINAL: "final"&gt;
+| &lt;FINALLY: "finally"&gt;
+| &lt;FLOAT: "float"&gt;
+| &lt;FOR: "for"&gt;
+| &lt;GOTO: "goto"&gt;
+| &lt;IF: "if"&gt;
+| &lt;IMPLEMENTS: "implements"&gt;
+| &lt;IMPORT: "import"&gt;
+| &lt;INSTANCEOF: "instanceof"&gt;
+| &lt;INT: "int"&gt;
+| &lt;INTERFACE: "interface"&gt;
+| &lt;LONG: "long"&gt;
+| &lt;NATIVE: "native"&gt;
+| &lt;NEW: "new"&gt;
+| &lt;NULL: "null"&gt;
+| &lt;PACKAGE: "package"&gt;
+| &lt;PRIVATE: "private"&gt;
+| &lt;PROTECTED: "protected"&gt;
+| &lt;PUBLIC: "public"&gt;
+| &lt;RETURN: "return"&gt;
+| &lt;SHORT: "short"&gt;
+| &lt;STATIC: "static"&gt;
+| &lt;STRICTFP: "strictfp"&gt;
+| &lt;SUPER: "super"&gt;
+| &lt;SWITCH: "switch"&gt;
+| &lt;SYNCHRONIZED: "synchronized"&gt;
+| &lt;THIS: "this"&gt;
+| &lt;THROW: "throw"&gt;
+| &lt;THROWS: "throws"&gt;
+| &lt;TRANSIENT: "transient"&gt;
+| &lt;TRUE: "true"&gt;
+| &lt;TRY: "try"&gt;
+| &lt;VOID: "void"&gt;
+| &lt;VOLATILE: "volatile"&gt;
+| &lt;WHILE: "while"&gt;
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* JAVA LITERALS */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; TOKEN : {
+&lt;INTEGER_LITERAL: &lt;DECIMAL_LITERAL&gt; (["l","L"])? | &lt;HEX_LITERAL&gt; (["l","L"])? | &lt;OCTAL_LITERAL&gt; (["l","L"])?&gt;
+| &lt;#DECIMAL_LITERAL: ["1"-"9"] (["0"-"9"])*&gt;
+| &lt;#HEX_LITERAL: "0" ["x","X"] (["0"-"9","a"-"f","A"-"F"])+&gt;
+| &lt;#OCTAL_LITERAL: "0" (["0"-"7"])*&gt;
+| &lt;FLOATING_POINT_LITERAL: &lt;DECIMAL_FLOATING_POINT_LITERAL&gt; | &lt;HEXADECIMAL_FLOATING_POINT_LITERAL&gt;&gt;
+| &lt;#DECIMAL_FLOATING_POINT_LITERAL: (["0"-"9"])+ "." (["0"-"9"])* (&lt;DECIMAL_EXPONENT&gt;)? (["f","F","d","D"])? | "." (["0"-"9"])+ (&lt;DECIMAL_EXPONENT&gt;)? (["f","F","d","D"])? | (["0"-"9"])+ &lt;DECIMAL_EXPONENT&gt; (["f","F","d","D"])? | (["0"-"9"])+ (&lt;DECIMAL_EXPONENT&gt;)? ["f","F","d","D"]&gt;
+| &lt;#DECIMAL_EXPONENT: ["e","E"] (["+","-"])? (["0"-"9"])+&gt;
+| &lt;#HEXADECIMAL_FLOATING_POINT_LITERAL: "0" ["x","X"] (["0"-"9","a"-"f","A"-"F"])+ (".")? &lt;HEXADECIMAL_EXPONENT&gt; (["f","F","d","D"])? | "0" ["x","X"] (["0"-"9","a"-"f","A"-"F"])* "." (["0"-"9","a"-"f","A"-"F"])+ &lt;HEXADECIMAL_EXPONENT&gt; (["f","F","d","D"])?&gt;
+| &lt;#HEXADECIMAL_EXPONENT: ["p","P"] (["+","-"])? (["0"-"9"])+&gt;
+| &lt;CHARACTER_LITERAL: "\'" (~["\'","\\","\n","\r"] | "\\" (["n","t","b","r","f","\\","\'","\""] | ["0"-"7"] (["0"-"7"])? | ["0"-"3"] ["0"-"7"] ["0"-"7"])) "\'"&gt;
+| &lt;STRING_LITERAL: "\"" (~["\"","\\","\n","\r"] | "\\" (["n","t","b","r","f","\\","\'","\""] | ["0"-"7"] (["0"-"7"])? | ["0"-"3"] ["0"-"7"] ["0"-"7"]))* "\""&gt;
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* SEPARATORS */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; TOKEN : {
+&lt;LPAREN: "("&gt;
+| &lt;RPAREN: ")"&gt;
+| &lt;LBRACE: "{"&gt;
+| &lt;RBRACE: "}"&gt;
+| &lt;LBRACKET: "["&gt;
+| &lt;RBRACKET: "]"&gt;
+| &lt;SEMICOLON: ";"&gt;
+| &lt;COMMA: ","&gt;
+| &lt;DOT: "."&gt;
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* OPERATORS */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; TOKEN : {
+&lt;ASSIGN: "="&gt;
+| &lt;LT: "&lt;"&gt;
+| &lt;BANG: "!"&gt;
+| &lt;TILDE: "~"&gt;
+| &lt;HOOK: "?"&gt;
+| &lt;COLON: ":"&gt;
+| &lt;EQ: "=="&gt;
+| &lt;LE: "&lt;="&gt;
+| &lt;GE: "&gt;="&gt;
+| &lt;NE: "!="&gt;
+| &lt;SC_OR: "||"&gt;
+| &lt;SC_AND: "&amp;&amp;"&gt;
+| &lt;INCR: "++"&gt;
+| &lt;DECR: "--"&gt;
+| &lt;PLUS: "+"&gt;
+| &lt;MINUS: "-"&gt;
+| &lt;STAR: "*"&gt;
+| &lt;SLASH: "/"&gt;
+| &lt;BIT_AND: "&amp;"&gt;
+| &lt;BIT_OR: "|"&gt;
+| &lt;XOR: "^"&gt;
+| &lt;REM: "%"&gt;
+| &lt;PLUSASSIGN: "+="&gt;
+| &lt;MINUSASSIGN: "-="&gt;
+| &lt;STARASSIGN: "*="&gt;
+| &lt;SLASHASSIGN: "/="&gt;
+| &lt;ANDASSIGN: "&amp;="&gt;
+| &lt;ORASSIGN: "|="&gt;
+| &lt;XORASSIGN: "^="&gt;
+| &lt;REMASSIGN: "%="&gt;
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* >'s need special attention due to generics syntax. */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; TOKEN : {
+&lt;RUNSIGNEDSHIFT: "&gt;&gt;&gt;"&gt; : {
+| &lt;RSIGNEDSHIFT: "&gt;&gt;"&gt; : {
+| &lt;GT: "&gt;"&gt;
+}
+
+   </pre>
+  </td>
+ </tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* IDENTIFIERS */</pre>
+  </td>
+ </tr>
+ <!-- Token -->
+ <tr>
+  <td>
+   <pre>
+&lt;DEFAULT&gt; TOKEN : {
+&lt;IDENTIFIER: &lt;LETTER&gt; (&lt;PART_LETTER&gt;)*&gt;
+| &lt;#LETTER: ["$","A"-"Z","_","a"-"z","\u00a2"-"\u00a5","\u00aa","\u00b5","\u00ba","\u00c0"-"\u00d6","\u00d8"-"\u00f6","\u00f8"-"\u021f","\u0222"-"\u0233","\u0250"-"\u02ad","\u02b0"-"\u02b8","\u02bb"-"\u02c1","\u02d0"-"\u02d1","\u02e0"-"\u02e4","\u02ee","\u037a","\u0386","\u0388"-"\u038a","\u038c","\u038e"-"\u03a1","\u03a3"-"\u03ce","\u03d0"-"\u03d7","\u03da"-"\u03f3","\u0400"-"\u0481","\u048c"-"\u04c4","\u04c7"-"\u04c8","\u04cb"-"\u04cc","\u04d0"-"\u04f5","\u04f8"-"\u04f9","\u0531"-"\u0556","\u0559","\u0561"-"\u0587","\u05d0"-"\u05ea","\u05f0"-"\u05f2","\u0621"-"\u063a","\u0640"-"\u064a","\u0671"-"\u06d3","\u06d5","\u06e5"-"\u06e6","\u06fa"-"\u06fc","\u0710","\u0712"-"\u072c","\u0780"-"\u07a5","\u0905"-"\u0939","\u093d","\u0950","\u0958"-"\u0961","\u0985"-"\u098c","\u098f"-"\u0990","\u0993"-"\u09a8","\u09aa"-"\u09b0","\u09b2","\u09b6"-"\u09b9","\u09dc"-"\u09dd","\u09df"-"\u09e1","\u09f0"-"\u09f3","\u0a05"-"\u0a0a","\u0a0f"-"\u0a10","\u0a13"-"\u0a28","\u0a2a"-"\u0a30","\u0a32"-"\u0a33","\u0a35"-"\u0a36","\u0a38"-"\u0a39","\u0a59"-"\u0a5c","\u0a5e","\u0a72"-"\u0a74","\u0a85"-"\u0a8b","\u0a8d","\u0a8f"-"\u0a91","\u0a93"-"\u0aa8","\u0aaa"-"\u0ab0","\u0ab2"-"\u0ab3","\u0ab5"-"\u0ab9","\u0abd","\u0ad0","\u0ae0","\u0b05"-"\u0b0c","\u0b0f"-"\u0b10","\u0b13"-"\u0b28","\u0b2a"-"\u0b30","\u0b32"-"\u0b33","\u0b36"-"\u0b39","\u0b3d","\u0b5c"-"\u0b5d","\u0b5f"-"\u0b61","\u0b85"-"\u0b8a","\u0b8e"-"\u0b90","\u0b92"-"\u0b95","\u0b99"-"\u0b9a","\u0b9c","\u0b9e"-"\u0b9f","\u0ba3"-"\u0ba4","\u0ba8"-"\u0baa","\u0bae"-"\u0bb5","\u0bb7"-"\u0bb9","\u0c05"-"\u0c0c","\u0c0e"-"\u0c10","\u0c12"-"\u0c28","\u0c2a"-"\u0c33","\u0c35"-"\u0c39","\u0c60"-"\u0c61","\u0c85"-"\u0c8c","\u0c8e"-"\u0c90","\u0c92"-"\u0ca8","\u0caa"-"\u0cb3","\u0cb5"-"\u0cb9","\u0cde","\u0ce0"-"\u0ce1","\u0d05"-"\u0d0c","\u0d0e"-"\u0d10","\u0d12"-"\u0d28","\u0d2a"-"\u0d39","\u0d60"-"\u0d61","\u0d85"-"\u0d96","\u0d9a"-"\u0db1","\u0db3"-"\u0dbb","\u0dbd","\u0dc0"-"\u0dc6","\u0e01"-"\u0e30","\u0e32"-"\u0e33","\u0e3f"-"\u0e46","\u0e81"-"\u0e82","\u0e84","\u0e87"-"\u0e88","\u0e8a","\u0e8d","\u0e94"-"\u0e97","\u0e99"-"\u0e9f","\u0ea1"-"\u0ea3","\u0ea5","\u0ea7","\u0eaa"-"\u0eab","\u0ead"-"\u0eb0","\u0eb2"-"\u0eb3","\u0ebd","\u0ec0"-"\u0ec4","\u0ec6","\u0edc"-"\u0edd","\u0f00","\u0f40"-"\u0f47","\u0f49"-"\u0f6a","\u0f88"-"\u0f8b","\u1000"-"\u1021","\u1023"-"\u1027","\u1029"-"\u102a","\u1050"-"\u1055","\u10a0"-"\u10c5","\u10d0"-"\u10f6","\u1100"-"\u1159","\u115f"-"\u11a2","\u11a8"-"\u11f9","\u1200"-"\u1206","\u1208"-"\u1246","\u1248","\u124a"-"\u124d","\u1250"-"\u1256","\u1258","\u125a"-"\u125d","\u1260"-"\u1286","\u1288","\u128a"-"\u128d","\u1290"-"\u12ae","\u12b0","\u12b2"-"\u12b5","\u12b8"-"\u12be","\u12c0","\u12c2"-"\u12c5","\u12c8"-"\u12ce","\u12d0"-"\u12d6","\u12d8"-"\u12ee","\u12f0"-"\u130e","\u1310","\u1312"-"\u1315","\u1318"-"\u131e","\u1320"-"\u1346","\u1348"-"\u135a","\u13a0"-"\u13f4","\u1401"-"\u166c","\u166f"-"\u1676","\u1681"-"\u169a","\u16a0"-"\u16ea","\u1780"-"\u17b3","\u17db","\u1820"-"\u1877","\u1880"-"\u18a8","\u1e00"-"\u1e9b","\u1ea0"-"\u1ef9","\u1f00"-"\u1f15","\u1f18"-"\u1f1d","\u1f20"-"\u1f45","\u1f48"-"\u1f4d","\u1f50"-"\u1f57","\u1f59","\u1f5b","\u1f5d","\u1f5f"-"\u1f7d","\u1f80"-"\u1fb4","\u1fb6"-"\u1fbc","\u1fbe","\u1fc2"-"\u1fc4","\u1fc6"-"\u1fcc","\u1fd0"-"\u1fd3","\u1fd6"-"\u1fdb","\u1fe0"-"\u1fec","\u1ff2"-"\u1ff4","\u1ff6"-"\u1ffc","\u203f"-"\u2040","\u207f","\u20a0"-"\u20af","\u2102","\u2107","\u210a"-"\u2113","\u2115","\u2119"-"\u211d","\u2124","\u2126","\u2128","\u212a"-"\u212d","\u212f"-"\u2131","\u2133"-"\u2139","\u2160"-"\u2183","\u3005"-"\u3007","\u3021"-"\u3029","\u3031"-"\u3035","\u3038"-"\u303a","\u3041"-"\u3094","\u309d"-"\u309e","\u30a1"-"\u30fe","\u3105"-"\u312c","\u3131"-"\u318e","\u31a0"-"\u31b7","\u3400"-"\u4db5","\u4e00"-"\u9fa5","\ua000"-"\ua48c","\uac00"-"\ud7a3","\uf900"-"\ufa2d","\ufb00"-"\ufb06","\ufb13"-"\ufb17","\ufb1d","\ufb1f"-"\ufb28","\ufb2a"-"\ufb36","\ufb38"-"\ufb3c","\ufb3e","\ufb40"-"\ufb41","\ufb43"-"\ufb44","\ufb46"-"\ufbb1","\ufbd3"-"\ufd3d","\ufd50"-"\ufd8f","\ufd92"-"\ufdc7","\ufdf0"-"\ufdfb","\ufe33"-"\ufe34","\ufe4d"-"\ufe4f","\ufe69","\ufe70"-"\ufe72","\ufe74","\ufe76"-"\ufefc","\uff04","\uff21"-"\uff3a","\uff3f","\uff41"-"\uff5a","\uff65"-"\uffbe","\uffc2"-"\uffc7","\uffca"-"\uffcf","\uffd2"-"\uffd7","\uffda"-"\uffdc","\uffe0"-"\uffe1","\uffe5"-"\uffe6"]&gt;
+| &lt;#PART_LETTER: ["\u0000"-"\b","\u000e"-"\u001b","$","0"-"9","A"-"Z","_","a"-"z","\u007f"-"\u009f","\u00a2"-"\u00a5","\u00aa","\u00b5","\u00ba","\u00c0"-"\u00d6","\u00d8"-"\u00f6","\u00f8"-"\u021f","\u0222"-"\u0233","\u0250"-"\u02ad","\u02b0"-"\u02b8","\u02bb"-"\u02c1","\u02d0"-"\u02d1","\u02e0"-"\u02e4","\u02ee","\u0300"-"\u034e","\u0360"-"\u0362","\u037a","\u0386","\u0388"-"\u038a","\u038c","\u038e"-"\u03a1","\u03a3"-"\u03ce","\u03d0"-"\u03d7","\u03da"-"\u03f3","\u0400"-"\u0481","\u0483"-"\u0486","\u048c"-"\u04c4","\u04c7"-"\u04c8","\u04cb"-"\u04cc","\u04d0"-"\u04f5","\u04f8"-"\u04f9","\u0531"-"\u0556","\u0559","\u0561"-"\u0587","\u0591"-"\u05a1","\u05a3"-"\u05b9","\u05bb"-"\u05bd","\u05bf","\u05c1"-"\u05c2","\u05c4","\u05d0"-"\u05ea","\u05f0"-"\u05f2","\u0621"-"\u063a","\u0640"-"\u0655","\u0660"-"\u0669","\u0670"-"\u06d3","\u06d5"-"\u06dc","\u06df"-"\u06e8","\u06ea"-"\u06ed","\u06f0"-"\u06fc","\u070f"-"\u072c","\u0730"-"\u074a","\u0780"-"\u07b0","\u0901"-"\u0903","\u0905"-"\u0939","\u093c"-"\u094d","\u0950"-"\u0954","\u0958"-"\u0963","\u0966"-"\u096f","\u0981"-"\u0983","\u0985"-"\u098c","\u098f"-"\u0990","\u0993"-"\u09a8","\u09aa"-"\u09b0","\u09b2","\u09b6"-"\u09b9","\u09bc","\u09be"-"\u09c4","\u09c7"-"\u09c8","\u09cb"-"\u09cd","\u09d7","\u09dc"-"\u09dd","\u09df"-"\u09e3","\u09e6"-"\u09f3","\u0a02","\u0a05"-"\u0a0a","\u0a0f"-"\u0a10","\u0a13"-"\u0a28","\u0a2a"-"\u0a30","\u0a32"-"\u0a33","\u0a35"-"\u0a36","\u0a38"-"\u0a39","\u0a3c","\u0a3e"-"\u0a42","\u0a47"-"\u0a48","\u0a4b"-"\u0a4d","\u0a59"-"\u0a5c","\u0a5e","\u0a66"-"\u0a74","\u0a81"-"\u0a83","\u0a85"-"\u0a8b","\u0a8d","\u0a8f"-"\u0a91","\u0a93"-"\u0aa8","\u0aaa"-"\u0ab0","\u0ab2"-"\u0ab3","\u0ab5"-"\u0ab9","\u0abc"-"\u0ac5","\u0ac7"-"\u0ac9","\u0acb"-"\u0acd","\u0ad0","\u0ae0","\u0ae6"-"\u0aef","\u0b01"-"\u0b03","\u0b05"-"\u0b0c","\u0b0f"-"\u0b10","\u0b13"-"\u0b28","\u0b2a"-"\u0b30","\u0b32"-"\u0b33","\u0b36"-"\u0b39","\u0b3c"-"\u0b43","\u0b47"-"\u0b48","\u0b4b"-"\u0b4d","\u0b56"-"\u0b57","\u0b5c"-"\u0b5d","\u0b5f"-"\u0b61","\u0b66"-"\u0b6f","\u0b82"-"\u0b83","\u0b85"-"\u0b8a","\u0b8e"-"\u0b90","\u0b92"-"\u0b95","\u0b99"-"\u0b9a","\u0b9c","\u0b9e"-"\u0b9f","\u0ba3"-"\u0ba4","\u0ba8"-"\u0baa","\u0bae"-"\u0bb5","\u0bb7"-"\u0bb9","\u0bbe"-"\u0bc2","\u0bc6"-"\u0bc8","\u0bca"-"\u0bcd","\u0bd7","\u0be7"-"\u0bef","\u0c01"-"\u0c03","\u0c05"-"\u0c0c","\u0c0e"-"\u0c10","\u0c12"-"\u0c28","\u0c2a"-"\u0c33","\u0c35"-"\u0c39","\u0c3e"-"\u0c44","\u0c46"-"\u0c48","\u0c4a"-"\u0c4d","\u0c55"-"\u0c56","\u0c60"-"\u0c61","\u0c66"-"\u0c6f","\u0c82"-"\u0c83","\u0c85"-"\u0c8c","\u0c8e"-"\u0c90","\u0c92"-"\u0ca8","\u0caa"-"\u0cb3","\u0cb5"-"\u0cb9","\u0cbe"-"\u0cc4","\u0cc6"-"\u0cc8","\u0cca"-"\u0ccd","\u0cd5"-"\u0cd6","\u0cde","\u0ce0"-"\u0ce1","\u0ce6"-"\u0cef","\u0d02"-"\u0d03","\u0d05"-"\u0d0c","\u0d0e"-"\u0d10","\u0d12"-"\u0d28","\u0d2a"-"\u0d39","\u0d3e"-"\u0d43","\u0d46"-"\u0d48","\u0d4a"-"\u0d4d","\u0d57","\u0d60"-"\u0d61","\u0d66"-"\u0d6f","\u0d82"-"\u0d83","\u0d85"-"\u0d96","\u0d9a"-"\u0db1","\u0db3"-"\u0dbb","\u0dbd","\u0dc0"-"\u0dc6","\u0dca","\u0dcf"-"\u0dd4","\u0dd6","\u0dd8"-"\u0ddf","\u0df2"-"\u0df3","\u0e01"-"\u0e3a","\u0e3f"-"\u0e4e","\u0e50"-"\u0e59","\u0e81"-"\u0e82","\u0e84","\u0e87"-"\u0e88","\u0e8a","\u0e8d","\u0e94"-"\u0e97","\u0e99"-"\u0e9f","\u0ea1"-"\u0ea3","\u0ea5","\u0ea7","\u0eaa"-"\u0eab","\u0ead"-"\u0eb9","\u0ebb"-"\u0ebd","\u0ec0"-"\u0ec4","\u0ec6","\u0ec8"-"\u0ecd","\u0ed0"-"\u0ed9","\u0edc"-"\u0edd","\u0f00","\u0f18"-"\u0f19","\u0f20"-"\u0f29","\u0f35","\u0f37","\u0f39","\u0f3e"-"\u0f47","\u0f49"-"\u0f6a","\u0f71"-"\u0f84","\u0f86"-"\u0f8b","\u0f90"-"\u0f97","\u0f99"-"\u0fbc","\u0fc6","\u1000"-"\u1021","\u1023"-"\u1027","\u1029"-"\u102a","\u102c"-"\u1032","\u1036"-"\u1039","\u1040"-"\u1049","\u1050"-"\u1059","\u10a0"-"\u10c5","\u10d0"-"\u10f6","\u1100"-"\u1159","\u115f"-"\u11a2","\u11a8"-"\u11f9","\u1200"-"\u1206","\u1208"-"\u1246","\u1248","\u124a"-"\u124d","\u1250"-"\u1256","\u1258","\u125a"-"\u125d","\u1260"-"\u1286","\u1288","\u128a"-"\u128d","\u1290"-"\u12ae","\u12b0","\u12b2"-"\u12b5","\u12b8"-"\u12be","\u12c0","\u12c2"-"\u12c5","\u12c8"-"\u12ce","\u12d0"-"\u12d6","\u12d8"-"\u12ee","\u12f0"-"\u130e","\u1310","\u1312"-"\u1315","\u1318"-"\u131e","\u1320"-"\u1346","\u1348"-"\u135a","\u1369"-"\u1371","\u13a0"-"\u13f4","\u1401"-"\u166c","\u166f"-"\u1676","\u1681"-"\u169a","\u16a0"-"\u16ea","\u1780"-"\u17d3","\u17db","\u17e0"-"\u17e9","\u180b"-"\u180e","\u1810"-"\u1819","\u1820"-"\u1877","\u1880"-"\u18a9","\u1e00"-"\u1e9b","\u1ea0"-"\u1ef9","\u1f00"-"\u1f15","\u1f18"-"\u1f1d","\u1f20"-"\u1f45","\u1f48"-"\u1f4d","\u1f50"-"\u1f57","\u1f59","\u1f5b","\u1f5d","\u1f5f"-"\u1f7d","\u1f80"-"\u1fb4","\u1fb6"-"\u1fbc","\u1fbe","\u1fc2"-"\u1fc4","\u1fc6"-"\u1fcc","\u1fd0"-"\u1fd3","\u1fd6"-"\u1fdb","\u1fe0"-"\u1fec","\u1ff2"-"\u1ff4","\u1ff6"-"\u1ffc","\u200c"-"\u200f","\u202a"-"\u202e","\u203f"-"\u2040","\u206a"-"\u206f","\u207f","\u20a0"-"\u20af","\u20d0"-"\u20dc","\u20e1","\u2102","\u2107","\u210a"-"\u2113","\u2115","\u2119"-"\u211d","\u2124","\u2126","\u2128","\u212a"-"\u212d","\u212f"-"\u2131","\u2133"-"\u2139","\u2160"-"\u2183","\u3005"-"\u3007","\u3021"-"\u302f","\u3031"-"\u3035","\u3038"-"\u303a","\u3041"-"\u3094","\u3099"-"\u309a","\u309d"-"\u309e","\u30a1"-"\u30fe","\u3105"-"\u312c","\u3131"-"\u318e","\u31a0"-"\u31b7","\u3400"-"\u4db5","\u4e00"-"\u9fa5","\ua000"-"\ua48c","\uac00"-"\ud7a3","\uf900"-"\ufa2d","\ufb00"-"\ufb06","\ufb13"-"\ufb17","\ufb1d"-"\ufb28","\ufb2a"-"\ufb36","\ufb38"-"\ufb3c","\ufb3e","\ufb40"-"\ufb41","\ufb43"-"\ufb44","\ufb46"-"\ufbb1","\ufbd3"-"\ufd3d","\ufd50"-"\ufd8f","\ufd92"-"\ufdc7","\ufdf0"-"\ufdfb","\ufe20"-"\ufe23","\ufe33"-"\ufe34","\ufe4d"-"\ufe4f","\ufe69","\ufe70"-"\ufe72","\ufe74","\ufe76"-"\ufefc","\ufeff","\uff04","\uff10"-"\uff19","\uff21"-"\uff3a","\uff3f","\uff41"-"\uff5a","\uff65"-"\uffbe","\uffc2"-"\uffc7","\uffca"-"\uffcf","\uffd2"-"\uffd7","\uffda"-"\uffdc","\uffe0"-"\uffe1","\uffe5"-"\uffe6","\ufff9"-"\ufffb"]&gt;
+}
+
+   </pre>
+  </td>
+ </tr>
+</table>
+<h2 align="CENTER">NON-TERMINALS</h2>
+<table>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/************************************************
+ * THE JAVACC GRAMMAR SPECIFICATION STARTS HERE *
+ ************************************************/</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod1">javacc_input</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod2">javacc_options</a> "PARSER_BEGIN" "(" <a href="#prod3">identifier</a> ")" <a href="#prod4">CompilationUnit</a> "PARSER_END" "(" <a href="#prod3">identifier</a> ")" ( <a href="#prod5">production</a> )+ &lt;EOF&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod2">javacc_options</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( &lt;IDENTIFIER&gt; "{" ( <a href="#prod6">option_binding</a> )* "}" )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod6">option_binding</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( &lt;IDENTIFIER&gt; | "LOOKAHEAD" | "IGNORE_CASE" | "static" ) "=" ( <a href="#prod7">IntegerLiteral</a> | <a href="#prod8">BooleanLiteral</a> | <a href="#prod9">StringLiteral</a> ) ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod5">production</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod10">javacode_production</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod11">regular_expr_production</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod12">token_manager_decls</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod13">bnf_production</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod10">javacode_production</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"JAVACODE" <a href="#prod14">AccessModifier</a> <a href="#prod15">ResultType</a> <a href="#prod3">identifier</a> <a href="#prod16">FormalParameters</a> ( "throws" <a href="#prod17">Name</a> ( "," <a href="#prod17">Name</a> )* )? <a href="#prod18">Block</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod13">bnf_production</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod14">AccessModifier</a> <a href="#prod15">ResultType</a> <a href="#prod3">identifier</a> <a href="#prod16">FormalParameters</a> ( "throws" <a href="#prod17">Name</a> ( "," <a href="#prod17">Name</a> )* )? ":" <a href="#prod18">Block</a> "{" <a href="#prod19">expansion_choices</a> "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod14">AccessModifier</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "public" | "protected" | "private" )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod11">regular_expr_production</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "&lt;" "*" "&gt;" | "&lt;" &lt;IDENTIFIER&gt; ( "," &lt;IDENTIFIER&gt; )* "&gt;" )? <a href="#prod20">regexpr_kind</a> ( "[" "IGNORE_CASE" "]" )? ":" "{" <a href="#prod21">regexpr_spec</a> ( "|" <a href="#prod21">regexpr_spec</a> )* "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod12">token_manager_decls</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"TOKEN_MGR_DECLS" ":" <a href="#prod22">ClassOrInterfaceBody</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod20">regexpr_kind</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"TOKEN"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"SPECIAL_TOKEN"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"SKIP"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"MORE"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod21">regexpr_spec</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod23">regular_expression</a> ( <a href="#prod18">Block</a> )? ( ":" &lt;IDENTIFIER&gt; )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod19">expansion_choices</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod24">expansion</a> ( "|" <a href="#prod24">expansion</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod24">expansion</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "LOOKAHEAD" "(" <a href="#prod25">local_lookahead</a> ")" )? ( <a href="#prod26">expansion_unit</a> )+</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod25">local_lookahead</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( <a href="#prod7">IntegerLiteral</a> )? ( "," )? ( <a href="#prod19">expansion_choices</a> )? ( "," )? ( "{" <a href="#prod27">Expression</a> "}" )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod26">expansion_unit</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"LOOKAHEAD" "(" <a href="#prod25">local_lookahead</a> ")"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod18">Block</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"[" <a href="#prod19">expansion_choices</a> "]"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"try" "{" <a href="#prod19">expansion_choices</a> "}" ( "catch" "(" <a href="#prod17">Name</a> &lt;IDENTIFIER&gt; ")" <a href="#prod18">Block</a> )* ( "finally" <a href="#prod18">Block</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">( <a href="#prod28">PrimaryExpression</a> "=" )? ( <a href="#prod3">identifier</a> <a href="#prod29">Arguments</a> | <a href="#prod23">regular_expression</a> ( "." &lt;IDENTIFIER&gt; )? )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"(" <a href="#prod19">expansion_choices</a> ")" ( "+" | "*" | "?" )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod23">regular_expression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod9">StringLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">&lt;LANGLE: "&lt;"&gt; ( ( "#" )? <a href="#prod3">identifier</a> ":" )? <a href="#prod30">complex_regular_expression_choices</a> &lt;RANGLE: "&gt;"&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"&lt;" <a href="#prod3">identifier</a> "&gt;"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"&lt;" "EOF" "&gt;"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod30">complex_regular_expression_choices</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod31">complex_regular_expression</a> ( "|" <a href="#prod31">complex_regular_expression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod31">complex_regular_expression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( <a href="#prod32">complex_regular_expression_unit</a> )+</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod32">complex_regular_expression_unit</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod9">StringLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"&lt;" <a href="#prod3">identifier</a> "&gt;"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod33">character_list</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"(" <a href="#prod30">complex_regular_expression_choices</a> ")" ( "+" | "*" | "?" | "{" <a href="#prod7">IntegerLiteral</a> ( "," ( <a href="#prod7">IntegerLiteral</a> )? )? "}" )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod33">character_list</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "~" )? "[" ( <a href="#prod34">character_descriptor</a> ( "," <a href="#prod34">character_descriptor</a> )* )? "]"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod34">character_descriptor</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod9">StringLiteral</a> ( "-" <a href="#prod9">StringLiteral</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod3">identifier</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt;</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/**********************************************
+ * THE JAVA GRAMMAR SPECIFICATION STARTS HERE *
+ **********************************************/
+
+/*
+ * The Java grammar is modified to use sequences of tokens
+ * for the missing tokens - those that include "<<" and ">>".
+ */
+
+/*
+ * The following production defines Java identifiers - it
+ * includes the reserved words of JavaCC also.
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod35">JavaIdentifier</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( &lt;IDENTIFIER&gt; | "LOOKAHEAD" | "IGNORE_CASE" | "PARSER_BEGIN" | "PARSER_END" | "JAVACODE" | "TOKEN" | "SPECIAL_TOKEN" | "MORE" | "SKIP" | "TOKEN_MGR_DECLS" | "EOF" )</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/*
+ * Program structuring syntax follows.
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod4">CompilationUnit</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( <a href="#prod36">PackageDeclaration</a> )? ( <a href="#prod37">ImportDeclaration</a> )* ( <a href="#prod38">TypeDeclaration</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod36">PackageDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod39">Modifiers</a> "package" <a href="#prod17">Name</a> ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod37">ImportDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"import" ( "static" )? <a href="#prod17">Name</a> ( "." "*" )? ";"</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/*
+ * Modifiers. We match all modifiers in a single rule to reduce the chances of
+ * syntax errors for simple modifier mistakes. It will also enable us to give
+ * better error messages.
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod39">Modifiers</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( ( "public" | "static" | "protected" | "private" | "final" | "abstract" | "synchronized" | "native" | "transient" | "volatile" | "strictfp" | <a href="#prod40">Annotation</a> ) )*</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/*
+ * Declaration syntax follows.
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod38">TypeDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod39">Modifiers</a> ( <a href="#prod41">ClassOrInterfaceDeclaration</a> | <a href="#prod42">EnumDeclaration</a> | <a href="#prod43">AnnotationTypeDeclaration</a> )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod41">ClassOrInterfaceDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "class" | "interface" ) &lt;IDENTIFIER&gt; ( <a href="#prod44">TypeParameters</a> )? ( <a href="#prod45">ExtendsList</a> )? ( <a href="#prod46">ImplementsList</a> )? <a href="#prod22">ClassOrInterfaceBody</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod45">ExtendsList</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"extends" <a href="#prod47">ClassOrInterfaceType</a> ( "," <a href="#prod47">ClassOrInterfaceType</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod46">ImplementsList</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"implements" <a href="#prod47">ClassOrInterfaceType</a> ( "," <a href="#prod47">ClassOrInterfaceType</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod42">EnumDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"enum" &lt;IDENTIFIER&gt; ( <a href="#prod46">ImplementsList</a> )? <a href="#prod48">EnumBody</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod48">EnumBody</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"{" ( <a href="#prod49">EnumConstant</a> ( "," <a href="#prod49">EnumConstant</a> )* )? ( "," )? ( ";" ( <a href="#prod50">ClassOrInterfaceBodyDeclaration</a> )* )? "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod49">EnumConstant</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod39">Modifiers</a> &lt;IDENTIFIER&gt; ( <a href="#prod29">Arguments</a> )? ( <a href="#prod22">ClassOrInterfaceBody</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod44">TypeParameters</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"&lt;" <a href="#prod51">TypeParameter</a> ( "," <a href="#prod51">TypeParameter</a> )* "&gt;"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod51">TypeParameter</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt; ( <a href="#prod52">TypeBound</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod52">TypeBound</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"extends" <a href="#prod47">ClassOrInterfaceType</a> ( "&amp;" <a href="#prod47">ClassOrInterfaceType</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod22">ClassOrInterfaceBody</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"{" ( <a href="#prod50">ClassOrInterfaceBodyDeclaration</a> )* "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod50">ClassOrInterfaceBodyDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod53">Initializer</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod39">Modifiers</a> ( <a href="#prod41">ClassOrInterfaceDeclaration</a> | <a href="#prod42">EnumDeclaration</a> | <a href="#prod54">ConstructorDeclaration</a> | <a href="#prod55">FieldDeclaration</a> | <a href="#prod56">MethodDeclaration</a> )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod55">FieldDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod57">Type</a> <a href="#prod58">VariableDeclarator</a> ( "," <a href="#prod58">VariableDeclarator</a> )* ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod58">VariableDeclarator</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod59">VariableDeclaratorId</a> ( "=" <a href="#prod60">VariableInitializer</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod59">VariableDeclaratorId</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt; ( "[" "]" )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod60">VariableInitializer</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod61">ArrayInitializer</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod27">Expression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod61">ArrayInitializer</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"{" ( <a href="#prod60">VariableInitializer</a> ( "," <a href="#prod60">VariableInitializer</a> )* )? ( "," )? "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod56">MethodDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( <a href="#prod44">TypeParameters</a> )? <a href="#prod15">ResultType</a> <a href="#prod62">MethodDeclarator</a> ( "throws" <a href="#prod63">NameList</a> )? ( <a href="#prod18">Block</a> | ";" )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod62">MethodDeclarator</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt; <a href="#prod16">FormalParameters</a> ( "[" "]" )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod16">FormalParameters</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"(" ( <a href="#prod64">FormalParameter</a> ( "," <a href="#prod64">FormalParameter</a> )* )? ")"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod64">FormalParameter</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod39">Modifiers</a> <a href="#prod57">Type</a> ( "..." )? <a href="#prod59">VariableDeclaratorId</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod54">ConstructorDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( <a href="#prod44">TypeParameters</a> )? &lt;IDENTIFIER&gt; <a href="#prod16">FormalParameters</a> ( "throws" <a href="#prod63">NameList</a> )? "{" ( <a href="#prod65">ExplicitConstructorInvocation</a> )? ( <a href="#prod66">BlockStatement</a> )* "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod65">ExplicitConstructorInvocation</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"this" <a href="#prod29">Arguments</a> ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">( <a href="#prod28">PrimaryExpression</a> "." )? "super" <a href="#prod29">Arguments</a> ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod53">Initializer</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "static" )? <a href="#prod18">Block</a></td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/*
+ * Type, name and expression syntax follows.
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod57">Type</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod67">ReferenceType</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod68">PrimitiveType</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod67">ReferenceType</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod68">PrimitiveType</a> ( "[" "]" )+</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">( <a href="#prod47">ClassOrInterfaceType</a> ) ( "[" "]" )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod47">ClassOrInterfaceType</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt; ( <a href="#prod69">TypeArguments</a> )? ( "." &lt;IDENTIFIER&gt; ( <a href="#prod69">TypeArguments</a> )? )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod69">TypeArguments</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"&lt;" <a href="#prod70">TypeArgument</a> ( "," <a href="#prod70">TypeArgument</a> )* "&gt;"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod70">TypeArgument</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod67">ReferenceType</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"?" ( <a href="#prod71">WildcardBounds</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod71">WildcardBounds</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"extends" <a href="#prod67">ReferenceType</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"super" <a href="#prod67">ReferenceType</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod68">PrimitiveType</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"boolean"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"char"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"byte"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"short"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"int"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"long"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"float"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"double"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod15">ResultType</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "void" | <a href="#prod57">Type</a> )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod17">Name</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod35">JavaIdentifier</a> ( "." <a href="#prod35">JavaIdentifier</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod63">NameList</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod17">Name</a> ( "," <a href="#prod17">Name</a> )*</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/*
+ * Expression syntax follows.
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod27">Expression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod72">ConditionalExpression</a> ( <a href="#prod73">AssignmentOperator</a> <a href="#prod27">Expression</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod73">AssignmentOperator</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"*="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"/="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"%="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"+="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"-="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"&lt;&lt;="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"&gt;&gt;="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"&gt;&gt;&gt;="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"&amp;="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"^="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"|="</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod72">ConditionalExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod74">ConditionalOrExpression</a> ( "?" <a href="#prod27">Expression</a> ":" <a href="#prod27">Expression</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod74">ConditionalOrExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod75">ConditionalAndExpression</a> ( "||" <a href="#prod75">ConditionalAndExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod75">ConditionalAndExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod76">InclusiveOrExpression</a> ( "&amp;&amp;" <a href="#prod76">InclusiveOrExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod76">InclusiveOrExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod77">ExclusiveOrExpression</a> ( "|" <a href="#prod77">ExclusiveOrExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod77">ExclusiveOrExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod78">AndExpression</a> ( "^" <a href="#prod78">AndExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod78">AndExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod79">EqualityExpression</a> ( "&amp;" <a href="#prod79">EqualityExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod79">EqualityExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod80">InstanceOfExpression</a> ( ( "==" | "!=" ) <a href="#prod80">InstanceOfExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod80">InstanceOfExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod81">RelationalExpression</a> ( "instanceof" <a href="#prod57">Type</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod81">RelationalExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod82">ShiftExpression</a> ( ( "&lt;" | "&gt;" | "&lt;=" | "&gt;=" ) <a href="#prod82">ShiftExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod82">ShiftExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod83">AdditiveExpression</a> ( ( "&lt;&lt;" | <a href="#prod84">RSIGNEDSHIFT</a> | <a href="#prod85">RUNSIGNEDSHIFT</a> ) <a href="#prod83">AdditiveExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod83">AdditiveExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod86">MultiplicativeExpression</a> ( ( "+" | "-" ) <a href="#prod86">MultiplicativeExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod86">MultiplicativeExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod87">UnaryExpression</a> ( ( "*" | "/" | "%" ) <a href="#prod87">UnaryExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod87">UnaryExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "+" | "-" ) <a href="#prod87">UnaryExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod88">PreIncrementExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod89">PreDecrementExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod90">UnaryExpressionNotPlusMinus</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod88">PreIncrementExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"++" <a href="#prod28">PrimaryExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod89">PreDecrementExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"--" <a href="#prod28">PrimaryExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod90">UnaryExpressionNotPlusMinus</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "~" | "!" ) <a href="#prod87">UnaryExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod91">CastExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod92">PostfixExpression</a></td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+// This production is to determine lookahead only.  The LOOKAHEAD specifications
+// below are not used, but they are there just to indicate that we know about
+// this.
+</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod93">CastLookahead</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"(" <a href="#prod68">PrimitiveType</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"(" <a href="#prod57">Type</a> "[" "]"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"(" <a href="#prod57">Type</a> ")" ( "~" | "!" | "(" | &lt;IDENTIFIER&gt; | "this" | "super" | "new" | <a href="#prod94">Literal</a> )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod92">PostfixExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod28">PrimaryExpression</a> ( "++" | "--" )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod91">CastExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"(" <a href="#prod57">Type</a> ")" <a href="#prod87">UnaryExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"(" <a href="#prod57">Type</a> ")" <a href="#prod90">UnaryExpressionNotPlusMinus</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod28">PrimaryExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod95">PrimaryPrefix</a> ( <a href="#prod96">PrimarySuffix</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod97">MemberSelector</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"." <a href="#prod69">TypeArguments</a> &lt;IDENTIFIER&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod95">PrimaryPrefix</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod94">Literal</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"this"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"super" "." &lt;IDENTIFIER&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"(" <a href="#prod27">Expression</a> ")"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod98">AllocationExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod15">ResultType</a> "." "class"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod17">Name</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod96">PrimarySuffix</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"." "this"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"." <a href="#prod98">AllocationExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod97">MemberSelector</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"[" <a href="#prod27">Expression</a> "]"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"." &lt;IDENTIFIER&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod29">Arguments</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod94">Literal</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;INTEGER_LITERAL&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">&lt;FLOATING_POINT_LITERAL&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">&lt;CHARACTER_LITERAL&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">&lt;STRING_LITERAL&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod8">BooleanLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod99">NullLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod7">IntegerLiteral</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;INTEGER_LITERAL&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod8">BooleanLiteral</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"true"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"false"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod9">StringLiteral</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;STRING_LITERAL&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod99">NullLiteral</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"null"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod29">Arguments</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"(" ( <a href="#prod100">ArgumentList</a> )? ")"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod100">ArgumentList</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod27">Expression</a> ( "," <a href="#prod27">Expression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod98">AllocationExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"new" <a href="#prod68">PrimitiveType</a> <a href="#prod101">ArrayDimsAndInits</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"new" <a href="#prod47">ClassOrInterfaceType</a> ( <a href="#prod69">TypeArguments</a> )? ( <a href="#prod101">ArrayDimsAndInits</a> | <a href="#prod29">Arguments</a> ( <a href="#prod22">ClassOrInterfaceBody</a> )? )</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/*
+ * The third LOOKAHEAD specification below is to parse to PrimarySuffix
+ * if there is an expression between the "[...]".
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod101">ArrayDimsAndInits</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "[" <a href="#prod27">Expression</a> "]" )+ ( "[" "]" )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">( "[" "]" )+ <a href="#prod61">ArrayInitializer</a></td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/*
+ * Statement syntax follows.
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod102">Statement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod103">LabeledStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod104">AssertStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod18">Block</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod105">EmptyStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod106">StatementExpression</a> ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod107">SwitchStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod108">IfStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod109">WhileStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod110">DoStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod111">ForStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod112">BreakStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod113">ContinueStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod114">ReturnStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod115">ThrowStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod116">SynchronizedStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod117">TryStatement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod104">AssertStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"assert" <a href="#prod27">Expression</a> ( ":" <a href="#prod27">Expression</a> )? ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod103">LabeledStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt; ":" <a href="#prod102">Statement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod18">Block</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"{" ( <a href="#prod66">BlockStatement</a> )* "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod66">BlockStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod118">LocalVariableDeclaration</a> ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod102">Statement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod41">ClassOrInterfaceDeclaration</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod118">LocalVariableDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod39">Modifiers</a> <a href="#prod57">Type</a> <a href="#prod58">VariableDeclarator</a> ( "," <a href="#prod58">VariableDeclarator</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod105">EmptyStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod106">StatementExpression</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod88">PreIncrementExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod89">PreDecrementExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod28">PrimaryExpression</a> ( "++" | "--" | <a href="#prod73">AssignmentOperator</a> <a href="#prod27">Expression</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod107">SwitchStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"switch" "(" <a href="#prod27">Expression</a> ")" "{" ( <a href="#prod119">SwitchLabel</a> ( <a href="#prod66">BlockStatement</a> )* )* "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod119">SwitchLabel</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"case" <a href="#prod27">Expression</a> ":"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"default" ":"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod108">IfStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"if" "(" <a href="#prod27">Expression</a> ")" <a href="#prod102">Statement</a> ( "else" <a href="#prod102">Statement</a> )?</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod109">WhileStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"while" "(" <a href="#prod27">Expression</a> ")" <a href="#prod102">Statement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod110">DoStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"do" <a href="#prod102">Statement</a> "while" "(" <a href="#prod27">Expression</a> ")" ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod111">ForStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"for" "(" ( <a href="#prod39">Modifiers</a> <a href="#prod57">Type</a> &lt;IDENTIFIER&gt; ":" <a href="#prod27">Expression</a> | ( <a href="#prod120">ForInit</a> )? ";" ( <a href="#prod27">Expression</a> )? ";" ( <a href="#prod121">ForUpdate</a> )? ) ")" <a href="#prod102">Statement</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod120">ForInit</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod118">LocalVariableDeclaration</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod122">StatementExpressionList</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod122">StatementExpressionList</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod106">StatementExpression</a> ( "," <a href="#prod106">StatementExpression</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod121">ForUpdate</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod122">StatementExpressionList</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod112">BreakStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"break" ( &lt;IDENTIFIER&gt; )? ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod113">ContinueStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"continue" ( &lt;IDENTIFIER&gt; )? ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod114">ReturnStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"return" ( <a href="#prod27">Expression</a> )? ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod115">ThrowStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"throw" <a href="#prod27">Expression</a> ";"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod116">SynchronizedStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"synchronized" "(" <a href="#prod27">Expression</a> ")" <a href="#prod18">Block</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod117">TryStatement</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"try" <a href="#prod18">Block</a> ( "catch" "(" <a href="#prod64">FormalParameter</a> ")" <a href="#prod18">Block</a> )* ( "finally" <a href="#prod18">Block</a> )?</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* We use productions to match >>>, >> and > so that we can keep the
+ * type declaration syntax with generics clean
+ */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod85">RUNSIGNEDSHIFT</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "&gt;" "&gt;" "&gt;" )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod84">RSIGNEDSHIFT</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( "&gt;" "&gt;" )</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* Annotation syntax follows. */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod40">Annotation</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod123">NormalAnnotation</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod124">SingleMemberAnnotation</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod125">MarkerAnnotation</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod123">NormalAnnotation</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"@" <a href="#prod17">Name</a> "(" ( <a href="#prod126">MemberValuePairs</a> )? ")"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod125">MarkerAnnotation</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"@" <a href="#prod17">Name</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod124">SingleMemberAnnotation</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"@" <a href="#prod17">Name</a> "(" <a href="#prod127">MemberValue</a> ")"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod126">MemberValuePairs</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod128">MemberValuePair</a> ( "," <a href="#prod128">MemberValuePair</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod128">MemberValuePair</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt; "=" <a href="#prod127">MemberValue</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod127">MemberValue</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod40">Annotation</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod129">MemberValueArrayInitializer</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod72">ConditionalExpression</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod129">MemberValueArrayInitializer</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"{" <a href="#prod127">MemberValue</a> ( "," <a href="#prod127">MemberValue</a> )* ( "," )? "}"</td>
+</tr>
+ <!-- Special token -->
+ <tr>
+  <td>
+<pre>
+/* Annotation Types. */</pre>
+  </td>
+ </tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod43">AnnotationTypeDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"@" "interface" &lt;IDENTIFIER&gt; <a href="#prod130">AnnotationTypeBody</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod130">AnnotationTypeBody</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"{" ( <a href="#prod131">AnnotationTypeMemberDeclaration</a> )* "}"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod131">AnnotationTypeMemberDeclaration</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="#prod39">Modifiers</a> ( <a href="#prod57">Type</a> &lt;IDENTIFIER&gt; "(" ")" ( <a href="#prod132">DefaultValue</a> )? ";" | <a href="#prod41">ClassOrInterfaceDeclaration</a> | <a href="#prod42">EnumDeclaration</a> | <a href="#prod43">AnnotationTypeDeclaration</a> | <a href="#prod55">FieldDeclaration</a> )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">( ";" )</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod132">DefaultValue</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"default" <a href="#prod127">MemberValue</a></td>
+</tr>
+</table>
+
+      </div>
+
+                  <!--END CONTENT AREA-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sidebar-first" class="sidebar">
+            <div class="vAccordion">      <div id="block-menu-menu-kenai-project-features" class="block">
+      <div class="block-inner">
+        <h2>Project Features</h2>
+        <div class="content" style="text-align: left; margin: 5px;">
+          <ul class="menu">
+                          
+              
+                <li class="leaf">
+                  <a href="https://java.net/projects/javacc/lists">Mailing Lists</a>
+                </li>
+                
+                            
+                          
+                            <li><a href="https://java.net/projects/javacc/downloads">Downloads</a></li>
+                          
+                            <li><a href="http://java.net/jira/browse/JAVACC" target="_blank">JIRA</a></li>
+                          
+              
+                <li class="leaf">
+                  <a href="https://java.net/projects/javacc/sources">Source Code Repositories</a>
+                </li>
+                
+                            <li style="margin-left: 12px"><a href="https://java.net/projects/javacc/sources/svn/show">Subversion</a></li>
+                          
+                            <li><a href="http://javacc.java.net/">javacc.java.net</a></li>
+                          
+                            <li><a href="https://java.net/projects/javacc/pages/Home">JavaCC 7 Design</a></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  
+
+  <div id="block-menu-menu-kenai-project-about" class="block">
+    <div class="block-inner">
+      <h2>About this Project</h2>
+      <div class="content" style="text-align: left; margin: 5px;">
+        <a href="https://java.net/projects/javacc">Check out http://javacc.org</a>
+                  is a subproject of
+          <a href="https://java.net/projects/javatools">Javatools</a>,
+                was started in November 2010
+        and has <a href="https://java.net/projects/javacc/members">1016 members</a>.
+        The project administrators are
+        <a href="https://java.net/people/528626-Glassfish-Kenai-Migration-Admin"><span class="person -kenai-super_glassfish">Glassfish Kenai Migration Admin</span></a>, <a href="https://java.net/people/11961-paulcager"><span class="person -kenai-paulcager">paulcager</span></a>, <a href="https://java.net/people/402-Tom-Copeland"><span class="person -kenai-tcopeland">Tom Copeland</span></a>, and <a href="https://java.net/people/23-sreeni"><span class="person -kenai-sreeni">sreeni</span></a>.
+        <br />
+        <ul class="menu">
+                                    <li class="leaf">
+                <a href="https://java.net/projects/javacc/watch">Join This Project</a>
+              </li>
+                              </ul>
+              </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div id="tertiary-content">
+      <div id="block-menu-menu-footer-menu"  class="block">
+        <div class="block-inner">
+          <div class="content">
+            <ul class="menu">
+              <li class="leaf first">
+                <a href="http://www.java.net/contact" title="">Feedback</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.java.net/javanet-faq" title="">FAQ</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.java.net/javanet-web-site-terms-use" title="">Terms of Use</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.oracle.com/us/legal/privacy/index.html" title="">Privacy</a>
+              </li>
+              <li class="leaf last">
+                <a href="http://www.oracle.com/us/legal/third-party-trademarks/index.html" title="">Trademarks</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-region">
+        <div class="block">
+          <div class="block-inner">
+            <div class="content">
+              <div style="width: 59%; float: left;">
+                <p>
+                  Your use of this web site or any of its content or software indicates
+                  your agreement to be bound by these
+                  <a href="http://www.java.net/javanet-web-site-terms-use">Terms of Participation</a>.
+                </p>
+                <p>
+                  Copyright © 2014, Oracle Corporation and/or its affiliates. All rights reserved.
+                  Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+                  Other names may be trademarks of their respective owners.
+                </p>
+                <p>(<a href="https://java.net/projects/help/pages/ReleaseNotes">revision 20160708.bf2ac18</a>)</p>
+              </div>
+              <div style="width: 310px; float: right; text-align: right; margin-right: 10px">
+                <div style="float: right;">
+                  <a href="http://www.oracle.com" title="Oracle"><img alt="" src="https://java.net/theme/images/oracle.png" /></a>
+                  <a href="http://kenai.com" title="Kenai.com"><img alt="" src="https://java.net/theme/images/kenai.png" /></a>
+                  <a href="http://www.cognisync.com" title="Cognisync"><img alt="" src="https://java.net/theme/images/cognisync.png" /></a>
+                  <br />
+                  <div class="powered-by">
+                    Powered by Oracle, Project Kenai and Cognisync
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+        <!-- popups that are anchored to specific elements -->
+    <div class="popupMenuShadow" id="contextMenuShadow"></div>
+    <div class="popupMenuContainer" id="contextMenu">
+      <div class="popupMenu inline">	
+        <div class="upArrow"></div>
+        <div class="header"></div>
+        <div class="contextMenuBody" id="contextMenuBody">&nbsp;</div>
+      </div>
+    </div> 
+    
+    <!-- large content loaded via ajax. Faded but not modal. -->
+    <div class="jqmWindow" id="jqm_large_overlay">
+      <div class="jqmHeader">
+        <div class="jqmTitle">&nbsp;</div>
+        <img alt="Close" class="jqmClose" src="https://asset-2.java.net/images/close.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmTarget">
+        <img alt="loading" src="https://asset-3.java.net/images/activity.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmFooter">
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" title="Done"> Done </button></div>
+      </div>
+    </div>
+    
+    <!-- confirmation dialogs with buttons. Faded and modal. -->
+    <div class="jqmWindow" id="jqm_dialog">
+      <div class="jqmHeader">
+        <div class="jqmTitle">Please Confirm</div>
+        <img alt="Close" class="jqmClose" src="https://asset-2.java.net/images/close.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmTarget">&nbsp;</div>
+      <div class="jqmFooter">
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" id="jq_no_button" title="No" onclick="Modal.no()"> No </button></div>
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" id="jq_yes_button" title="Yes" onclick="Modal.yes();"> Yes </button></div>
+      </div>
+    </div>    
+
+    <div id="jq-ui-autocomplete-parent"></div>
+    
+  
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-6400569-8");
+        pageTracker._trackPageview();
+      } catch(err) {}</script>
+  
+
+  </body>
+  <script src="https://asset-3.java.net/javascripts/body_packaged.js?20160708.bf2ac18" type="text/javascript"></script>
+  <script src="https://java.net/theme/javascript/java_custom.js" type="text/javascript"></script>
+  
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>JavaCC Features &mdash; Project Kenai</title>
+    <link href="https://asset-3.java.net/stylesheets/print_packaged.css?20160708.bf2ac18" media="print" rel="stylesheet" type="text/css" />
+    <script src="https://asset-3.java.net/javascripts/head_packaged.js?20160708.bf2ac18" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher:'bcd30425-1749-43d6-a311-18a82f89771a'
+        });
+    </script>
+    <script type="text/javascript">
+//<![CDATA[
+var page={"token":"n51DutxXIGJf2kg7GBxTP9wHJWMixsjHjgz30a6EZy4="};
+//]]>
+</script>
+    <script type="text/javascript" charset="utf-8">
+      function debug(m){}
+    </script>
+    
+ <link href="/styles.css" media="screen" rel="stylesheet" type="text/css" /> 
+ 
+<!-- Changed by: Michael Van De Vanter, 14-Jan-2003 -->
+
+    <link href="https://java.net/theme/stylesheets/java_net.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://java.net/theme/stylesheets/layout.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://asset-3.java.net/stylesheets/additions.css?20160708.bf2ac18" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if IE]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie.css";</style><![endif]-->
+    <!--[if lte IE 6]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie6.css";</style><![endif]-->
+    <!--[if IE 7]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie7.css";</style><![endif]-->
+    <!--[if IE 8]><style type="text/css" media="all">@import "https://java.net/theme/stylesheets/ie8.css";</style><![endif]-->
+
+    <meta name="keywords" content="" />
+    <!-- Anti clickjacking -->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+      if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
+  </head>
+  <body class="front not-logged-in article-type-page one-sidebar">
+      <div id="container">
+      
+      <div id="skip-nav" class="element-invisible">
+        <!-- To adjust the display of the skip link see the Advanced theme settings
+        (General settings), and never use display:none! -->
+        <a href="#main-content">Skip to main content</a>
+      </div>
+      <div id="leaderboard">
+        <div id="block-block-31"  class="block">
+          <div class="block-inner">
+            <div class="content">
+                <a href="https://java.net/people/new">Create Account</a>
+  <span class="separator"></span>
+  <a href="https://java.net/people/login?original_uri=https%3A%2F%2Fjavacc.java.net%2Fdoc%2Ffeatures.html" rel="nofollow">Login</a>
+  <span class="separator"></span>
+  <a href="https://java.net/projects/help/pages/WebSite#WithNavigation" target="_blank">Help</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="header" class="clearfix">
+        <div id="branding">
+          <div class="logo-site-name">
+            <strong>
+              <span id="logo">
+                <a href="http://www.java.net/" rel="home" class="active">
+                  <img alt="java.net - Go to Homepage" border="0" class="logo-link" src="https://java.net/theme/images/logo.png" title="Java.net - Go to the Homepage" />
+                </a>
+              </span>
+            </strong>
+          </div>
+          <div id="site-slogan">The Source for Java Technology Collaboration</div>
+        </div>
+        <div id="search-box" class="hide-label">
+          <form action="http://www.java.net/search/node" method="post" id="search-theme-form">
+            <div id="search">
+              <input type="hidden" value="search_form" id="edit-search-form" name="form_id" />
+              <div style="margin-left: -10px;" class="checks">
+                <span><input type="checkbox" name="type[forum]" id="edit-forums" value="forum" /> Forums</span>
+                <span><input type="checkbox" name="type[blog]" id="edit-blogs" value="blog" /> Blogs</span>
+                <span><input type="checkbox" name="projects" id="edit-projects" value="project" /> Projects</span>
+                <span><input type="checkbox" name="people" id="edit-people" value="people" /> People</span>
+              </div>
+              <input type="text" class="form-text" id="edit-search-theme-form-1" value="Search All" size="15" onclick="this.value = ''" onblur="if (!this.value) this.value = ''" name="keys" />
+              <input type="submit" value="" name="op" title="Search" class="form-submit" alt="Search" />
+            </div>
+          </form>
+        </div>
+      </div>
+    <div id="primary" class="nav">
+      <div id="primary-inner">
+                <h2 class="element-invisible">Main Menu</h2>
+       <ul class="primary-links clearfix">
+          <li class=""><a href="https://about.java.net" title="Return to the java.net homepage" class="active">Home</a></li>
+          <li class="active-trail"><a href="https://java.net/projects" title="View the projects hosted on java.net">Projects</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java" title="Participate in the java.net forums">Forums</a></li>
+          <li class=""><a href="https://java.net/people" title="View all the people involved with java.net">People</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java" title="Get involved in your local Java User Group (JUG)">Java User Groups</a></li>
+          <li class=""><a href="https://community.oracle.com/community/java/jcp" title="Get involved with the Java Community Process!">JCP</a></li>
+          <li class="active-trail"><a href="https://java.net/projects/help/pages/Home" title="Help pages java.net">Help</a></li>
+                  </ul>
+       </div>
+    </div>
+    <div id="columns">
+      <div class="columns-inner clearfix">
+        <div id="content-column">
+          <div class="content-inner">
+           <div id="navig-breadcrumbs">
+              <a href="https://java.net/">java.net</a><span>></span>  <a href="https://java.net/projects">projects</a> >
+  <a href="https://java.net/projects/javacc">javacc</a> >
+  <a href="https://java.net/projects/javacc/content" class="current">Website</a>
+
+            </div>
+            <div id="block-quicktabs-2"  class="block">
+              <div class="block-inner">
+                <div class="content">
+                  <!-- BEGIN CONTENT AREA -->
+                  
+                  
+
+
+
+
+<div class="contentPadding website">
+            
+
+<h1>JavaCC [tm]: Features</h1>
+<p>
+JavaCC [tm] is a Java parser generator written in the Java programming language.  It produces pure
+Java code.  Both JavaCC and the parsers generated by JavaCC have been
+run on a variety of Java platforms.  JavaCC comes with a bunch of
+grammars including Java 1.0.2, Java 1.1, and Java 2 as well as a couple
+of HTML grammars.
+</p>
+<p>
+Specific features of JavaCC are listed below:
+</p>
+<ul>
+<li>
+TOP-DOWN: JavaCC generates top-down (recursive descent) parsers as
+opposed to bottom-up parsers generated by YACC-like tools.  This
+allows the use of more general grammars (although left-recursion is
+disallowed).  Top-down parsers have a bunch of other advantages
+(besides more general grammars) such as being easier to debug,
+having the ability to parse to any non-terminal in the grammar, and also having the
+ability to pass values (attributes) both up and down the parse
+tree during parsing.
+</li>
+<li>
+LARGE USER COMMUNITY: JavaCC is by far the most popular parser
+generator used with Java applications.  We've had over hundreds of
+thousands of downloads and estimate serious users in the many thousands
+(maybe even tens of thousands).  Our <a href="mailinglist.html">mailing
+list</a> and newsgroups together have a few thousand participants.
+</li>
+<li>
+LEXICAL AND GRAMMAR SPECIFICATIONS IN ONE FILE: The lexical
+specifications such as regular expressions, strings, etc. and the
+grammar specifications (the BNF) are both written together in the same
+file.  It makes grammars easier to read (since it is possible to use
+regular expressions inline in the grammar specification) and also
+easier to maintain.
+</li>
+<li>
+TREE BUILDING PREPROCESSOR:  JavaCC comes with JJTree, an extremely
+powerful tree building preprocessor.
+</li>
+<li>
+EXTREMELY CUSTOMIZABLE: JavaCC offers many different options to
+customize its behavior and the behavior of the generated parsers.
+Examples of such options are the kinds of Unicode processing to
+perform on the input stream, the number of tokens of ambiguity
+checking to perform, etc. etc.
+</li>
+<li>
+CERTIFIED TO BE 100% PURE JAVA:  JavaCC runs on all Java compliant
+platforms Version 1.1 or later.  It has been used on countless different
+machines with no special porting effort - a testimonial to the
+"Write Once, Run Everywhere" aspect of the Java [tm] programming language.
+</li>
+<li>
+DOCUMENT GENERATION: JavaCC includes a tool called JJDoc that
+converts grammar files to documentation files (optionally in html).
+</li>
+<li>
+MANY MANY EXAMPLES:  The JavaCC release includes a wide range of
+examples including Java and HTML grammars.  The examples, along with
+their documentation, are a great way to get acquainted with JavaCC.
+</li>
+<li>
+INTERNATIONALIZED: The lexical analyzer of JavaCC can handle full
+Unicode input, and lexical specifications may also include any
+Unicode character.  This facilitates descriptions of language elements
+such as Java identifiers that allow certain Unicode characters (that are
+not ASCII), but not others.
+</li>
+<li>
+SYNTACTIC AND SEMANTIC LOOKAHEAD SPECIFICATIONS: By default, JavaCC
+generates an LL(1) parser.  However, there may be portions of the grammar
+that are not LL(1).  JavaCC offers the capabilities of syntactic and
+semantic lookahead to resolve shift-shift ambiguities locally at these
+points.  For example, the parser is LL(k) only at such points, but remains LL(1)
+everywhere else for better performance.  Shift-reduce and reduce-reduce
+conflicts are not an issue for top-down parsers.
+</li>
+<li>
+PERMITS EXTENDED BNF SPECIFICATIONS: JavaCC allows extended BNF
+specifications - such as <code>(A)*</code>, <code>(A)+</code>, etc. - within the lexical and
+the grammar specifications.  Extended BNF relieves the need for
+left-recursion to some extent.  In fact, extended BNF is often easier
+to read as in <code>A ::= y(x)*</code> versus <code>A ::= Ax|y</code>.
+</li>
+<li>
+LEXICAL STATES AND LEXICAL ACTIONS:  JavaCC offers <i>lex</i>-like lexical
+state and lexical action capabilities.  Specific aspects in JavaCC
+that are superior to other tools are the first class status it offers
+concepts such as TOKEN, MORE, SKIP, state changes, etc.  This allows
+cleaner specifications as well as better error and warning messages
+from JavaCC.
+</li>
+<li>
+CASE-INSENSITIVE LEXICAL ANALYSIS:  Lexical specifications can define
+tokens not to be case sensitive either at the global level for the
+entire lexical specification, or on an individual lexical specification
+basis.
+</li>
+<li>
+EXTENSIVE DEBUGGING CAPABILITIES:  Using options DEBUG_PARSER,
+DEBUG_LOOKAHEAD, and DEBUG_TOKEN_MANAGER, one can get in-depth analysis
+of the parsing and the token processing steps.
+</li>
+<li>
+SPECIAL TOKENS: Tokens that are defined as special tokens in the
+lexical specification are ignored during parsing, but these tokens
+are available for processing by the tools.  A useful application of
+this is in the processing of comments.
+</li>
+<li>
+VERY GOOD ERROR REPORTING:  JavaCC error reporting is among the best in
+parser generators.  JavaCC generated parsers are able to clearly point
+out the location of parse errors with complete diagnostic information.
+</li>
+</ul>
+
+
+      </div>
+
+                  <!--END CONTENT AREA-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sidebar-first" class="sidebar">
+            <div class="vAccordion">      <div id="block-menu-menu-kenai-project-features" class="block">
+      <div class="block-inner">
+        <h2>Project Features</h2>
+        <div class="content" style="text-align: left; margin: 5px;">
+          <ul class="menu">
+                          
+              
+                <li class="leaf">
+                  <a href="https://java.net/projects/javacc/lists">Mailing Lists</a>
+                </li>
+                
+                            
+                          
+                            <li><a href="https://java.net/projects/javacc/downloads">Downloads</a></li>
+                          
+                            <li><a href="http://java.net/jira/browse/JAVACC" target="_blank">JIRA</a></li>
+                          
+              
+                <li class="leaf">
+                  <a href="https://java.net/projects/javacc/sources">Source Code Repositories</a>
+                </li>
+                
+                            <li style="margin-left: 12px"><a href="https://java.net/projects/javacc/sources/svn/show">Subversion</a></li>
+                          
+                            <li><a href="http://javacc.java.net/">javacc.java.net</a></li>
+                          
+                            <li><a href="https://java.net/projects/javacc/pages/Home">JavaCC 7 Design</a></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  
+
+  <div id="block-menu-menu-kenai-project-about" class="block">
+    <div class="block-inner">
+      <h2>About this Project</h2>
+      <div class="content" style="text-align: left; margin: 5px;">
+        <a href="https://java.net/projects/javacc">Check out http://javacc.org</a>
+                  is a subproject of
+          <a href="https://java.net/projects/javatools">Javatools</a>,
+                was started in November 2010
+        and has <a href="https://java.net/projects/javacc/members">1016 members</a>.
+        The project administrators are
+        <a href="https://java.net/people/528626-Glassfish-Kenai-Migration-Admin"><span class="person -kenai-super_glassfish">Glassfish Kenai Migration Admin</span></a>, <a href="https://java.net/people/11961-paulcager"><span class="person -kenai-paulcager">paulcager</span></a>, <a href="https://java.net/people/402-Tom-Copeland"><span class="person -kenai-tcopeland">Tom Copeland</span></a>, and <a href="https://java.net/people/23-sreeni"><span class="person -kenai-sreeni">sreeni</span></a>.
+        <br />
+        <ul class="menu">
+                                    <li class="leaf">
+                <a href="https://java.net/projects/javacc/watch">Join This Project</a>
+              </li>
+                              </ul>
+              </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div id="tertiary-content">
+      <div id="block-menu-menu-footer-menu"  class="block">
+        <div class="block-inner">
+          <div class="content">
+            <ul class="menu">
+              <li class="leaf first">
+                <a href="http://www.java.net/contact" title="">Feedback</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.java.net/javanet-faq" title="">FAQ</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.java.net/javanet-web-site-terms-use" title="">Terms of Use</a>
+              </li>
+              <li class="leaf">
+                <a href="http://www.oracle.com/us/legal/privacy/index.html" title="">Privacy</a>
+              </li>
+              <li class="leaf last">
+                <a href="http://www.oracle.com/us/legal/third-party-trademarks/index.html" title="">Trademarks</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-region">
+        <div class="block">
+          <div class="block-inner">
+            <div class="content">
+              <div style="width: 59%; float: left;">
+                <p>
+                  Your use of this web site or any of its content or software indicates
+                  your agreement to be bound by these
+                  <a href="http://www.java.net/javanet-web-site-terms-use">Terms of Participation</a>.
+                </p>
+                <p>
+                  Copyright © 2014, Oracle Corporation and/or its affiliates. All rights reserved.
+                  Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+                  Other names may be trademarks of their respective owners.
+                </p>
+                <p>(<a href="https://java.net/projects/help/pages/ReleaseNotes">revision 20160708.bf2ac18</a>)</p>
+              </div>
+              <div style="width: 310px; float: right; text-align: right; margin-right: 10px">
+                <div style="float: right;">
+                  <a href="http://www.oracle.com" title="Oracle"><img alt="" src="https://java.net/theme/images/oracle.png" /></a>
+                  <a href="http://kenai.com" title="Kenai.com"><img alt="" src="https://java.net/theme/images/kenai.png" /></a>
+                  <a href="http://www.cognisync.com" title="Cognisync"><img alt="" src="https://java.net/theme/images/cognisync.png" /></a>
+                  <br />
+                  <div class="powered-by">
+                    Powered by Oracle, Project Kenai and Cognisync
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+        <!-- popups that are anchored to specific elements -->
+    <div class="popupMenuShadow" id="contextMenuShadow"></div>
+    <div class="popupMenuContainer" id="contextMenu">
+      <div class="popupMenu inline">	
+        <div class="upArrow"></div>
+        <div class="header"></div>
+        <div class="contextMenuBody" id="contextMenuBody">&nbsp;</div>
+      </div>
+    </div> 
+    
+    <!-- large content loaded via ajax. Faded but not modal. -->
+    <div class="jqmWindow" id="jqm_large_overlay">
+      <div class="jqmHeader">
+        <div class="jqmTitle">&nbsp;</div>
+        <img alt="Close" class="jqmClose" src="https://asset-2.java.net/images/close.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmTarget">
+        <img alt="loading" src="https://asset-0.java.net/images/activity.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmFooter">
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" title="Done"> Done </button></div>
+      </div>
+    </div>
+    
+    <!-- confirmation dialogs with buttons. Faded and modal. -->
+    <div class="jqmWindow" id="jqm_dialog">
+      <div class="jqmHeader">
+        <div class="jqmTitle">Please Confirm</div>
+        <img alt="Close" class="jqmClose" src="https://asset-2.java.net/images/close.gif?20160708.bf2ac18" />
+      </div>
+      <div class="jqmTarget">&nbsp;</div>
+      <div class="jqmFooter">
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" id="jq_no_button" title="No" onclick="Modal.no()"> No </button></div>
+      	<div class="jqmClose functionButtonContainer"><button class="functionButton" id="jq_yes_button" title="Yes" onclick="Modal.yes();"> Yes </button></div>
+      </div>
+    </div>    
+
+    <div id="jq-ui-autocomplete-parent"></div>
+    
+  
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-6400569-8");
+        pageTracker._trackPageview();
+      } catch(err) {}</script>
+  
+
+  </body>
+  <script src="https://asset-0.java.net/javascripts/body_packaged.js?20160708.bf2ac18" type="text/javascript"></script>
+  <script src="https://java.net/theme/javascript/java_custom.js" type="text/javascript"></script>
+  
+</html>
