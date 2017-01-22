@@ -3,7 +3,7 @@
                         <td id="cell1">
                               <script src="color-buttons.js"></script>
                               <div id="button-container">
-                                    <div class="help-button"><button id="main-btn" class="thebutton">JAVACC HELP</button></div>
+                                    <div class="help-button"><button id="main-btn" class="thebutton">JavaCC Help</button></div>
                                     <div id="inside-help">
                                           <div class="help-button"><button onclick="window.location = 'http://javacc.org/getting-started';" class="thebutton level1">Getting Started</button></div>
                                           <div class="help-button"><button onclick="window.location = 'http://javacc.org/doc';" class="thebutton level1">Documentation</button></div>
