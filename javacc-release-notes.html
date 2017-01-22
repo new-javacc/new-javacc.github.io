@@ -62,35 +62,735 @@
 <!--end-->
                     <td id="cell2">
                         <div class="bottomhalf">
-                          <iframe id="notes" src="javacc.java.net/doc/javaccreleasenotes.html">
-                            <p>Your browser does not support iframe.</p>
-                          </iframe>
+                          <div id="notes">
+<h1>JavaCC [tm]: Release Notes</h1>
+<br>
+THIS FILE IS A COMPLETE LOG OF ALL CHANGES THAT HAVE TAKEN PLACE SINCE<br>
+THE RELEASE OF VERSION 0.5 IN OCTOBER, 1996.<br>
+<br>
+AS NOTED HERE, DURING THE TRANSITION FROM 0.5 TO 4.0, THERE HAVE BEEN<br>
+THE FOLLOWING INTERMEDIATE VERSIONS:<br>
+<br>
+  0.6.-10<br>
+  0.6.-9<br>
+  0.6.-8<br>
+  0.6(Beta1)<br>
+  0.6(Beta2)<br>
+  0.6<br>
+  0.6.1<br>
+  0.7pre1<br>
+  0.7pre2<br>
+  0.7pre3<br>
+  0.7pre4<br>
+  0.7pre5<br>
+  0.7pre6<br>
+  0.7pre7<br>
+  0.7<br>
+  0.7.1<br>
+  0.8pre1<br>
+  0.8pre2<br>
+  1.0<br>
+  1.2<br>
+  2.0<br>
+  2.1<br>
+  3.0<br>
+  3.1<br>
+  3.2<br>
+  4.0<br>
+  4.1<br>
+        4.2<br>
+        6.0<br>
+<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 6.0<br>
+<br>
+Added support for C++ code generation - for almost all features - except ERROR_REPORTING. See the javacc-c++-releasenotes.html document for details.<br>
+<br>
+Added a new option:<br>
+  -OUTPUT_LANGUAGE - string value - "java" and "c++" are two currently allowed values<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 4.2<br>
+-------------------------------------------------------------------<br>
+<br>
+Release 4.2 is a maintenance release, incorporating a number of bug<br>
+fixes and enhancements. For a complete list, please see the<br>
+issue tracker:<br>
+<br>
+https://javacc.dev.java.net/issues/buglist.cgi?component=javacc&field0-0-0=target_milestone&type0-0-0=equals&value0-0-0=4.2<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 4.1<br>
+-------------------------------------------------------------------<br>
+<br>
+Release 4.1 is a maintenance release, incorporating a number of bug<br>
+fixes and enhancements. For a complete list, please see the<br>
+issue tracker:<br>
+<br>
+https://javacc.dev.java.net/issues/buglist.cgi?component=javacc&field0-0-0=target_milestone&type0-0-0=equals&value0-0-0=4.1<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 4.0<br>
+-------------------------------------------------------------------<br>
+<br>
+See the bug list in issue tracker for all the bugs fixed in this release.<br>
+JJTree and JavaCC both now support 1.5 syntax.<br>
+We now support accessing token fields in the grammar like: s=&lt;ID&gt;.image<br>
+Convenient constructors for passing encoding directly to the grammar<br>
+Tabsetting is now customizable.<br>
+SimpleNode can now extend a class using the NODE_EXTENDS option.<br>
+JAVACODE and BNF productions take optional access modifiers.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 3.2<br>
+-------------------------------------------------------------------<br>
+New regular expression kind with range operator where the upperbound is<br>
+optional, meaning just minimum, no max - (&lt;RE&gt;){n,}<br>
+Fix for issue 41 where it takes exponential time to minimumSize<br>
+<br>
+MODIFICATIONS IN VERSION 3.2<br>
+-------------------------------------------------------------------<br>
+Added the LICENSE file to the installation root directory.<br>
+Fixed issues #: 10, 11, 13, 2, 4, 5, 7<br>
+In particular, the generated code should now compile with JDK 1.5 (Tiger)<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 3.1<br>
+-------------------------------------------------------------------<br>
+<br>
+Open source with BSD license.<br>
+Fixed the copyright text in the sourcefiles.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 3.0 (as compared to version 2.1)<br>
+-------------------------------------------------------------------<br>
+<br>
+No GUI version anymore.<br>
+<br>
+Fixed a bug in handling string literals when they intersect some<br>
+regular expression.<br>
+<br>
+Split up initializations of jj_la1_* vars into smaller methods so<br>
+that there is no code size issue. This is a recently reported bug.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 2.1 (as compared to version 2.0)<br>
+-------------------------------------------------------------------<br>
+<br>
+Added a new option - KEEP_LINE_COLUMN default true.<br>
+<br>
+If you set this option to false, the generated CharStream will not<br>
+have any line/column tracking code. It will be your responsibility<br>
+to do it some other way. This is needed for systems which don't care<br>
+about giving error messages etc.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+API Changes: JavaCC no longer generates one of the 4 stream classes:<br>
+<br>
+      ASCII_CharStream<br>
+      ASCII_UCodeESC_CharStream<br>
+      UCode_CharStream<br>
+      UCode_UCodeESC_CharStream<br>
+<br>
+In stead, it now supports two kinds of streams:<br>
+<br>
+      SimpleCharStream<br>
+      JavaCharStream<br>
+<br>
+Both can be instantiated using a Reader object.<br>
+<br>
+SimpleCharStream just reads the characters from the Reader using the<br>
+read(char[], int, int) method. So if you want to support a specific<br>
+encoding - like SJIS etc., you will first create the Reader object<br>
+with that encoding and instantiate the SimpleCharStream with that<br>
+Reader so your encoding is automatically used. This should solve a<br>
+whole bunch of issues with UCode* classes that were reported.<br>
+<br>
+JavaCharStream is pretty much like SimpleCharStream, but it also does<br>
+\uxxxx processing as used by the Java programming language.<br>
+<br>
+Porting old grammars:<br>
+<br>
+Just replace Stream class names as follows -<br>
+<br>
+    if you are using ASCII_CharStream or UCode_CharStream,<br>
+    change it to SimpleCharStream<br>
+<br>
+    if you are using ASCII_UCodeESC_CharStream or UCode_UCodeESC_CharStream,<br>
+    change it to JavaCharStream<br>
+<br>
+The APIs remain the same.<br>
+<br>
+Also, the CharStream interface remains the same. So, if you have been using<br>
+USER_CHAR_STREAM option, then you don't need to change anything.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 2.0 (as compared to version 1.2)<br>
+-------------------------------------------------------------------<br>
+<br>
+Added CPP grammar to examples directory (contributed by Malome Khomo).<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+GUI is now available to run JavaCC.  You can control all aspects of<br>
+JJTree and JavaCC (except creating and editing the grammar file)<br>
+through this GUI.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Desktop icons now available on a variety of platforms so you can<br>
+run JavaCC by double clicking the icon.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Bash on NT support improved.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Uninstaller included.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed some minor bugs.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 1.2 (as compared to version 1.0)<br>
+-------------------------------------------------------------------<br>
+<br>
+Moved JavaCC to the Metamata installer and made it available for<br>
+download from Metamata's web site.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Added Java 1.2 grammars to the examples directory.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Added repetition range specifications for regular expressions.<br>
+You can specify exact number of times a particular re should<br>
+occur or a {man, max} range, e.g,<br>
+<br>
+    TOKEN:<br>
+    {<br>
+         &lt; TLA: (["A"-"Z"]){3} &gt; // Three letter acronyms!<br>
+<br>
+      |<br>
+<br>
+         &lt; DOS_FILENAME: (~[".", ":", ";", "\\"]) {1,8}<br>
+                         ( "." (~[".", ":", ";", "\\"]){1,3})? &gt;<br>
+               // An incomplete spec for the DOS file name format<br>
+    }<br>
+<br>
+The translation is right now expanding out these many number of times<br>
+so use it with caution.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+You can now specify actions/state changes for EOF. It is right now<br>
+very strict in that it has to look exactly like:<br>
+<br>
+   &lt;*&gt; TOKEN:<br>
+   {<br>
+      &lt; EOF &gt; { action } : NEW_STATE<br>
+   }<br>
+<br>
+which means that EOF is still EOF in every state except that now<br>
+you can specify what state changes  if any or what java code<br>
+if any to execute on seeing EOF.<br>
+<br>
+This should help in writing grammars for processing C/C++ #include<br>
+files, without going through hoops as in the old versions.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 1.0 (as compared to version 0.8pre2)<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed bugs related to usage of JavaCC with Java 2.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Many other bug fixes.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.8pre2 (as compared to version 0.8pre1)<br>
+-------------------------------------------------------------------<br>
+<br>
+Mainly bug fixes.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.8pre1 (as compared to version 0.7.1)<br>
+-------------------------------------------------------------------<br>
+<br>
+Changed all references to Stream classes in the JavaCC code itself and<br>
+changed them to Reader/Writer.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Changed all the generated *CharStream classes to use Reader instead of<br>
+InputStream. The names of the generated classes still say *CharStream.<br>
+For compatibility reasons, the old constructors are still supported.<br>
+All the constructors that take InputStream create InputStreamReader<br>
+objects for reading the input data. All users parsing non-ASCII inputs<br>
+should continue to use the InputStream constructors.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Generate inner classes instead of top level classes where appropriate.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.7.1 (as compared to version 0.7)<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a bug in the handling of empty PARSER_BEGIN...PARSER_END<br>
+regions.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a bug in Java1.1noLA.jj - the improved performance Java grammar.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a spurious definition that was being generated into the parser<br>
+when USER_TOKEN_MANAGER was set to true.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.7 (as compared to version 0.7pre7)<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed the error reporting routines to delete duplicate entries from<br>
+the "expected" list.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Generated braces around the "if (true) ..." construct inserted<br>
+by JavaCC to prevent the dangling else problem.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Added code to consume_token that performs garbage collections of<br>
+tokens no longer necessary for error reporting purposes.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a bug with OPTIMIZE_TOKEN_MANAGER when there is a common prefix<br>
+for two or more (complex) regular expressions.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a JJTree bug where a node annotation #P() caused a null pointer<br>
+error.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Only generate the jjtCreate() methods if the NODE_FACTORY option is<br>
+set.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a bug where the name of the JJTree state file was being used in<br>
+the declaration of the field.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Updated the performance page to demonstrate how JavaCC performance<br>
+has improved since Version 0.5.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.7pre7 (as compared to version 0.7pre6)<br>
+-------------------------------------------------------------------<br>
+<br>
+Added an option CACHE_TOKENS with a default value of false.  You<br>
+can generate slightly faster and (it so happens) more compact<br>
+parsers if you set CACHE_TOKENS to true.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Improved time and space requirements as compared to earlier<br>
+versions - regardless of the setting of CACHE_TOKENS.<br>
+<br>
+Performance has improved roughly 10% (maybe even a little more).<br>
+Space requirements have reduced approximately 30%.<br>
+<br>
+It is now possible to generate a Java parser whose class file is<br>
+only 28K in size.  To do this, run JavaCC on Java1.1noLA.jj with<br>
+options ERROR_REPORTING=false and CACHE_TOKENS=true.<br>
+<br>
+And over the next few months, there is still places where space<br>
+and time can be trimmed!<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+The token_mask arrays are completely gone and replaced by bit<br>
+vectors.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Nested switch statements have been flattened.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a bug in the outputting of code to generate a method<br>
+<br>
+    jjCheckNAddStates(int i)<br>
+<br>
+calls to which are generated, but not the method.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Generating the `static' keyword for the backup method of the<br>
+UCode*.java files when STATIC flag is set.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.7pre6 (as compared to version 0.7pre5)<br>
+-------------------------------------------------------------------<br>
+<br>
+Extended the generated CharStream classes with a method to adjust the<br>
+line and column numbers for the beginning of a token.  Look at the C++<br>
+grammar in the distribution to see an example usage.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed the JavaCC front-end so that error messages are given with line<br>
+numbers relative to the original .jjt file if the .jj file is generated<br>
+by pre-processing using jjtree.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Removed support for old deprecated features:<br>
+<br>
+. IGNORE_IN_BNF can no longer be used.  Until this version, you<br>
+  would get a deprecated warning message if you did use it.<br>
+<br>
+. The extra {} in TOKEN specifications can no longer be used.  Until<br>
+  this version, you would get a deprecated warning message if your<br>
+  did use it.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+ParseError is no longer supported.  It is now ParseException.  Please<br>
+delete the existing generated files for ParseError and ParseException.<br>
+The right ParseException will automatically get regenerated.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Completed step 1 in getting rid of the token mask arrays.  This<br>
+occupies space and is also somewhat inefficient.  Essentially,<br>
+replaced all "if" statements that test a token mask entry with<br>
+faster "switch" statements.  The token mask array still exist for<br>
+error reporting - but they will be removed in the next step (in<br>
+the next release).  As a result, we have noticed improved parser<br>
+speeds (up to 10% for the Java grammar).<br>
+<br>
+As a consequence of doing step 1, but not step 2, the size of the<br>
+generated parser has increased a small amount.  When step 2 is<br>
+completed, the size of the generated parser will go down to be even<br>
+smaller than what it was before.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Cache tokens one step ahead during parsing for performance reasons.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Made the static token mask fields "final".  Note that the token<br>
+mask arrays will go away in the next release.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+The Java 1.1 grammar was corrected to allow interfaces nested within<br>
+blocks.  The JavaCC grammar was corrected to fix a bug in its<br>
+handling of the "&gt;&gt;&gt;=" operator.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a bug in the optimizations of the lexical analyzer.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Many changes have been made to JJTree.  See the JJTree release<br>
+notes for more information.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.7pre5 (as compared to version 0.7pre4)<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a bug with TOKEN_MGR_DECLS introduced in 0.7pre4.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Enhanced JavaCC input grammar to allow JavaCC reserved words in<br>
+Java code (such as actions).  This too was disallowed in 0.7pre4<br>
+only and has been rectified.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+The JavaCC+JJTree grammar is now being offered to our users.  You<br>
+can find it in the examples directory.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed an array index out of bounds bug in the parser - that sometimes<br>
+can happen when a non-terminal can expand to more than 100 other<br>
+non-terminals.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a bug in generating parsers with USER_CHAR_STREAM set to true.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Created an alternate Java 1.1 grammar in which lookaheads have been<br>
+modified to minimize the space requirements of the generated<br>
+parser.  See the JavaGrammars directory under the examples directory.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Provided instructions on how you can make your own grammars space<br>
+efficient (until JavaCC is improved to do this).  See the<br>
+JavaGrammars directory under the examples directory.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Updated all examples to make them current.  Some examples had become<br>
+out of date due to newer versions of JavaCC.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Updated the VHDL example - Chris Grimm made a fresh contribution.<br>
+This seems to be a real product quality example now.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed bugs in the Obfuscator example that has started being used<br>
+for real obfuscation by some users.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+The token manager class is non-final (this was a bug).<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Many changes have been made to JJTree.  See the JJTree release<br>
+notes for more information.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed all token manager optimization bugs that we know about.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed all UNICODE lexing bugs that we know about.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed an array index out of bounds bug in the token manager.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.7pre4 (as compared to version 0.7pre3)<br>
+-------------------------------------------------------------------<br>
+<br>
+The only significant change for this version is that we incorporated<br>
+the Java grammar into the JavaCC grammar.  The JavaCC front end is<br>
+therefore able to parse the entire grammar file intelligently rather<br>
+than simple ignore the actions.<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.7pre3 (as compared to version 0.7pre2)<br>
+-------------------------------------------------------------------<br>
+<br>
+WE HAVE NOT ADDED ANY MAJOR FEATURES TO JAVACC FOR THIS PRERELEASE.<br>
+WE'VE FOCUSED MAINLY ON BUG FIXES.  BUT HERE IS WHAT HAS CHANGED:<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed the JavaCC license agreement to allow redistributions of example<br>
+grammars.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a couple of bugs in the JavaCC grammar.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed an obscure bug that caused spurious '\r's to be generated<br>
+on Windows machines.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Changed the generated *CharStream classes to take advantage of the<br>
+STATIC flag setting.  With this (like the token manager and parser)<br>
+the *CharStream class also will have all the methods and variables to<br>
+be static with STATIC flag.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+A new option OPTIMIZE_TOKEN_MANAGER is introduced. It defaults to<br>
+true.  When this option is set, optimizations for the TokenManager, in<br>
+terms of size *and* time are performed.<br>
+<br>
+This option is automatically set to false if DEBUG_TOKEN_MANAGER is<br>
+set to true.<br>
+<br>
+The new option OPTIMIZE_TOKEN_MANAGER might do some unsafe<br>
+optimization that can cause your token manager not to compile or run<br>
+properly. While we don't expect this to happen that much, in case it<br>
+happens, just turn off the option so that those optimizations will not<br>
+happen and you can continue working. Also, if this happens, please<br>
+send us the grammar so we can analyze the problem and fix JavaCC.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+A String-valued option OUTPUT_DIRECTORY is implemented. This can be<br>
+used to instruct JavaCC to generate all the code files in a particular<br>
+directory.  By default, this is set to user.dir.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a minor bug (in 0.7pre2) in that the specialToken field was not<br>
+being set before a lexical action for a TOKEN type reg. exp.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Added a toString method to the Token class to return the image.<br>
+<br>
+<br>
+-------------------------------------------------------------------<br>
+*******************************************************************<br>
+-------------------------------------------------------------------<br>
+<br>
+MODIFICATIONS IN VERSION 0.7pre2 (as compared to version 0.7pre1)<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+AS USUAL, KEEP IN MIND THAT THIS IS A PRERELEASE THAT WE HAVE NOT<br>
+TESTED EXTENSIVELY.  THERE ARE A FEW KNOWN BUGS THAT ARE STILL PRESENT<br>
+IN THIS VERSION.  QUALITY CONTROL FOR PRERELEASES ARE SIGNIFICANTLY<br>
+LOWER THAN STABLE RELEASES - I.E., WE DON'T MIND THE PRESENCE OF BUGS<br>
+THAT WE WOULD FEEL EMBARRASSED ABOUT IN STABLE RELEASES.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Main feature release for 0.7pre2 is a completely redone JJTree.  It<br>
+now bootstraps itself.  See the JJTree release notes for more<br>
+information.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Error recovery constructs have been modified a bit from 0.7pre1.  The<br>
+parser methods now throw only ParseException by default.  You can now<br>
+specify a "throws" clause with your non-terminals to add other<br>
+exceptions to this list explicitly.  Please see the help web page at:<br>
+<br>
+   http://www.suntest.com/JavaCCBeta/newerrorhandling.html<br>
+<br>
+for complete information on error recovery.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+A new Java grammar improved for performance in the presence of very<br>
+complex expressions is now included.  This is NewJava1.1.jj.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+More optimizations for the size of the token manager's java and class<br>
+files.  The generated .java files are about 10-15% smaller that<br>
+0.7pre1 (and 40-45%) smaller compared to 0.6. The class files (with<br>
+-O) are about 20% smaller compared to 0.6.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+The parser size has been decreased.  The current optimizations affect<br>
+grammars that have small amounts of non-1 lookaheads.  For example the<br>
+generated code for the Java grammar has now reduced by 10%.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Extended the Token class to introduce a new factory function that<br>
+takes the token kind and returns a new Token object. This is done to<br>
+facilitate creating Objects of subclasses of Token based on the kind.<br>
+Look at the generated file Token.java for more details.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+The restriction on the input size (to be &lt; 2 gbytes) for the token<br>
+manager is gone.  Now the lexer can tokenize any size input (no<br>
+limit).<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Removed all the references to System.out.println in the *CharStream<br>
+classes.  Now all these are thrown as Error objects.<br>
+<br>
+-------------------------------------------------------------------<br>
+<br>
+Fixed a very old problem with giving input from System.in. Previously<br>
+for the EOF, you needed to give  or<br>
+                          </div>
                         </div>
                     </td>
-                    <script>
-                      // taken from http://stackoverflow.com/questions/325273/make-iframe-to-fit-100-of-containers-remaining-height
-                      var buffer = 20; //scroll bar buffer
-                      var iframe = document.getElementById('notes');
-
-                      function pageY(elem) {
-                          return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
-                      }
-
-                      function resizeIframe() {
-                          var height = document.documentElement.clientHeight;
-                          height -= pageY(document.getElementById('notes'))+ buffer ;
-                          height = (height < 0) ? 0 : height;
-                          document.getElementById('notes').style.height = height + 'px';
-                      }
-
-                      // .onload doesn't work with IE8 and older.
-                      if (iframe.attachEvent) {
-                          iframe.attachEvent("onload", resizeIframe);
-                      } else {
-                          iframe.onload=resizeIframe;
-                      }
-
-                      window.onresize = resizeIframe;
+                    <script src="tutorials/resize-iframe.js">
                     </script>
               </tr>
         </table>

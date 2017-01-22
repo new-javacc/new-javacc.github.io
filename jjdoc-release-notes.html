@@ -62,35 +62,116 @@
 <!--end-->
                     <td id="cell2">
                         <div class="bottomhalf">
-                          <iframe id="notes" src="http://google.com/">
-                            <p>Your browser does not support iframe.</p>
-                          </iframe>
+                          <div id="notes">
+<h1>JavaCC [tm]: JJDoc Release Notes</h1><br>
+<br>
+=================================<br>
+Changes from JJDoc 0.1.5 to 0.1.6<br>
+=================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Refactored to make Generator a settable interface,<br>
+enabling Maven or other generators.<br>
+Existing Generator becomes TextGenerator.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+=================================<br>
+Changes from JJDoc 0.1.4 to 0.1.5<br>
+=================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed bug where Writers were not being closed correctly.<br>
+Fixed bug where help message would not appear on command line.<br>
+Added the "CSS" option.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+=================================<br>
+Changes from JJDoc 0.1.3 to 0.1.4<br>
+=================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Now accepts JavaCC try/catch/finally blocks.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+=================================<br>
+Changes from JJDoc 0.1.2 to 0.1.3<br>
+=================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Made appropriate internal modifications for the JavaCC 0.7 parse error<br>
+exceptions.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+=================================<br>
+Changes from JJDoc 0.1.1 to 0.1.2<br>
+=================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed bug where ()+ expansions were being reported as ()*.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+===============================<br>
+Changes from JJDoc 0.1 to 0.1.1<br>
+===============================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed several stupid bugs in the Macintosh main class.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed bug where production comments were being generated multiple<br>
+times in text modes and one table HTML mode.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Moved production comments to the correct place: they were coming out<br>
+with the preceding production in one table HTML mode.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+=========<br>
+JJDoc 0.1<br>
+=========<br>
+<br>
+JJDoc takes a JavaCC parser specification and produces documentation<br>
+for the BNF grammar.  It can operate in three modes, determined by<br>
+command line options.<br>
+<br>
+    TEXT                   (default false)<br>
+<br>
+Setting TEXT to true causes JJDoc to generate a plain text format<br>
+description of the BNF.  Some formatting is done via tab characters,<br>
+but the intention is to leave it as plain as possible.<br>
+<br>
+The default value of TEXT causes JJDoc to generate a hyperlinked HTML<br>
+document.<br>
+<br>
+    ONE_TABLE              (default true)<br>
+<br>
+The default value of ONE_TABLE is used to generate a single HTML table<br>
+for the BNF.  Setting it to false will produce one table for every<br>
+production in the grammar.<br>
+<br>
+    OUTPUT_FILE<br>
+<br>
+The default behavior is to put the JJDoc output into a file with<br>
+either .html or .txt added as a suffix to the input file's base name.<br>
+You can supply a different file name with this option.<br>
+                          </div>
                         </div>
                     </td>
-                    <script>
-                      // taken from http://stackoverflow.com/questions/325273/make-iframe-to-fit-100-of-containers-remaining-height
-                      var buffer = 20; //scroll bar buffer
-                      var iframe = document.getElementById('notes');
-
-                      function pageY(elem) {
-                          return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
-                      }
-
-                      function resizeIframe() {
-                          var height = document.documentElement.clientHeight;
-                          height -= pageY(document.getElementById('notes'))+ buffer ;
-                          height = (height < 0) ? 0 : height;
-                          document.getElementById('notes').style.height = height + 'px';
-                      }
-
-                      // .onload doesn't work with IE8 and older.
-                      if (iframe.attachEvent) {
-                          iframe.attachEvent("onload", resizeIframe);
-                      } else {
-                          iframe.onload=resizeIframe;
-                      }
-
-                      window.onresize = resizeIframe;
+                    <script src="tutorials/resize-iframe.js">
                     </script>
               </tr>
         </table>

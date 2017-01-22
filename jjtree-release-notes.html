@@ -62,35 +62,450 @@
 <!--end-->
                     <td id="cell2">
                         <div class="bottomhalf">
-                          <iframe id="notes" src="javacc.java.net/doc/JJTree.html">
-                            <p>Your browser does not support iframe.</p>
-                          </iframe>
+                          <div id="notes">
+<h1>JavaCC [tm]: JJTree Release Notes</h1>
+
+<br>
+======================================<br>
+Changes in 6.0<br>
+======================================<br>
+<br>
+Added support for C++ code generation for the tree builder. Please see the doc: jjtree-c++-releasenotes.html for more details.<br>
+<br>
+Added the new option:<br>
+  -OUTPUT_LANGUAGE - string valued options with "java" and "c++" currently allowed.<br>
+  - VISITOR_METHOD_NAME_INCLUDES_TYPE_NAME - include the name of the class being visited in the Visitor<br>
+<br>
+======================================<br>
+Changes in 4.2<br>
+======================================<br>
+Release 4.2 is a maintenance release, incorporating a number of bug<br>
+fixes and enhancements. For a complete list, please see the<br>
+issue tracker:<br>
+<br>
+https://javacc.dev.java.net/issues/buglist.cgi?component=javacc&field0-0-0=target_milestone&type0-0-0=equals&value0-0-0=4.2<br>
+<br>
+======================================<br>
+Changes in 4.1<br>
+======================================<br>
+Release 4.1 is a maintenance release, incorporating a number of bug<br>
+fixes and enhancements. For a complete list, please see the<br>
+issue tracker:<br>
+<br>
+https://javacc.dev.java.net/issues/buglist.cgi?component=javacc&field0-0-0=target_milestone&type0-0-0=equals&value0-0-0=4.1<br>
+<br>
+======================================<br>
+Changes in 4.0<br>
+======================================<br>
+New option NODE_EXTENDS to specify a classname that<br>
+SimpleNode extends so that boiler plate code can be  put<br>
+in that class. See the examples/Interpreter for an example<br>
+usage.<br>
+<br>
+======================================<br>
+Changes from JJTree 0.3pre5 to 0.3pre6<br>
+======================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed bug where Writers were not being closed correctly.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+======================================<br>
+Changes from JJTree 0.3pre4 to 0.3pre5<br>
+======================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where a node annotation #P() caused a null pointer error.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Only generate the jjtCreate() methods if the NODE_FACTORY option is<br>
+set.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where the name of the JJTree state file was being used in<br>
+the declaration of the field.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+======================================<br>
+Changes from JJTree 0.3pre3 to 0.3pre4<br>
+======================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Made the constructors of nodes public.  Also made the node identifier<br>
+constants and the associated strings public.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a misleading error message that was produced when the output<br>
+file couldn't be generated for some reason.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Brought the HTML documentation up to date.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where the file containing the JJTree state class was<br>
+ignoring the OUTPUT_DIRECTORY option.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where a construction like this:<br>
+<br>
+  a=foo() #Foo<br>
+<br>
+was being incorrectly handled and generating bad Java code.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Changed the visitor support from a void function to one which takes a<br>
+parameter and returns a result.  This is a non-compatible change, so<br>
+you will have to update your code if it uses the visitor support.<br>
+<br>
+<br>
+[Also, if the string option VISITOR_EXCEPTION is set, its value is<br>
+also used in the signatures of the various methods in the pattern.<br>
+<br>
+Please note: this exception support is very provisional and will be<br>
+replaced in a following version by a more general solution.  It's only<br>
+here because I needed it for one of my own projects and thought it<br>
+might be useful to someone else too.  Don't use it unless you're<br>
+prepared to change your code again later.  Rob.]<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+======================================<br>
+Changes from JJTree 0.3pre2 to 0.3pre3<br>
+======================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+JJTree now uses the same grammar as JavaCC.  This means that Java code<br>
+in parser actions is parsed.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Added support for the Visitor design pattern.  If the VISITOR option<br>
+is true, JJTree adds an accept method to the node classes that it<br>
+generates, and also generates a visitor interface.  This interface is<br>
+regenerated every time that JJTree is run, so that new nodes will<br>
+cause compilation errors in concrete visitors that have not been<br>
+updated for them.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Added a couple of examples to illustrate the Visitor support.<br>
+JJTreeExamples/eg4.jjt is yet another version of the expression tree<br>
+builder which uses a visitor to dump the expression tree; and<br>
+VTransformer is a variation of the Java source code transformer.<br>
+<br>
+VTransformer is also possibly directly useful as a tool that inserts<br>
+visitor accept methods into class files that were generated with<br>
+earlier versions of JJTree.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Added the BUILD_NODE_FILES option, with a default value of true.  If<br>
+set to false, it prevents JJTree from generating SimpleNode.java and<br>
+nodes that are usually built in MULTI mode.  Node.java is still<br>
+generated, as are the various tree constants, etc.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Code that is inserted into the grammar is now enclosed in the standard<br>
+@bgen/@egen pair.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The JJTree state object is now generated into its own file if it<br>
+doesn't already exist.  This is to make it easier to modify.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a couple of bugs in the HTML example grammar where the closing<br>
+tags didn't match the opening tags.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where JJTree was trying to clear the node scope while<br>
+handling an exception, even when the node had been closed successfully.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+NODE_FACTORY no longer implies NODE_USES_PARSER.<br>
+<br>
+If you have been using NODE_FACTORY, then now you'll also need<br>
+NODE_USES_PARSER.  Unless, of course, you were never using the parser<br>
+in your node factories.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Removed not very useful debugging stuff from the JJTree state object.<br>
+It was causing problems with parsers running in security environments<br>
+where access to arbitrary properties is disallowed.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+======================================<br>
+Changes from JJTree 0.3pre1 to 0.3pre2<br>
+======================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The state that JJTree inserts into the parser class is now guarded by<br>
+the formal comments.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The JJTree syntax has been changed so that the node descriptor now<br>
+comes after the throws clause, rather than before it.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where string-valued options did not have their quotes<br>
+stripped.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where nodes were being closed early for actions within<br>
+ZeroOrMore etc., expansion units.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The special identifier `jjtThis' was not being translated in parameter<br>
+lists or in the BNF declaration section.  Fixed it.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Added the OUTPUT_DIRECTORY option.  The default value is "".<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Reinstated node factory methods.  They are enabled by setting the<br>
+NODE_FACTORY option to true.  Unlike the original node factory methods<br>
+they take two arguments: the node identifier constant and a reference<br>
+to the parser.  The reference is null for static parsers.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Added the NODE_USES_PARSER option with a default value of false.  When<br>
+set to true, JJTree will call the node constructor with a reference to<br>
+the parser object as an extra parameter.  This reference is null for<br>
+static parsers.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+====================================<br>
+Changes from JJTree 0.2.6 to 0.3pre1<br>
+====================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+JJTree 0.3pre1 has been bootstrapped with JJTree 0.2.6.<br>
+<br>
+Some aspects of JJTree 0.3pre1 are not backwards-compatible with<br>
+0.2.6.  Some users will need to modify their parsers in<br>
+straightforward ways in order to work with the new version.  See the<br>
+file JJTREE-FIX to find out if you need to change anything, and for<br>
+detailed instructions on what to change.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+JJTree works with the JavaCC exception handling code.  Any unhandled<br>
+exceptions within a node scope are caught, the node stack is cleaned<br>
+up a bit, and then the exception is rethrown.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Indefinite and Greater-Than nodes have been generalized into<br>
+conditional nodes.<br>
+<br>
+Definite nodes now take any integer expression to indicate now many<br>
+children they take.  Conditional nodes take any boolean expression to<br>
+indicate whether the node is closed and pushed on to the node stack.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The life cycle of a node is now defined.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+User-defined parser methods can be called when a node scope is entered<br>
+and exited.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The NODE_STACK_SIZE and CHECK_DEFINITE_NODE options are now ignored.<br>
+<br>
+The NODE_SCOPE_HOOK option has been added.  This boolean option<br>
+determines whether calls to certain user-defined parser methods are<br>
+generated at the beginning and end of each node scope.  The default<br>
+value for this option is false.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The special identifier jjtThis can now be used in the declarations<br>
+section of a production, as well as on the left hand side of call to a<br>
+nonterminal.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+A new method arity() has been added to the JJTree state.  It returns<br>
+the number of nodes that have been pushed so far in the current node<br>
+scope.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The Node interface has changed.  The method jjtAddChild() now takes an<br>
+argument to indicate the index of the child it is adding.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The node factory methods are no longer used.  You can remove all your<br>
+jjtCreate() methods.<br>
+<br>
+The node constructor now takes an int parameter instead of a String.<br>
+You will have to modify your node implementations to use the new<br>
+signature.  The protected field `identifier' no longer exists: you can<br>
+use the jjtNodeName[] array to map from the new parameter to the old<br>
+String.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The implementation of SimpleNode has changed significantly.  It now<br>
+uses an array to hold any child nodes instead of a Vector.  It no<br>
+longer implements a node factory, its constructor takes an int instead<br>
+of a String, and it uses the jjtNodeName[] mechanism for dumping.  The<br>
+setInfo() and getInfo() methods have been removed.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The implementation of the state that JJTree keeps in the parser has<br>
+changed.  It is now considerably more lightweight: the auxiliary<br>
+classes JJTreeNodeStack and JJTreeNodeStackEnum have been abolished.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+The JJTree state method currentNode() has been removed.  Any calls to<br>
+the method in an action within a node scope are automatically replaced<br>
+by references to the special identifier jjtThis.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+==================================<br>
+Changes from JJTree 0.2.5 to 0.2.6<br>
+==================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Made appropriate internal modifications for the JavaCC 0.7 parse error<br>
+exceptions.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+==================================<br>
+Changes from JJTree 0.2.4 to 0.2.5<br>
+==================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where the current node was not being updated in the right<br>
+place for final user actions.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+==================================<br>
+Changes from JJTree 0.2.3 to 0.2.4<br>
+==================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where bad code was generated for void nodes in MULTI mode.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed a bug where a node decoration directly on an action generated<br>
+bad code. For example,<br>
+<br>
+  {} #MyNode<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+==================================<br>
+Changes from JJTree 0.2.2 to 0.2.3<br>
+==================================<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Added toString() and toString(String) methods to SimpleNode and<br>
+modified the dumping code to use them.  Now you can easily customize<br>
+how a node appears in the tree dump, without having to reproduce the<br>
+tree walking machinery.  See SimpleNode.java for details.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Clarified the concept of node scope.  currentNode() now refers to the<br>
+node currently being built for the current scope.  It used to be<br>
+incorrectly implemented as referring to the most recently created<br>
+node, and was synonymous with peekNode().<br>
+<br>
+This change may break some existing programs.  Those programs should<br>
+be changed to use peekNode() where they currently use currentNode().<br>
+<br>
+Added jjtThis to every user action.  It refers to the same node that<br>
+currentNode() does, but is already cast to the appropriate node type.<br>
+<br>
+The final user action in a node scope is different from all the<br>
+others.  When it is executed the node has been fully created, had its<br>
+children added, and has been pushed on the node stack.  By contrast,<br>
+other user actions within the scope are called when the children are<br>
+still on the stack, and the current node is not.<br>
+<br>
+Added the nodeCreated() method so that final actions within greater<br>
+than nodes can tell whether the node was created or not.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed several stupid bugs in the Macintosh main class.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+Fixed names of internally used JJTree classes so that they use the JJT<br>
+prefix and the name of the parser.  This is to avoid naming conflicts<br>
+where there is more than one JJTree parser in the same package.<br>
+<br>
+----------------------------------------------------------------<br>
+<br>
+================================<br>
+Changes from JJTree 0.2 to 0.2.2<br>
+================================<br>
+<br>
+The main change between Beanstalk 0.2 and JJTree 0.2.2 is the removal<br>
+of the factory classes.  Their function is now performed by a static<br>
+method in the node classes themselves.<br>
+<br>
+The state maintained in the parser class has been changed from bs to<br>
+jjtree.  The prefix on the Node class methods has been changed from bs<br>
+to jjt.<br>
+<br>
+A new node method jjtGetNumChildren() returns the number of children<br>
+the node has.  You can use this in conjunction with jjtGetChild() to<br>
+iterate over the children.<br>
+<br>
+Two new options have been added: OUTPUT_FILE and NODE_DEFAULT_VOID.<br>
+<br>
+----------------------------------------------------------------<br>
+                          </div>
                         </div>
                     </td>
-                    <script>
-                      // taken from http://stackoverflow.com/questions/325273/make-iframe-to-fit-100-of-containers-remaining-height
-                      var buffer = 20; //scroll bar buffer
-                      var iframe = document.getElementById('notes');
-
-                      function pageY(elem) {
-                          return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
-                      }
-
-                      function resizeIframe() {
-                          var height = document.documentElement.clientHeight;
-                          height -= pageY(document.getElementById('notes'))+ buffer ;
-                          height = (height < 0) ? 0 : height;
-                          document.getElementById('notes').style.height = height + 'px';
-                      }
-
-                      // .onload doesn't work with IE8 and older.
-                      if (iframe.attachEvent) {
-                          iframe.attachEvent("onload", resizeIframe);
-                      } else {
-                          iframe.onload=resizeIframe;
-                      }
-
-                      window.onresize = resizeIframe;
+                    <script src="tutorials/resize-iframe.js">
                     </script>
               </tr>
         </table>
