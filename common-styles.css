@@ -75,3 +75,7 @@ a {
     text-decoration: none;
     transition: color 0.5s;
 }
+
+a:hover {
+    color: #267f00;
+}
