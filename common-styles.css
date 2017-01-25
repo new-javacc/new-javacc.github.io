@@ -24,10 +24,11 @@ body {
 }
 
 .dropdown {
+    border-collapse: collapse;
     width: 18%;
     display: inline-block;
     /*background-color: white;*/
-    /*color: rgb(255, 165, 0);*/
+    /*color: rgb(38, 127, 0);*/
     font-size: 16px;
     border: none;
     height: 100%;
@@ -41,7 +42,8 @@ body {
 
 .dropbtn {
     /*background-color: white;*/
-    color: rgb(255, 165, 0);
+    border-collapse: collapse;
+    color: rgb(38, 127, 0);
     font-size: 24px;
     height: 80px;
     top: 0px;
@@ -56,14 +58,13 @@ body {
 #logo {
     height: 100%;
     float: left;
-    width: 14%;
-    margin-left: 1%;
-    margin-right: 30%;
+    width: 18%;
+    margin-right: 27%;
+    transition: background-color 0.5s;
 }
 
-#logo-container {
-/*    align: left;
-*/    margin-left: none;
+#logo:hover {
+    background-color: #aaaaaa;
 }
 
 button:hover {
