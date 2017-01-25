@@ -18,8 +18,8 @@
 #notes::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: rgba(255,165,0,1); 
+    background: rgba(38,127,0,1); 
 }
 #notes::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,165,0,1); 
+	background: rgba(38,127,0,1); 
 }

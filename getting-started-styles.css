@@ -32,7 +32,7 @@ li {
 }
 
 ul a {
-	color: #ffa500;
+	color: #267f00;
 	transition: color 0.5s;
 }
 
@@ -83,7 +83,7 @@ ul a:hover {
 }
 
 .thebutton:hover {
-	color: #ffa500;
+	color: #267f00;
 }
 
 #button-container {
