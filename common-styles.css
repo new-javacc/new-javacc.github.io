@@ -5,52 +5,65 @@ body {
     margin: none;
 }
 #alldropdowns {
-	width: 96%;
+	width: 100%;
 	height: 50px;
-	margin-bottom: 70px;
+/*	margin-bottom: 70px;
     margin-left: 2%;
     margin-right: 2%;
-	top: 30px;
-	position: relative;
+*/	/*top: 30px;*/
+    top: 0px;
+    left: 0px;
+    padding-bottom: 30px;
+	position: fixed;
+    border-collapse: collapse;
+/*    background-color: gray;
+*/}
+
+#alldropdowns, .dropbtn {
+    background-color: #000000;
 }
 
 .dropdown {
-	width: 16%;
+    width: 18%;
     display: inline-block;
-	background-color: white;
-	color: rgb(255, 165, 0);
-	font-size: 16px;
-	border: none;
-	height: 100%;
-	transition: background-color 0.5s, color 0.5s;
+    /*background-color: white;*/
+    /*color: rgb(255, 165, 0);*/
+    font-size: 16px;
+    border: none;
+    height: 100%;
+    transition: background-color 0.5s;
+    margin: none;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #dddddd;
+    background-color: #aaaaaa;
 }
 
 .dropbtn {
-    background-color: white;
+    /*background-color: white;*/
     color: rgb(255, 165, 0);
-    font-size: 16px;
-    height: 50px;
+    font-size: 24px;
+    height: 80px;
+    top: 0px;
     width: 100%;
     border: none;
     cursor: pointer;
     transition: background-color 0.5s;
+    font-weight: bolder;
+    /*vertical-align: middle;*/
 }
 
 #logo {
     height: 100%;
     float: left;
-    width: 18%;
-    margin-left: none;
+    width: 14%;
+    margin-left: 1%;
     margin-right: 30%;
 }
 
 #logo-container {
-    align: left;
-    margin-left: none;
+/*    align: left;
+*/    margin-left: none;
 }
 
 button:hover {
@@ -59,4 +72,5 @@ button:hover {
 
 a {
     text-decoration: none;
+    transition: color 0.5s;
 }
