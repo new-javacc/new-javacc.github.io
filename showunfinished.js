@@ -6,7 +6,7 @@ window.onload = function() {
 			elements[i].style.color = "red";
 		}
 		else {
-			elements[i].style.color = "#ffa500";
+			elements[i].style.color = "#267f00";
 			elements[i].style.transition = "color 0.5s";
 		}
 	}
