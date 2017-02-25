@@ -65,6 +65,86 @@
                     <td id="cell2">
                         <div class="bottomhalf">
                           <div id="notes">
+                          <h1>JavaCC&#8482;: JJDoc Documentation</h1>
+<p>
+JJDoc takes a JavaCC&#8482; parser specification and produces documentation
+for the BNF grammar.  It can operate in several modes, determined by
+command line options.
+</p>
+
+<dl>
+  <dt><code>TEXT</code></dt>
+
+  <dd>(default false)
+
+  <p>
+  Setting <code>TEXT</code> to true causes JJDoc to generate
+  a plain text format description of the BNF.  Some formatting
+  is done via tab characters, but the intention is to leave it
+  as plain as possible.
+  </p>
+
+  <p>
+  The default value of <code>TEXT</code> causes JJDoc to
+  generate a hyperlinked HTML document.
+  </p>
+  </dd>
+
+  <dt><code>BNF</code></dt>
+
+  <dd>(default false)
+  <p>
+  Setting <code>BNF</code> to true causes JJDoc to generate
+  a pure BNF document.
+  </p>
+  </dd>
+
+  <dt><code>ONE_TABLE</code></dt>
+
+  <dd>(default true)
+
+  <p>
+  The default value of <code>ONE_TABLE</code> is used to
+  generate a single HTML table for the BNF.  Setting it to
+  false will produce one table for every production in the
+  grammar.
+  </p>
+  </dd>
+
+  <dt><code>OUTPUT_FILE</code></dt>
+
+  <dd>
+  <p>
+    The default behavior is to put the JJDoc output into a file
+  with either .html or .txt added as a suffix to the input
+  file's base name.  You can supply a different file name with
+  this option.
+  </p>
+  </dd>
+
+  <dt><code>CSS</code></dt>
+
+  <dd>
+  <p>
+      This option allows you to specify a CSS file name.  If you supply
+      a file name in this option it will appear in a <code>LINK</code> element
+      in the <code>HEAD</code> section of the file.  This option only applies
+      to HTML output.
+  </p>
+  </dd>
+</dl>
+
+<p>
+Comments in the JavaCC source that immediately precede a
+production are passed through to the generated documentation.
+</p>
+
+<p>
+The results for JavaCC are given as <a href="JavaCC.txt">text</a> or <a href="JavaCC.html">HTML</a>.
+</p>
+
+<hr />
+
                           </div>
                           <script src="tutorials/resize-iframe.js"></script>
                         </div>

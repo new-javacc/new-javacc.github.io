@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class ReplaceURL {
 	public static void main(String[] args) {
 		File file = new File(".");
-		ArrayList<File> files = UpdatePages.getAllFiles("html");
+		ArrayList<File> files = UpdatePages.getAllFiles("html", ".");
 		for (File f : files) {
 			Scanner scan = null;
 			try {
