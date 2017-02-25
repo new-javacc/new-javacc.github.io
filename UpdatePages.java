@@ -8,7 +8,7 @@ public class UpdatePages {
 
 	public static void main(String[] args) {
 		ArrayList<File> files = getAllFiles("html", ".");
-		ArrayList<File> temps = getAllFiles("txt", ".");
+		ArrayList<File> temps = getAllFiles("tpl", ".");
 		update(files, temps);
 		System.out.println("Successfully updated all HTML pages.");
 	}
@@ -41,14 +41,14 @@ public class UpdatePages {
 			try {
 				input = new Scanner(htmlFile);
 			} catch (FileNotFoundException e) {
-				System.err.println("Failure");
+				System.err.println("Failure in html file");
 				continue;
 			}
 			Scanner temp = null;
 			try {
 				temp = new Scanner(new File(commonpath));
 			} catch (FileNotFoundException e) {
-				System.err.println("Failure");
+				System.err.println("Failure in common path");
 				continue;
 			}
 			String templateText = "";
