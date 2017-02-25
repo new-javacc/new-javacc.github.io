@@ -6,7 +6,7 @@
             	<button onclick="window.location = 'http://javacc.org/download';" class="dropbtn"><div class="drpdntext">DOWNLOAD</div></button>
             </div>
             <div class="dropdown">
-            	<button onclick="window.location = 'http://javacc.org/help';" class="dropbtn"><div class="drpdntext">DOCUMENTATION</div></button>
+            	<button onclick="window.location = 'http://javacc.org/doc';" class="dropbtn"><div class="drpdntext">DOCUMENTATION</div></button>
             </div>
             <div class="dropdown">
             	<button onclick="window.location = 'http://javacc.org/contact';" class="dropbtn"><div class="drpdntext">CONTACT</div></button>
